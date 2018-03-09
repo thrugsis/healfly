@@ -67,8 +67,6 @@ ActiveRecord::Schema.define(version: 20180309095035) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
-    t.index ["email"], name: "index_users_on_email", using: :btree
-    t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
 
   add_foreign_key "appointments", "providers"
