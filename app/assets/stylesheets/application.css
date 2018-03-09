@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+#healfly_title {
+font-family: Blanch-CapsInline;
+font-size: 160px;
+color: #000000;
+letter-spacing: 0;
+text-align: center;
+}
+
