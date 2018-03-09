@@ -19,7 +19,13 @@
     <% end %>
   </tbody>
 </table>
-
+ <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete, class: "button" %>
+    <% else %>
+      <a href="/auth/facebook">
+      Login With Facebook</a>
+    <% end %>
 <br>
 
 <%= link_to 'New User', new_user_path %>
