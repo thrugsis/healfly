@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
+  root "listings#index"
+
   resources :appointments
   resources :providers
   resources :users
+  resources :listings
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
