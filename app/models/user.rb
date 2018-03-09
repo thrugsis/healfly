@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :appointments, :dependent => :delete_all
+  include Clearance::User
 
- include Clearance::User
+  has_many :appointments, :dependent => :delete_all
 end
