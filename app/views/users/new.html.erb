@@ -1,6 +1,11 @@
 <div id="clearance" class="sign-up">
+  <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path %>
+    </div>
+
   <h2><%= t(".title") %></h2>
 
+  <h5> AS PATIENT: </h5>
   <%= form_for @user do |form| %>
     <%= render partial: '/users/form', object: form %>
 
@@ -33,13 +38,15 @@
       <%= form.label :birthday %>
       <%= form.text_field :birthday, type: 'birthday' %>
     </div>
-
+    <br/>
     <div class="submit-field">
       <%= form.submit %>
     </div>
 
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
-    </div>
   <% end %>
+
+  <br/>
+
+  <div> Are you a provider? Sign up <%= link_to "here", "/providers/new" %> </div>
+
 </div>
