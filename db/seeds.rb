@@ -16,7 +16,7 @@ ActiveRecord::Base.transaction do
     user['email'] = Faker::Internet.email
     user['first_name'] = Faker::Name.first_name
 	user['last_name'] = Faker::Name.last_name
-  user['password'] = 'asdf'
+  user['password'] = Faker::Color.color_name
 	user['gender'] = ["Male", "Female"].at(rand(2))
 	user['image'] = Faker::LoremPixel.image("500x500", false, 'people')
 	user['birthday'] = Faker::Date.between(100.years.ago, 18.years.ago)

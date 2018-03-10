@@ -21,14 +21,26 @@ class SessionsController < Clearance::SessionsController
     redirect_to root_path, :notice => @notice
   end
 
-   def user_sign_in
+  def user_sign_in
     @user = User.new
     render template: "sessions/user_sign_in"
+  end
+
+  def user_login_success
+    User.find_by(user_params)
+    redirect_to "/"
   end
 
   def provider_sign_in
     @provider = Provider.new
     render template: "sessions/provider_sign_in"
+  end
+
+  private
+
+  def user_params
+    byebug
+    params.require(:user).permit(:username, :email, :password)
   end
 
 end

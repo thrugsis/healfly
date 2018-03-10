@@ -1,4 +1,14 @@
 <h2> AS PATIENT: </h2>
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
-    <% end %>
+  
+  <%= form_tag user_login_success_path(@user), :method =>"get" do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    Username: <%= text_field_tag 'user[username]', @user.username %>
+    <br/>
+    Password: <%= text_field_tag 'user[password]', @user.password %>
+    <br/>
+    <%= submit_tag "Log in", :id=>"log-in-button" %>
+  <% end %>
+
+  <br/>
+  <br/>
+  <a href="/auth/facebook"> Login With Facebook</a>

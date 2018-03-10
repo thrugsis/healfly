@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get "/sign_in/user" => "sessions#user_sign_in", as: "user_sign_in"
   get "/sign_in/provider" => "sessions#provider_sign_in", as: "provider_sign_in"
 
+  get "/sign_in/user_login_success" => "sessions#user_login_success", as: "user_login_success"
+
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
 
