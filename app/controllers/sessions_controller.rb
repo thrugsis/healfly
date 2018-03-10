@@ -20,4 +20,15 @@ class SessionsController < Clearance::SessionsController
     sign_in(user)
     redirect_to root_path, :notice => @notice
   end
+
+   def user_sign_in
+    @user = User.new
+    render template: "sessions/user_sign_in"
+  end
+
+  def provider_sign_in
+    @provider = Provider.new
+    render template: "sessions/provider_sign_in"
+  end
+
 end
