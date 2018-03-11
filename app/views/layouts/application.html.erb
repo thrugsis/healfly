@@ -1,20 +1,27 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
+    
     <title>Healfly</title>
     <%= csrf_meta_tags %>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
   </head>
 
   <body>
-      <% if signed_in? %>
+      
+    <% if signed_in? %>
       Signed in as: <%= current_user.email %>
       <%= button_to 'Sign out', sign_out_path, method: :delete, class: "button" %>
     <% else %>
-      <a href="/auth/facebook">
-      Login With Facebook</a>
+      <a id=login_with_facebook href="/auth/facebook">
+      login with facebook</a>
     <% end %>
 
     <br>
