@@ -66,6 +66,14 @@ class ProvidersController < ApplicationController
     end
   end
 
+
+  def search
+    @providers = Provider.all 
+
+    @search = @providers.search_engine(params[:search_input])
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_provider
