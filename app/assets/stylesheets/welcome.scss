@@ -1,3 +1,68 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar_futura_font {
+  font-family: Futura; 
+  font-size: 3vw;
+  letter-spacing: .05vw;
+  font-size: 13px;
+  color: white;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav {
+  color: white;
+}
+
+.navbar {
+  background-color: black;
+  margin-top: -12vh;
+  width: 100vw;
+  margin-left: -4vw; 
+  height: 3vw;
+  z-index: -1;
+  color: white;
+}
+
+#healfly_logo {
+  position: absolute;
+}
+
+#title_healfly {
+  font-family: Blanch-CapsInline;
+  font-size: 160px;
+  color: #000000;
+  letter-spacing: 0;
+  text-align: center;
+  word-spacing: 14vw;
+  display: inline-block;
+  margin-left: 28vw;
+  position: absolute;
+  top: 4.8vw;
+}
+
+#healfly_logo_text {
+  display: inline-block;
+}
+
+#healfly_logo_pillwings {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+  top: 4.8vw;
+  left: 43.7vw;
+}
+
+#login_with_facebook {
+  font-family: Futura;
+  text-decoration: none;
+  position: absolute;
+  margin-left: 58vw;
+  margin-top: -1.7vw;
+  color: white;
+  display: inline-block;
+  letter-spacing: .05vw;
+}
+
