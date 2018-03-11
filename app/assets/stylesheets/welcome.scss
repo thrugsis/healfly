@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@font-face {
+  font-family: "Blanch_Caps_Light";
+  src: url(/assets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Blanch_Caps_Inline";
+  src: url(/assets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Blanch_Caps";
+  src: url(/assets/fonts/BLANCH_CAPS.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Futura_Medium";
+  src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
+}
+
 .navbar_futura_font {
   font-family: Futura; 
   font-size: 3vw;
@@ -18,12 +38,13 @@
 
 .navbar {
   background-color: black;
-  margin-top: -12vh;
-  width: 100vw;
+  margin-top: -8vh;
+  width: 103vw;
   margin-left: -4vw; 
   height: 3vw;
   z-index: -1;
   color: white;
+
 }
 
 #healfly_logo {
@@ -40,7 +61,7 @@
   display: inline-block;
   margin-left: 28vw;
   position: absolute;
-  top: 4.8vw;
+  top: 4.5vw;
 }
 
 #healfly_logo_text {
@@ -51,8 +72,8 @@
   display: inline-block;
   position: absolute;
   text-align: center;
-  top: 4.8vw;
-  left: 43.7vw;
+  top: 4vw;
+  left: 43.4vw;
 }
 
 #login_with_facebook {
