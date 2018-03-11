@@ -1,3 +1,3 @@
 class Provider < ApplicationRecord
-	has_many :appointments, :dependent => :delete_all
+	has_many :appointments, :dependent => :destroy
 end

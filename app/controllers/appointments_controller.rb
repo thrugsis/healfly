@@ -15,6 +15,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new
   def new
     @appointment = Appointment.new
+    @provider = Provider.find(params[:provider_id])
   end
 
   # GET /appointments/1/edit
@@ -24,18 +25,20 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    @appointment = Appointment.new(appointment_params)
-
-    respond_to do |format|
+    @provider = Provider.find(params[:provider_id])  
+    @appointment = @provider.appointments.new(appointment_params)
+    # respond_to do |format|
       if @appointment.save
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        format.json { render :show, status: :created, location: @appointment }
+      @providers = @appointment.provider
+        # format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
+        # format.json { render :show, status: :created, location: @appointment }
       else
-        format.html { render :new }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      end
+        # format.html { render :new }
+        # format.json { render json: @appointment.errors, status: :unprocessable_entity }
+      # end
     end
   end
+ 
 
   # PATCH/PUT /appointments/1
   # PATCH/PUT /appointments/1.json
@@ -69,6 +72,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.fetch(:appointment, {})
+      params.require(:appointment).permit(:provider_id, :date, :start_time, :end_time)
     end
 end
