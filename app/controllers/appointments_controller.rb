@@ -28,6 +28,9 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.save
+        AppointmentMailer.appointment_email(current_user, @provider, @appointment).deliver
+   redirect_to appointment_path(@appointment.id), notice: 'Appointment was successfully created'
+
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
         format.json { render :show, status: :created, location: @appointment }
       else
