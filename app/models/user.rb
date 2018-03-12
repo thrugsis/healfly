@@ -4,8 +4,6 @@ class User < ApplicationRecord
   has_many :appointments, :dependent => :delete_all
   has_many :authentications, :dependent => :destroy
 
-  include Clearance::User
-
  def self.create_with_auth_and_hash(authentication, auth_hash)
    user = self.create!(
      name: auth_hash["info"]["name"],
@@ -24,6 +22,10 @@ class User < ApplicationRecord
  def fb_token
    x = self.authentications.find_by(provider: 'facebook')
    return x.token unless x.nil?
+ end
+
+ def user?
+  has_role?(:user)
  end
 
 end

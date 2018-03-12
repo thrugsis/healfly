@@ -1,0 +1,14 @@
+<h2> AS PATIENT: </h2>
+  
+  <%= form_tag user_login_success_path(@user), :method =>"get" do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  Email: <%= text_field_tag 'session[email]', @user.email %>
+  <br/>
+  Password: <%= text_field_tag 'session[password]', @user.password %>
+  <br/>
+  <%= submit_tag "Log in", :id=>"log-in-button" %>
+  <% end %>
+
+  <br/>
+  <br/>
+  <a href="/auth/facebook"> Login With Facebook</a>

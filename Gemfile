@@ -23,6 +23,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'clearance'
 gem 'faker'
 gem 'figaro'
+gem 'mail'
+gem 'carrierwave', '~> 1.0'
+gem 'fog-aws'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
