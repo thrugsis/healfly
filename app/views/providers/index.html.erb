@@ -2,6 +2,13 @@
 
 <h1>Providers</h1>
 
+
+<%= form_tag search_path do %>
+    <%= text_field_tag "search_input", nil, placeholder: "Search Treatment", list: "list" %>
+    <%= submit_tag "Search" %>
+<%end%>
+
+
 <table>
   <thead>
     <tr>
@@ -12,6 +19,11 @@
   <tbody>
     <% @providers.each do |provider| %>
       <tr>
+        <td><%= provider.id%></td>
+        <td><%= provider.name%></td>
+        <td><%= provider.treatment%></td>
+        <td><%= provider.location%></td>
+        <td><%= provider.price%></td>        
         <td><%= link_to 'Show', provider %></td>
         <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
         <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>

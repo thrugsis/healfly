@@ -23,6 +23,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'clearance'
 gem 'faker'
 gem 'figaro'
+gem 'mail'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -42,7 +44,11 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+
+gem 'pg_search'
+
 gem 'inline_svg'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -20,4 +20,35 @@ class SessionsController < Clearance::SessionsController
     sign_in(user)
     redirect_to root_path, :notice => @notice
   end
+
+  def user_sign_in
+    @user = User.new
+    render template: "sessions/user_sign_in"
+  end
+
+  def user_login_success
+    byebug
+
+    @user = authenticate(params)
+    sign_in(@user) do |status|
+      if status.success?
+        @user 
+        redirect_to "/"
+      else
+        flash[:notice] = "Sorry. You are not allowed to perform this action."
+      end
+    end
+  end
+
+  def provider_sign_in
+    @provider = Provider.new
+    render template: "sessions/provider_sign_in"
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
+
 end

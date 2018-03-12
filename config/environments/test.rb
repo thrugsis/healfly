@@ -37,6 +37,19 @@ Rails.application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
+    config.action_mailer.default_url_options = { host: 'https://healfly.herokuapp.com/' }
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.default_options = {from: 'healflymail@gmail.com'}
+config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  user_name:            'healflymail@gmail.com',
+  password:             ENV["GMAIL_PASSWORD"],
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 end
