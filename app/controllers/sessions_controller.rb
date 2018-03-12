@@ -1,4 +1,6 @@
 class SessionsController < Clearance::SessionsController
+  # include ClearanceModule
+
   def create_from_omniauth
     auth_hash = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"]) ||  Authentication.create_with_omniauth(auth_hash)
@@ -23,21 +25,28 @@ class SessionsController < Clearance::SessionsController
 
   def user_sign_in
     @user = User.new
+    @previous_page = URI(request.referer).path
     render template: "sessions/user_sign_in"
   end
 
   def user_login_success
-    byebug
 
-    @user = authenticate(params)
-    sign_in(@user) do |status|
-      if status.success?
-        @user 
-        redirect_to "/"
-      else
-        flash[:notice] = "Sorry. You are not allowed to perform this action."
+      @user = authenticate(params)
+      sign_in(@user) do |status|
+        if status.success?
+          @user 
+          byebug
+          redirect_to @previous_page
+        else
+          flash[:notice] = "There is no record of your email or password"
+          render :new
+        end
       end
-    end
+  end
+
+  def destroy
+    sign_out
+    redirect_to URI(request.referer).path
   end
 
   def provider_sign_in
@@ -48,7 +57,7 @@ class SessionsController < Clearance::SessionsController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:session).permit(:username, :password)
   end
 
 end
