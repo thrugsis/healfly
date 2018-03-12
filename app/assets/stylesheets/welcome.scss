@@ -27,10 +27,12 @@ body {
 }
 
 
-.lightblue_homepage_background {
-  margin-left: -3vw;
-  margin-top: -5vw;
-  z-index: -1;
+#lightblue_background {
+  z-index: -5;
+  position: absolute;
+  margin-top: -40vh;
+  height: 2vh;
+  margin-left: -2vw
 }
 
 .navbar_futura_font {
@@ -38,10 +40,9 @@ body {
   font-size: 3vw;
   letter-spacing: .05vw;
   font-size: 13px;
-  color: white;
-  text-decoration: none;
-  margin-left: 81vw;
-  // margin-top: 10vw;
+  // color: white;
+  // text-decoration: none;
+  margin-left: 72vw;
 }
 
 .nav {
@@ -55,17 +56,21 @@ body {
 
 }
 
+#beige_text {
+  color: beige;
+}
+
 #navbar_logo {
   font-family: Blanch-CapsInline;
-  color: white;
-  font-size: 20px;
-  letter-spacing: 0;
+  color: beige;
+  font-size: 25px;
+  letter-spacing: .8vw;
   text-align: left;
-  word-spacing: 4vw;
   display: inline-block;
   position: absolute;
   top: 1.5vh;
-  margin-left: .9vw;
+  margin-left: 15vw;
+  text-decoration: none;
 }
 
 #healfly_logo {
@@ -80,7 +85,7 @@ body {
   text-align: center;
   word-spacing: 14vw;
   display: inline-block;
-  margin-left: 28vw;
+  margin-left: 30vw;
   position: absolute;
   top: 5.5vw;
 }
@@ -94,22 +99,7 @@ body {
   position: absolute;
   text-align: center;
   top: 5vw;
-  left: 41vw;
+  left: 43vw;
 }
 
-.navbar_inline {
-//   display: inline-block;
-// color: white;
-}
-
-.navbar_active_links {
-  // font-family: Futura;
-  // color: white;
-  // position: absolute;
-  // margin-left: 80vw;
-  // z-index: 1;
-  // margin-top: 2vw;
-  // display: inline-block;
-  // letter-spacing: .05vw;
-}
 
