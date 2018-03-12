@@ -29,18 +29,10 @@ class AppointmentsController < ApplicationController
     # respond_to do |format|
       if @appointment.save
       @providers = @appointment.provider
-      redirect_to provider_appointment_path(@providers, @appointment)
-        # format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        # format.json { render :show, status: :created, location: @appointment }
         AppointmentMailer.appointment_email(current_user, @provider, @appointment).deliver
-   redirect_to appointment_path(@appointment.id), notice: 'Appointment was successfully created'
-
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        format.json { render :show, status: :created, location: @appointment }
+   redirect_to provider_appointment_path(@providers, @appointment), notice: 'Appointment was successfully created'
       else
-        # format.html { render :new }
-        # format.json { render json: @appointment.errors, status: :unprocessable_entity }
-      # end
+        redirect_to root_path
     end
   end
  
