@@ -9,6 +9,7 @@ class Provider < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_engine, :against => [:treatment, :location]
-  
+
   	mount_uploader :image, AvatarUploader
+  	mount_uploader :avatar, AvatarUploader
 end

@@ -28,6 +28,7 @@ class ProvidersController < ApplicationController
 
   def profile
     set_provider
+    byebug
   end
   # POST /providers
   # POST /providers.json
