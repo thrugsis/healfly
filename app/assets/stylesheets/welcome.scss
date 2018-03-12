@@ -34,19 +34,7 @@ html {
 height: 100%;  
 }
 
-#lightblue_background {
-  z-index: -5;
-  position: absolute;
-  margin-top: -40vh;
-  height: 2vh;
-  // margin-left: -16vw
-  // width: 100%;
-}
-
-.lightblue_background {
-width: 100%;
-}
-
+// NAVBAR - - - - - - - - - - - - - - - - - -
 
 .navbar_futura_font {
   font-family: Futura; 
@@ -86,6 +74,23 @@ width: 100%;
   text-decoration: none;
 }
 
+// BACKGROUND - - - - - - - - - - - - - - - - - - 
+
+#lightblue_background {
+  z-index: -5;
+  position: absolute;
+  margin-top: -40vh;
+  height: 2vh;
+  // margin-left: -16vw
+  // width: 100%;
+}
+
+.lightblue_background {
+width: 100%;
+}
+ 
+// LOGO - - - - - - - - - - - - - - - - - -
+
 #healfly_logo {
   position: absolute;
 }
@@ -114,6 +119,8 @@ width: 100%;
   top: 5vw;
   left: 43.8vw;
 }
+
+// MOTTO & ICONS - - - - - - - - - - - - - - - - - -
 
 .turquoise_icon_squares {
   position: absolute;
@@ -148,4 +155,75 @@ margin-left: 56.5vw;
 
 #motto_yourself {
 margin-left: 67.7vw;
+}
+
+// SEARCH ENGINE - - - - - - - - - - - - - - - - - -
+
+.search_text {
+font-family: Futura-Medium;
+font-size: 22px;
+color: #000000;
+letter-spacing: 1px;
+}
+
+#I_am_looking_for {
+margin-top: 23vh;
+margin-left: 32.5vw;
+}
+
+.near_and_price_container {
+ display: flex;
+ flex-direction: row;
+ 
+}
+
+#near {
+margin-top: 14vh;
+margin-left: 32.5vw;
+margin-top: 4.5vw;
+}
+
+#price {
+margin-left: 17vw;
+margin-top: 4.5vw;
+}
+
+.form-group {
+width: 38%;
+font-family: Futura-Medium;
+position: absolute;
+margin-left: 31.5vw;
+}
+
+#input_treatment {
+border-radius: 0;
+border: none;
+margin-top: -21vh;
+}
+
+.near_and_price_input_container {
+ display: flex;
+ flex-direction: row;
+ margin-top: 5.5vw;
+ width: 38%
+}
+
+#input_location {
+border-radius: 0;
+border: none;
+width: 16vw;
+}
+
+#input_min_price {
+border-radius: 0;
+border: none;
+width: 7vw;
+margin-left: 7vw;
+}
+
+#input_max_price {
+border-radius: 0;
+border: none;
+width: 7vw;
+margin-left: 1vw;
 }
