@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(version: 20180309102942) do
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "patient_id"
     t.integer  "provider_id"
     t.time     "start_time"
     t.time     "end_time"
     t.date     "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
     t.index ["provider_id"], name: "index_appointments_on_provider_id", using: :btree
-    t.index ["user_id"], name: "index_appointments_on_user_id", using: :btree
   end
 
   create_table "authentications", force: :cascade do |t|
@@ -34,18 +34,6 @@ ActiveRecord::Schema.define(version: 20180309102942) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "providers", force: :cascade do |t|
-    t.integer  "price",         null: false
-    t.string   "location",      null: false
-    t.string   "name",          null: false
-    t.string   "treatment",     null: false
-    t.string   "language",      null: false
-    t.text     "image",         null: false
-    t.text     "qualification", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,16 +50,20 @@ ActiveRecord::Schema.define(version: 20180309102942) do
     t.date     "birthday"
     t.text     "image"
     t.text     "medical_history"
+    t.integer  "price"
+    t.string   "location"
+    t.string   "name"
+    t.string   "treatment"
+    t.string   "language"
+    t.text     "qualification"
+    t.string   "type",                           null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "provider"
     t.string   "uid"
-    t.string   "name"
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
 
-  add_foreign_key "appointments", "providers"
-  add_foreign_key "appointments", "users"
   add_foreign_key "authentications", "users"
 end

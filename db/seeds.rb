@@ -12,11 +12,10 @@ user = {}
 #ActiveRecord::Base.transaction will rollback if there is an error (by raising an acception - create! or save!)
 ActiveRecord::Base.transaction do
  20.times do
-    user['username'] = Faker::Name.name
+    user['username'] = Faker::Name.first_name
     user['email'] = Faker::Internet.email
     user['first_name'] = Faker::Name.first_name
 	user['last_name'] = Faker::Name.last_name
-  byebug
   user['password'] = Faker::Color.color_name
 	user['gender'] = ["Male", "Female"].at(rand(2))
 	user['image'] = Faker::LoremPixel.image("500x500", false, 'people')

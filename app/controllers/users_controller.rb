@@ -24,7 +24,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.create(user_params)
+    if params[:user][:type] == "patient"
+      @user = Patient.create(user_params)
+    else
+      @user = Provider.create(user_params)
+    end
 
     respond_to do |format|
       if @user.save

@@ -16,6 +16,19 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.text :image
       t.text :medical_history
 
+      #providers (will share username, first_name, last_name, email and password)
+      t.integer :price
+      t.string :location
+      t.string :name
+      t.string :treatment
+      t.string :language
+      t.text :image
+      t.text :qualification
+
+      #Single Table Inheritance Type
+      t.string :type, null: false
+      
+
       t.timestamps
     end
     

@@ -23,12 +23,7 @@ class SessionsController < Clearance::SessionsController
     redirect_to root_path, :notice => @notice
   end
 
-  def user_sign_in
-    @user = User.new
-    
-    render template: "sessions/user_sign_in"
-  end
-
+  
   def user_login_success
 
       @user = authenticate(params)
