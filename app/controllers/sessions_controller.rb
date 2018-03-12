@@ -27,8 +27,17 @@ class SessionsController < Clearance::SessionsController
   end
 
   def user_login_success
-    User.find_by(user_params)
-    redirect_to "/"
+    byebug
+
+    @user = authenticate(params)
+    sign_in(@user) do |status|
+      if status.success?
+        @user 
+        redirect_to "/"
+      else
+        flash[:notice] = "Sorry. You are not allowed to perform this action."
+      end
+    end
   end
 
   def provider_sign_in
@@ -39,8 +48,7 @@ class SessionsController < Clearance::SessionsController
   private
 
   def user_params
-    byebug
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :password)
   end
 
 end
