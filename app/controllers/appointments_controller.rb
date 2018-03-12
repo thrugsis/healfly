@@ -9,8 +9,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/1
   # GET /appointments/1.json
-  def show
-  end
+
 
   # GET /appointments/new
   def new
@@ -30,6 +29,7 @@ class AppointmentsController < ApplicationController
     # respond_to do |format|
       if @appointment.save
       @providers = @appointment.provider
+      redirect_to provider_appointment_path(@providers, @appointment)
         # format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
         # format.json { render :show, status: :created, location: @appointment }
       else
@@ -39,6 +39,10 @@ class AppointmentsController < ApplicationController
     end
   end
  
+  def show
+    @provider = Provider.find(params[:provider_id])
+    set_appointment
+  end
 
   # PATCH/PUT /appointments/1
   # PATCH/PUT /appointments/1.json
@@ -72,6 +76,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:provider_id, :date, :start_time, :end_time)
+      params.require(:appointment).permit(:provider_id, :date, :start_time, :end_time, :id)
     end
 end

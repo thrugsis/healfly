@@ -1,5 +1,52 @@
-<h1>New User</h1>
+<div id="clearance" class="sign-up">
+  <div class="other-links">
+      <%= link_to t(".sign_in"), sign_in_path %>
+    </div>
 
-<%= render 'form', user: @user %>
+  <h2><%= t(".title") %></h2>
 
-<%= link_to 'Back', users_path %>
+  <h5> AS PATIENT: </h5>
+  <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="text-field">
+      <%= form.label :username %>
+      <%= form.text_field :username, type: 'username' %>
+    </div>
+
+    <div class="text-field">
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name, type: 'first_name' %>
+    </div>
+
+    <div class="text-field">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, type: 'first_name' %>
+    </div>
+
+    <div class="text-field">
+      <%= form.label :gender %>
+      <%= form.text_field :gender, type: 'gender' %>
+    </div>
+
+    <div class="text-field">
+      <%= form.label :phone_number %>
+      <%= form.text_field :phone_number, type: 'phone_number' %>
+    </div>
+
+    <div class="text-field">
+      <%= form.label :birthday %>
+      <%= form.text_field :birthday, type: 'birthday' %>
+    </div>
+    <br/>
+    <div class="submit-field">
+      <%= form.submit %>
+    </div>
+
+  <% end %>
+
+  <br/>
+
+  <div> Are you a provider? Sign up <%= link_to "here", "/providers/new" %> </div>
+
+</div>
