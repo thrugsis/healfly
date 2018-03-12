@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+Profile
+<div><%=image_tag @provider.image.url.to_s,:size => "300x200" if @provider.image %></div>
+<div>Username:<%= @provider.name %></div>
+<div>Language:<%= @provider.language%></div>
+</body>
+</html>

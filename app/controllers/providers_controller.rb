@@ -26,6 +26,9 @@ class ProvidersController < ApplicationController
   def edit
   end
 
+  def profile
+    set_provider
+  end
   # POST /providers
   # POST /providers.json
   def create
