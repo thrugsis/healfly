@@ -27,18 +27,19 @@ class SessionsController < Clearance::SessionsController
   end
 
   def user_login_success
-    byebug
 
-    @user = authenticate(params)
-    sign_in(@user) do |status|
-      if status.success?
-        @user 
-        redirect_to "/"
-      else
-        flash[:notice] = "Sorry. You are not allowed to perform this action."
+      @user = authenticate(params)
+      byebug
+      sign_in(@user) do |status|
+        if status.success?
+          @user 
+          redirect_to "/"
+        else
+          flash[:notice] = "There is no record of your email or password"
+          render :new
+        end
       end
     end
-  end
 
   def provider_sign_in
     @provider = Provider.new
@@ -48,7 +49,7 @@ class SessionsController < Clearance::SessionsController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:session).permit(:username, :password)
   end
 
 end
