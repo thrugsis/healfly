@@ -26,4 +26,12 @@ class User < ApplicationRecord
    return x.token unless x.nil?
  end
 
+ def patient?
+    has_attribute?(:patient)
+  end
+
+  def provider?
+    has_attribute?(:provider)
+  end
+
 end

@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Clearance::UsersController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -73,6 +73,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token)
+      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token, :price, :location, :name, :treatment, :language, :image, :qualification)
     end
 end

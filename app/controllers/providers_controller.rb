@@ -1,4 +1,4 @@
-class ProvidersController < ApplicationController
+class ProvidersController < UsersController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
 
   # GET /providers
