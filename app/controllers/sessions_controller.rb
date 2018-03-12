@@ -35,7 +35,6 @@ class SessionsController < Clearance::SessionsController
       sign_in(@user) do |status|
         if status.success?
           @user 
-          byebug
           redirect_to @previous_page
         else
           flash[:notice] = "There is no record of your email or password"
