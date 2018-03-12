@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  margin: 0;
+}
+
 @font-face {
   font-family: "Blanch_Caps_Light";
   src: url(/assets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
@@ -22,29 +26,46 @@
   src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
 }
 
+
+.lightblue_homepage_background {
+  margin-left: -3vw;
+  margin-top: -5vw;
+  z-index: -1;
+}
+
 .navbar_futura_font {
   font-family: Futura; 
   font-size: 3vw;
   letter-spacing: .05vw;
   font-size: 13px;
   color: white;
-  display: inline-block;
   text-decoration: none;
+  margin-left: 81vw;
+  // margin-top: 10vw;
 }
 
 .nav {
-  color: white;
+  height: 6vh;
 }
 
 .navbar {
-  background-color: black;
-  margin-top: -8vh;
-  width: 103vw;
-  margin-left: -4vw; 
+  width: 100vw; 
   height: 3vw;
-  z-index: -1;
-  color: white;
+  z-index: 1;
 
+}
+
+#navbar_logo {
+  font-family: Blanch-CapsInline;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 0;
+  text-align: left;
+  word-spacing: 4vw;
+  display: inline-block;
+  position: absolute;
+  top: 1.5vh;
+  margin-left: .9vw;
 }
 
 #healfly_logo {
@@ -61,7 +82,7 @@
   display: inline-block;
   margin-left: 28vw;
   position: absolute;
-  top: 4.5vw;
+  top: 5.5vw;
 }
 
 #healfly_logo_text {
@@ -72,18 +93,23 @@
   display: inline-block;
   position: absolute;
   text-align: center;
-  top: 4vw;
-  left: 43.4vw;
+  top: 5vw;
+  left: 41vw;
 }
 
-#login_with_facebook {
-  font-family: Futura;
-  text-decoration: none;
-  position: absolute;
-  margin-left: 58vw;
-  margin-top: -1.7vw;
-  color: white;
-  display: inline-block;
-  letter-spacing: .05vw;
+.navbar_inline {
+//   display: inline-block;
+// color: white;
+}
+
+.navbar_active_links {
+  // font-family: Futura;
+  // color: white;
+  // position: absolute;
+  // margin-left: 80vw;
+  // z-index: 1;
+  // margin-top: 2vw;
+  // display: inline-block;
+  // letter-spacing: .05vw;
 }
 
