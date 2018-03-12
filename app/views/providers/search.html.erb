@@ -1,4 +1,6 @@
-<% @search.each do |search_result| %>
-  <p><%= search_result.treatment%></p> 
-  <p><%= search_result.location%></p>
+<% @providers.each do |search_result| %>
+  <p>Name: <%= search_result.name%></p>
+  <p>Treatment: <%= search_result.treatment%></p>
+  <p>Location: <%= search_result.location%></p>
+  <p>Language: <%= search_result.language%></p>
 <%end%>
