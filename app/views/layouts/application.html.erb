@@ -20,8 +20,10 @@
       Signed in as: <%= current_user.email %>
       <%= button_to 'Sign out', sign_out_path, method: :delete, class: "button" %>
     <% else %>
-      <a id=login_with_facebook href="/auth/facebook">
-      login with facebook</a>
+
+      <%= link_to 'Sign In As Patient', user_sign_in_path %>
+      <%= link_to 'Sign In As Provider', provider_sign_in_path %> 
+
     <% end %>
 
     <br>

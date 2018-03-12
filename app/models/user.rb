@@ -26,4 +26,8 @@ class User < ApplicationRecord
    return x.token unless x.nil?
  end
 
+ def user?
+  has_role?(:user)
+ end
+
 end
