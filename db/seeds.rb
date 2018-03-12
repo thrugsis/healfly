@@ -16,6 +16,7 @@ ActiveRecord::Base.transaction do
     user['email'] = Faker::Internet.email
     user['first_name'] = Faker::Name.first_name
 	user['last_name'] = Faker::Name.last_name
+  byebug
   user['password'] = Faker::Color.color_name
 	user['gender'] = ["Male", "Female"].at(rand(2))
 	user['image'] = Faker::LoremPixel.image("500x500", false, 'people')
