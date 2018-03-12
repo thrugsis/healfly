@@ -25,7 +25,7 @@ class SessionsController < Clearance::SessionsController
 
   def user_sign_in
     @user = User.new
-    @previous_page = URI(request.referer).path
+    
     render template: "sessions/user_sign_in"
   end
 
@@ -35,8 +35,7 @@ class SessionsController < Clearance::SessionsController
       sign_in(@user) do |status|
         if status.success?
           @user 
-          byebug
-          redirect_to @previous_page
+          redirect_to "/"
         else
           flash[:notice] = "There is no record of your email or password"
           render :new
