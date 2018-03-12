@@ -1,4 +1,6 @@
 class SessionsController < Clearance::SessionsController
+  # include ClearanceModule
+
   def create_from_omniauth
     auth_hash = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"]) ||  Authentication.create_with_omniauth(auth_hash)
@@ -23,23 +25,29 @@ class SessionsController < Clearance::SessionsController
 
   def user_sign_in
     @user = User.new
+    @previous_page = URI(request.referer).path
     render template: "sessions/user_sign_in"
   end
 
   def user_login_success
 
       @user = authenticate(params)
-      byebug
       sign_in(@user) do |status|
         if status.success?
           @user 
-          redirect_to "/"
+          byebug
+          redirect_to @previous_page
         else
           flash[:notice] = "There is no record of your email or password"
           render :new
         end
       end
-    end
+  end
+
+  def destroy
+    sign_out
+    redirect_to URI(request.referer).path
+  end
 
   def provider_sign_in
     @provider = Provider.new
