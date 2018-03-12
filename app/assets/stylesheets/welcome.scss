@@ -26,14 +26,27 @@ body {
   src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
 }
 
+body {
+height: 100%;
+}
+
+html {
+height: 100%;  
+}
 
 #lightblue_background {
   z-index: -5;
   position: absolute;
   margin-top: -40vh;
   height: 2vh;
-  margin-left: -2vw
+  // margin-left: -16vw
+  // width: 100%;
 }
+
+.lightblue_background {
+width: 100%;
+}
+
 
 .navbar_futura_font {
   font-family: Futura; 
@@ -42,7 +55,7 @@ body {
   font-size: 13px;
   // color: white;
   // text-decoration: none;
-  margin-left: 72vw;
+  margin-left: 73vw;
 }
 
 .nav {
@@ -99,7 +112,40 @@ body {
   position: absolute;
   text-align: center;
   top: 5vw;
-  left: 43vw;
+  left: 43.8vw;
 }
 
+.turquoise_icon_squares {
+  position: absolute;
+  margin-top: 52vh;
+  margin-left: 26vw;
+  width: 50%;
+}
 
+.motto {
+font-family: Futura-Medium;
+font-size: 18px;
+color: #000000;
+letter-spacing: 0.67px;
+text-align: center;
+position: absolute;
+margin-top: 73.5vh;
+margin-left: 30.5vw;
+}
+
+#motto_care {
+margin-left: 43vw;
+}
+
+#motto_ampersand {
+margin-left: 50.73vw;
+margin-top: 74vh;
+}
+
+#motto_treat {
+margin-left: 56.5vw;
+}
+
+#motto_yourself {
+margin-left: 67.7vw;
+}
