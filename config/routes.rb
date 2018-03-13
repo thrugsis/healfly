@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
+resources :providers do
+	resources :appointments
+end
+  root "welcome#index"
+
   resources :appointments
   resources :providers
-  resources :users
+  resources :patients
 
   resources :users, controller: "clearance/users", only: [:create] do
     resource :password,

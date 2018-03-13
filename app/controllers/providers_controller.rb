@@ -70,9 +70,11 @@ class ProvidersController < ApplicationController
   def search
     @providers = Provider.all 
 
-    @search = @providers.search_engine(params[:search_input])
-
+    search_params(params).each do |key, value|
+      @providers = @providers.public_send(key, value) if value.present?
+    end 
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -84,4 +86,9 @@ class ProvidersController < ApplicationController
     def provider_params
       params.require(:provider).permit(:name, :location, :treatment, :language, :price, {image:[]}, {qualification:[]})
     end
+
+    def search_params(params)
+      params.slice(:treatment, :location, :language)
+    end 
+
 end
