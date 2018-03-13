@@ -1,12 +1,13 @@
 
 <body class="appointment">
 <p><%= image_tag @provider.image %><br>
-<%= @provider.location %><br><br>
-<%= @provider.price %><br><br>
-<%= @provider.treatment %><br><br>
-<%= @provider.language %><br><br>
-<%= @provider.qualification %><br><br>
-</p
+<span>Location:</span><%= @provider.location %><br><br>
+<span>Price:</span><%= @provider.price %><br><br>
+<span>Treatment:</span><%= @provider.treatment %><br><br>
+<span>Language:</span><%= @provider.language %><br><br>
+<span>Qualification:</span><%= @provider.qualification %><br><br>
+</p>
+<div id="makeAppoint">
 <h1>New Appointment</h1>
 
 <%= form_for ([@provider,@appointment]) do |s| %>
@@ -18,7 +19,7 @@
 <% end %>
 <%= link_to 'Back', provider_appointments_path %>
 </body>
-
+</div>
 <script>
 	flatpickr('#dateAppoint', {dateFormat: 'd-m-Y'})
 	// flatpickr('#startAppoint', {dateFormat: 'h:i',enableTime: true,noCalendar: true,time_24hour: true})
