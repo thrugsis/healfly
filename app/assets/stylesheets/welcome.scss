@@ -35,7 +35,7 @@ height: 100%;
 }
 
 .homepage_center {
- margin-left: -3vw;
+ margin-left: -2vw;
 }
 
 // NAVBAR - - - - - - - - - - - - - - - - - -
@@ -47,7 +47,7 @@ height: 100%;
   font-size: 13px;
   // color: white;
   // text-decoration: none;
-  margin-left: 73vw;
+  margin-left: 71vw;
 }
 
 .nav {
@@ -105,9 +105,9 @@ width: 100%;
   color: #000000;
   letter-spacing: 0;
   text-align: center;
-  word-spacing: 14vw;
+  word-spacing: 16vw;
   display: inline-block;
-  margin-left: 30vw;
+  margin-left: 30.5vw;
   position: absolute;
   top: 5.5vw;
 }
@@ -121,14 +121,14 @@ width: 100%;
   position: absolute;
   text-align: center;
   top: 5vw;
-  left: 43.8vw;
+  left: 43.4vw;
 }
 
 // MOTTO & ICONS - - - - - - - - - - - - - - - - - -
 
 .turquoise_icon_squares {
   position: absolute;
-  margin-top: 52vh;
+  margin-top: 55vh;
   margin-left: 26vw;
   width: 50%;
 }
@@ -140,7 +140,7 @@ color: #000000;
 letter-spacing: 0.67px;
 text-align: center;
 position: absolute;
-margin-top: 73.5vh;
+margin-top: 78.5vh;
 margin-left: 30.5vw;
 }
 
@@ -150,7 +150,7 @@ margin-left: 43vw;
 
 #motto_ampersand {
 margin-left: 50.73vw;
-margin-top: 74vh;
+margin-top: 79vh;
 }
 
 #motto_treat {
@@ -182,18 +182,17 @@ margin-left: 32.5vw;
 }
 
 #near {
-margin-top: 14vh;
 margin-left: 32.5vw;
 margin-top: 4.5vw;
 }
 
 #price {
-margin-left: 17vw;
+margin-left: 18vw;
 margin-top: 4.5vw;
 }
 
 .form-group {
-width: 38%;
+width: 39%;
 font-family: Futura-Medium;
 position: absolute;
 margin-left: 31.5vw;
@@ -208,21 +207,21 @@ margin-top: -21vh;
 .near_and_price_input_container {
  display: flex;
  flex-direction: row;
- margin-top: 5.5vw;
- width: 38%
+ margin-top: 5vw;
+ width: 40%
 }
 
 #input_location {
 border-radius: 0;
 border: none;
-width: 16vw;
+width: 15.2vw;
 }
 
 #input_min_price {
 border-radius: 0;
 border: none;
 width: 7vw;
-margin-left: 7vw;
+margin-left: 8.8vw;
 }
 
 #input_max_price {
@@ -230,4 +229,11 @@ border-radius: 0;
 border: none;
 width: 7vw;
 margin-left: 1vw;
+}
+
+#search_button {
+margin-left: 47.4vw;
+margin-top: -4vh;
+z-index: 10;
+// size: 50%;
 }
