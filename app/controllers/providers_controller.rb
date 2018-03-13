@@ -12,9 +12,9 @@ class ProvidersController < UsersController
   def show
 
     #IF CURRENT USER NOT LOGGED IN, WILL STOP
-    allowed?(action: @provider, user: current_user)
-    #
-    @provider = Provider.find()
+    # allowed?(action: @provider, user: current_user)
+    # #
+    # @provider = Provider.find()
   end
 
   # GET /providers/new

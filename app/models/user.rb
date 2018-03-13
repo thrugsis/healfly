@@ -27,11 +27,11 @@ class User < ApplicationRecord
  end
 
  def patient?
-    has_attribute?(:patient)
+    self.type == "Patient"
   end
 
   def provider?
-    has_attribute?(:provider)
+    self.type == "Provider"
   end
 
 end

@@ -4,12 +4,8 @@ class PatientsController < UsersController
 
   end
 
-  def create
-    @user = Patient.new(user_params)
-    @user.save
-    sign_in(@user)
-    byebug
-    redirect_to "/"
+  def edit
+    
   end
 
   def show
@@ -22,3 +18,5 @@ class PatientsController < UsersController
       params.require(:patient).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token, :price, :location, :name, :treatment, :language, :image, :qualification)
   end
 end
+
+# params.fetch(:patient, {})

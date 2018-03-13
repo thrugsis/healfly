@@ -15,16 +15,21 @@
   </head>
 
   <body>
-      
+    
+    <!-- Clearance sign in button: -->
     <% if signed_in? %>
       Signed in as: <%= current_user.email %>
       <%= button_to 'Sign out', sign_out_path, method: :delete, class: "button" %>
     <% else %>
-
       <%= link_to 'Sign In', sign_in_path %>
-
     <% end %>
 
+    <!-- Clearance flash notice -->
+     <div id="flash">
+      <% flash.each do |key, value| -%>
+        <div id="flash_<%= key %>"><%=h value %></div>
+      <% end %>
+    </div>
     <br>
 
     <%= yield %>

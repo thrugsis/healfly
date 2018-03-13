@@ -25,18 +25,25 @@ class UsersController < Clearance::UsersController
   # POST /users.json
   def create
     if params[:user][:type] == "patient"
-      @user = Patient.create(user_params)
+      @user = Patient.new(user_params)
     else
-      @user = Provider.create(user_params)
+      @user = Provider.new(user_params)
     end
+    
 
     respond_to do |format|
       if @user.save
+        sign_in(@user)
+        byebug
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        flash.now[:error] = "Email already taken"
+        render action: "new"
+        # flash[:notice] = "Email already taken."
+        # format.html { render :new, notice: "Email already taken" }
+        # format.json { render json: @user.errors, status: :unprocessable_entity }
+        # @user = User.new(user_params)
       end
     end
   end

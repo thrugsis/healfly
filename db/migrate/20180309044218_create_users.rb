@@ -6,8 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :first_name, null: false
       t.string :last_name, null: false
       t.string :email, null: false
-      t.string :password
-      t.string :encrypted_password, limit: 128
+      t.string :encrypted_password, limit: 128 #no need password column since clearance will auto look at encrypted_password
       t.string :remember_token, limit: 128
       t.string :confirmation_token, limit: 128
       t.string :gender
