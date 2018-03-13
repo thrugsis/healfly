@@ -3,8 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  margin: 0;
+height: 100%;
+margin: 0;
 }
+
+html {
+height: 100%;  
+}
+
+.homepage_center {
+ margin-left: -2vw;
+}
+
+
+// FONTS - - - - - - - - - - - - - - - - - - 
 
 @font-face {
   font-family: "Blanch_Caps_Light";
@@ -12,7 +24,7 @@ body {
 }
 
 @font-face {
-  font-family: "Blanch_Caps_Inline";
+  font-family: "Blanch_CapsInline";
   src: url(/assets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
 }
 
@@ -22,20 +34,8 @@ body {
 }
 
 @font-face {
-  font-family: "Futura_Medium";
+  font-family: "Futura";
   src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
-}
-
-body {
-height: 100%;
-}
-
-html {
-height: 100%;  
-}
-
-.homepage_center {
- margin-left: -2vw;
 }
 
 // NAVBAR - - - - - - - - - - - - - - - - - -
@@ -133,7 +133,7 @@ width: 100%;
 }
 
 .motto {
-font-family: Futura-Medium;
+font-family: Futura;
 font-size: 18px;
 color: #000000;
 letter-spacing: 0.67px;
@@ -163,7 +163,7 @@ margin-left: 67.7vw;
 // SEARCH ENGINE - - - - - - - - - - - - - - - - - -
 
 .search_text {
-font-family: Futura-Medium;
+font-family: Futura;
 font-size: 22px;
 color: #000000;
 letter-spacing: 1px;
@@ -192,7 +192,7 @@ margin-top: 4.5vw;
 
 .form-group {
 width: 39%;
-font-family: Futura-Medium;
+font-family: Futura;
 position: absolute;
 margin-left: 31.5vw;
 }
