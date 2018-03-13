@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309102946) do
+ActiveRecord::Schema.define(version: 20180309102942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,41 +36,25 @@ ActiveRecord::Schema.define(version: 20180309102946) do
     t.datetime "updated_at"
   end
 
-# <<<<<<< HEAD
-# =======
-#   create_table "providers", force: :cascade do |t|
-#     t.integer  "price",         null: false
-#     t.string   "location",      null: false
-#     t.string   "name",          null: false
-#     t.string   "treatment",     null: false
-#     t.string   "language",      null: false
-#     t.datetime "created_at",    null: false
-#     t.datetime "updated_at",    null: false
-#     t.json     "image"
-#     t.json     "qualification"
-#   end
-
-# >>>>>>> master
   create_table "users", force: :cascade do |t|
     t.string   "username",                       null: false
     t.string   "first_name",                     null: false
     t.string   "last_name",                      null: false
     t.string   "email",                          null: false
-    t.string   "password"
     t.string   "encrypted_password", limit: 128
     t.string   "remember_token",     limit: 128
     t.string   "confirmation_token", limit: 128
     t.string   "gender"
     t.string   "phone_number"
     t.date     "birthday"
-    t.text     "image"
-    t.text     "medical_history"
+    t.json     "image"
+    t.json     "medical_history"
     t.integer  "price"
     t.string   "location"
     t.string   "name"
     t.string   "treatment"
     t.string   "language"
-    t.text     "qualification"
+    t.json     "qualification"
     t.string   "type",                           null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false

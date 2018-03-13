@@ -11,8 +11,8 @@ class User < ApplicationRecord
      name: auth_hash["info"]["name"],
      username: auth_hash["info"]["name"],
      first_name: auth_hash["info"]["name"],
-     last_name:auth_hash["info"]["name"],
-     image:auth_hash["info"]["image"],
+     last_name: auth_hash["info"]["name"],
+     image: auth_hash["info"]["image"],
      email: auth_hash["extra"]["raw_info"]["email"],
      password: SecureRandom.base64
    )

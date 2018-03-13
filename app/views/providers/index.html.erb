@@ -26,7 +26,10 @@
         <td><%= provider.price%></td>
         <td><%= provider.treatment%></td>
         <td><%= provider.location%></td>
-        <td><%= provider.language%></td>                
+        <td><%= provider.language%></td>  
+        <td><img src=<%= provider.image.first%>></td>  
+        <td><img src=<%= provider.qualification.first%>></td>  
+
         <td><%= link_to 'Show', provider %></td>
         <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
         <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
