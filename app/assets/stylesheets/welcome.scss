@@ -137,6 +137,10 @@ html {
   position: absolute;
   margin-top: 76.5vh;
   margin-left: 30.5vw;
+
+  -webkit-transition: width .6s; 
+  transition: width .6s;
+  transition-timing-function: linear;
 }
 
 #motto_care {
@@ -233,8 +237,14 @@ html {
 
 // Map & Text - - - - - - - - - - - - - - - - - -
 
+.black_split_line {
+  margin-left: 40%;
+  margin-top: 16.4%;
+  width: 18%;
+}
+
 #maptable {
   width: 80%;
-  margin-top: 9%;
+  margin-top: 1.2%;
   margin-left: 9.5%;
 }
