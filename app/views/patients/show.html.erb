@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<% if signed_in? == false %>
+  <% controller.redirect_to welcome_index_path %>
+<% else %>
+  <%= link_to 'Edit', edit_patient_path(@user) %> |
+  <%= link_to 'Back', patients_path %>
+<% end %>
