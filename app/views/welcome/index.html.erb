@@ -1,28 +1,53 @@
-<h1> Hello HealFly @ Next Academy </h1>
+<div id=lightblue_background>
+  <%= inline_svg "lightblue_homepage_background", class: 'lightblue_background' %> 
+</div>
 
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">heal fly</a>
+<div class="homepage_center">
+    <div id=healfly_logo_text> 
+      <p id=title_healfly> Heal     Fly</p>   
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a id=login_with_facebook href="#">patient login</a></li>
-      <li class="active"><a id=login_with_facebook href="#">provider login</a></li>
-<!--       <li><a id=login_with_facebook href="/auth/facebook"> -->
-<!--       Login With Facebook</a></li> -->
-    </ul>
-  </div>
-</nav>
+
+    <div id=healfly_logo_pillwings>
+      <%= inline_svg "healfly_title_logo", class: 'healfly_title_logo' %> 
+    </div>
+
+    <div id=turquoise_icon_squares>
+      <%= inline_svg "turquoise_icon_squares", class: 'turquoise_icon_squares' %> 
+    </div>
+
+    <p class="motto"> get  </p>
+    <p id="motto_care" class="motto"> care </p>
+    <p id="motto_ampersand" class="motto"> &    </p>
+    <p id="motto_treat" class="motto"> treat </p>
+    <p id="motto_yourself" class="motto"> yourself </p>
 
 
-<div id=healfly_logo_text> 
-  <p id=title_healfly> Heal     Fly</p>   
+    <p id="I_am_looking_for" class="search_text"> I am looking for </p>
+    <div class="near_and_price_container">
+    <p id="near" class="search_text"> near </p>
+    <p id="price" class="search_text"> price </p>
+    </div>
+
+    <form>
+      <div class="form-group">
+        
+        <label for="treatment"></label>
+        <input type="text" class="form-control" id="input_treatment" placeholder="dental cleaning">
+        
+        <div class="near_and_price_input_container">
+        <label for="location"></label>
+        <input type="text" class="form-control" id="input_location" placeholder="tokyo">
+        
+        <label for="min price"></label>
+        <input type="text" class="form-control" id="input_min_price" placeholder="20">
+        
+        <label for="max price"></label>
+        <input type="text" class="form-control" id="input_max_price" placeholder="80">
+
+        </div>
+      </div>
+    </form>
 </div>
-
-<div id=healfly_logo_pillwings>
-  <%= inline_svg "healfly_title_logo", class: 'healfly_title_logo' %> 
-</div>
-
 
 <br> <br> <br> 
+<br> <br> <br>  
