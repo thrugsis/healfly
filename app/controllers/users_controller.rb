@@ -32,7 +32,6 @@ class UsersController < Clearance::UsersController
     end
    
     if @user.save
-      byebug
       sign_in(@user)
       if @user.patient?
         redirect_to edit_patient_path(@user)
