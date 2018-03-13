@@ -12,8 +12,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :gender
       t.string :phone_number
       t.date :birthday
-      t.text :image
-      t.text :medical_history
+      t.json :image
+      t.json :medical_history
 
       #providers (will share username, first_name, last_name, email and password)
       t.integer :price
@@ -21,8 +21,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :treatment
       t.string :language
-      t.text :image
-      t.text :qualification
+      t.json :image
+      t.json :qualification
 
       #Single Table Inheritance Type
       t.string :type, null: false

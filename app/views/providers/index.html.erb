@@ -3,9 +3,14 @@
 <h1>Providers</h1>
 
 
-<%= form_tag search_path do %>
-    <%= text_field_tag "search_input", nil, placeholder: "Search Treatment", list: "list" %>
-    <%= submit_tag "Search" %>
+<%= form_tag search_path do%>
+  <%= text_field_tag "treatment", nil, placeholder: "by treatment"%>
+  <%= text_field_tag "location", nil, placeholder: "by location"%>
+  <%= text_field_tag "language", nil, placeholder: "by language"%>
+  <%= text_field_tag "min_price", nil, placeholder: "min price"%>
+  <%= text_field_tag "max_price", nil, placeholder: "max price"%>
+
+  <%= submit_tag "Search"%>
 <%end%>
 
 
@@ -19,11 +24,14 @@
   <tbody>
     <% @providers.each do |provider| %>
       <tr>
-        <td><%= provider.id%></td>
-        <td><%= provider.name%></td>
+        <td><%= provider.name%></td>        
+        <td><%= provider.price%></td>
         <td><%= provider.treatment%></td>
         <td><%= provider.location%></td>
-        <td><%= provider.price%></td>        
+        <td><%= provider.language%></td>  
+        <td><img src=<%= provider.image.first%>></td>  
+        <td><img src=<%= provider.qualification.first%>></td>  
+
         <td><%= link_to 'Show', provider %></td>
         <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
         <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>

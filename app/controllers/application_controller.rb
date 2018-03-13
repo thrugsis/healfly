@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
         return redirect_to "/", notice: "Sorry. You do not have the permission to verify a property."
     end
   end
+
 end

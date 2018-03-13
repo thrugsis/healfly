@@ -13,8 +13,7 @@ class ProvidersController < UsersController
 
     #IF CURRENT USER NOT LOGGED IN, WILL STOP
     # allowed?(action: @provider, user: current_user)
-    # #
-    # @provider = Provider.find()
+    @provider = Provider.find(params[:id])
   end
 
   # GET /providers/new
@@ -70,9 +69,11 @@ class ProvidersController < UsersController
   def search
     @providers = Provider.all 
 
-    @search = @providers.search_engine(params[:search_input])
-
+    search_params(params).each do |key, value|
+      @providers = @providers.public_send(key, value) if value.present?
+    end 
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -82,6 +83,11 @@ class ProvidersController < UsersController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def provider_params
-      params.fetch(:provider, {})
+      params.require(:provider).permit(:name, :location, :treatment, :language, :price, {image:[]}, {qualification:[]})
     end
+
+    def search_params(params)
+      params.slice(:treatment, :location, :language, :min_price, :max_price)
+    end 
+
 end

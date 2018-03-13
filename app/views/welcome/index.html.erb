@@ -1,17 +1,17 @@
-<div id=lightblue_background>
+<div id="lightblue_background">
   <%= inline_svg "lightblue_homepage_background", class: 'lightblue_background' %> 
 </div>
 
 <div class="homepage_center">
-    <div id=healfly_logo_text> 
+    <div id="healfly_logo_text"> 
       <p id=title_healfly> Heal     Fly</p>   
     </div>
 
-    <div id=healfly_logo_pillwings>
+    <div id="healfly_logo_pillwings">
       <%= inline_svg "healfly_title_logo", class: 'healfly_title_logo' %> 
     </div>
 
-    <div id=turquoise_icon_squares>
+    <div id="turquoise_icon_squares">
       <%= inline_svg "turquoise_icon_squares", class: 'turquoise_icon_squares' %> 
     </div>
 
@@ -24,16 +24,22 @@
 
     <p id="I_am_looking_for" class="search_text"> I am looking for </p>
     <div class="near_and_price_container">
-    <p id="near" class="search_text"> near </p>
-    <p id="price" class="search_text"> price </p>
+        <p id="near" class="search_text"> near </p>
+        <p id="price" class="search_text"> price </p>
     </div>
 
-    <form>
+<!--     <form>
       <div class="form-group">
+
+    <form>
+      
+
+<div class="form-group">
+
         
         <label for="treatment"></label>
         <input type="text" class="form-control" id="input_treatment" placeholder="dental cleaning">
-        
+
         <div class="near_and_price_input_container">
         <label for="location"></label>
         <input type="text" class="form-control" id="input_location" placeholder="tokyo">
@@ -45,9 +51,36 @@
         <input type="text" class="form-control" id="input_max_price" placeholder="80">
 
         </div>
-      </div>
+      </div> 
+
+    </form> -->
+
+    <%= form_tag search_path do%>
+        <%= text_field_tag "treatment", nil, placeholder: "by treatment"%>
+        <%= text_field_tag "location", nil, placeholder: "by location"%>
+        <%= text_field_tag "min_price", nil, placeholder: "min price"%>
+        <%= text_field_tag "max_price", nil, placeholder: "max price"%>
+
+        <%= submit_tag "Search"%>
+    <%end%>
+
+
     </form>
+    
+
 </div>
+
+    <div id="search_button">
+      <%= inline_svg "search_button.svg", class: 'search_button' %> 
+    </div>
+
+    <div id="black_split_line">
+      <%= inline_svg "black_split_line.svg", class: 'black_split_line' %> 
+    </div>
+
+    <div id="maptable">
+    <%= image_tag("maptable.jpg", id:"maptable", :alt => "A photograph of a table with a map should be here") %>
+    </div>
 
 <br> <br> <br> 
 <br> <br> <br>  
