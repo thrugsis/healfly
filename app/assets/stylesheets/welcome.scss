@@ -20,22 +20,22 @@ height: 100%;
 
 @font-face {
   font-family: "Blanch_Caps_Light";
-  src: url(/assets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
+  src: url(/assets/stylesheets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Blanch_CapsInline";
-  src: url(/assets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
+  src: url(/assets/stylesheets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Blanch_Caps";
-  src: url(/assets/fonts/BLANCH_CAPS.ttf) format("truetype");
+  src: url(/assets/stylesheets/fonts/BLANCH_CAPS.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Futura";
-  src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
+  src: url(/assets/stylesheets/fonts/16020_FUTURAM.ttf) format("truetype");
 }
 
 // NAVBAR - - - - - - - - - - - - - - - - - -
@@ -84,8 +84,6 @@ height: 100%;
   position: absolute;
   margin-top: -40vh;
   height: 2vh;
-  // margin-left: -16vw
-  // width: 100%;
 }
 
 .lightblue_background {
