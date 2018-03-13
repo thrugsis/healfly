@@ -21,8 +21,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :treatment
       t.string :language
-      t.text :image
-      t.text :qualification
+      t.json :image
+      t.json :qualification
 
       #Single Table Inheritance Type
       t.string :type, null: false
