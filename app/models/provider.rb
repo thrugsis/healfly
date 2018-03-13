@@ -1,4 +1,5 @@
-class Provider < ApplicationRecord
+
+class Provider < User
 	has_many :appointments, :dependent => :destroy
 	has_many :appointments, :dependent => :delete_all
 
@@ -7,7 +8,7 @@ class Provider < ApplicationRecord
   mount_uploaders :qualification, QualificationUploader
   
   def provider?
-    has_role?(:provider)
+    self.type == "Provider"
   end
 
   include PgSearch

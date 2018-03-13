@@ -30,6 +30,12 @@
 
 <!--     <form>
       <div class="form-group">
+
+    <form>
+      
+
+<div class="form-group">
+
         
         <label for="treatment"></label>
         <input type="text" class="form-control" id="input_treatment" placeholder="dental cleaning">
@@ -46,6 +52,7 @@
 
         </div>
       </div> 
+
     </form> -->
 
     <%= form_tag search_path do%>
@@ -57,10 +64,18 @@
         <%= submit_tag "Search"%>
     <%end%>
 
+
+    </form>
+    
+
 </div>
 
     <div id="search_button">
       <%= inline_svg "search_button.svg", class: 'search_button' %> 
+    </div>
+
+    <div id="maptable">
+    <%= image_tag("maptable.jpg", id:"maptable", :alt => "A photograph of a table with a map should be here") %>
     </div>
 
 <br> <br> <br> 
