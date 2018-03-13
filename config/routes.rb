@@ -20,8 +20,6 @@ end
   #get "/sign_in" => "clearance/sessions#new", as: "sign_in" 
 
   #WIP:
-  get '/providers/:id/profile', to: 'providers#profile', as: 'provider_profile'
-  
   get '/sign_in', to: 'users#new', as: nil
   get "/sign_in/user" => "sessions#user_sign_in", as: "user_sign_in"
   get "/sign_in/provider" => "sessions#provider_sign_in", as: "provider_sign_in"

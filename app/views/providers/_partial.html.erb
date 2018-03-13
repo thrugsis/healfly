@@ -1,1 +1,4 @@
-<%= current_user.provider %>
+<%= form_tag edit_provider_path(@provider) do%>
+  <%= text_field_tag :username,nil , placeholder: "username"%>
+  <%= submit_tag "Apply" %> 
+<%end%>

@@ -24,11 +24,9 @@ class ProvidersController < ApplicationController
 
   # GET /providers/1/edit
   def edit
+    @provider = Provider.find(params[:id])
   end
 
-  def profile
-    set_provider
-  end
   # POST /providers
   # POST /providers.json
   def create
