@@ -1,6 +1,8 @@
   <h2><%= t("Step 1: " + ".title") %></h2>
 
   <div><b> EITHER: </b></div>
+
+  <div id="move">
   <%= form_for @user do |form| %>
     <div class="text-field">
       <%= form.label :email %>
@@ -40,6 +42,7 @@
     </div>
 
   <% end %>
+  </div>
 
   <br/>
 
