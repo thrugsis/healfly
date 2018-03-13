@@ -6,9 +6,16 @@
 <body>
 <h1>Profile</h1>
   <p>
-    <img src="https://image.flaticon.com/icons/png/512/194/194935.png" width="300px" height="300px">
+    <%= image_tag current_user.image + "?type=large" %>
   </p>
-<div>Username:  <%= @provider.name %></div>
+
+<div>Username:  <%= current_user.username %></div>
 <div>Language:  <%= @provider.language%></div>
+	<%= form_tag provider_profile_path,method: :get, remote: true do %>
+	<%= submit_tag 'Appointment' %>
+	<% end %>
+
+<div id="appointmentRecord">
+</div>
 </body>
 </html>
