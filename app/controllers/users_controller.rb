@@ -25,7 +25,6 @@ class UsersController < Clearance::UsersController
   # POST /users.json
   def create
     if params[:user][:type] == "patient"
-      byebug
       @user = Patient.new(user_params)
     else
       @user = Provider.new(user_params)
