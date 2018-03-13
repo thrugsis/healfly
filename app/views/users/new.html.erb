@@ -1,15 +1,10 @@
-  <h2><%= t(".title") %></h2>
+  <h2><%= t("Step 1: " + ".title") %></h2>
 
+  <div><b> EITHER: </b></div>
   <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
-
     <div class="text-field">
-      <%= label :type_patient, 'Patient' %>
-      <%= form.radio_button :type, 'patient', :checked => true %>
-      <%= label :type_provider, 'Provider' %>
-      <%= form.radio_button :type, 'provider', :checked => true %>
-      
-
+      <%= form.label :email %>
+      <%= form.text_field :email, type: 'email' %>
     </div>
 
     <div class="text-field">
@@ -19,63 +14,26 @@
 
     <div class="text-field">
       <%= form.label :first_name %>
-      <%= form.text_field :first_name, type: 'first_name' %>
+      <%= form.text_field :first_name %>
     </div>
 
     <div class="text-field">
       <%= form.label :last_name %>
-      <%= form.text_field :last_name, type: 'first_name' %>
+      <%= form.text_field :last_name %>
+    </div>
+
+    <div class="password-field">
+      <%= form.label :password %>
+      <%= form.password_field :password %>
     </div>
 
     <div class="text-field">
-      <%= form.label :gender %>
-      <%= form.text_field :gender, type: 'gender' %>
+      <%= label :type_patient, 'Patient' %>
+      <%= form.radio_button :type, 'patient', :checked => true %>
+      <%= label :type_provider, 'Provider' %>
+      <%= form.radio_button :type, 'provider', :checked => true %>
     </div>
 
-    <div class="text-field">
-      <%= form.label :phone_number %>
-      <%= form.text_field :phone_number, type: 'phone_number' %>
-    </div>
-
-    <div class="text-field">
-      <%= form.label :birthday %>
-      <%= form.text_field :birthday, type: 'birthday' %>
-    </div>
-    <br/>
-    <div class="text-field">
-      <%= form.label :price %>
-      <%= form.text_field :price, type: 'birthday' %>
-    </div>
-    <br/>
-    <div class="text-field">
-      <%= form.label :location %>
-      <%= form.text_field :location, type: 'birthday' %>
-    </div>
-    <br/>
-    <div class="text-field">
-      <%= form.label :name %>
-      <%= form.text_field :name, type: 'birthday' %>
-    </div>
-    <br/>
-    <div class="text-field">
-      <%= form.label :treatment %>
-      <%= form.text_field :treatment, type: 'birthday' %>
-    </div>
-    <br/>
-    <div class="text-field">
-      <%= form.label :language %>
-      <%= form.text_field :language, type: 'birthday' %>
-    </div>
-    <br/>
-    <div class="text-field">
-      <%= form.label :image %>
-      <%= form.text_field :image, type: 'birthday' %>
-    </div>
-    <br/>
-    <div class="text-field">
-      <%= form.label :qualification %>
-      <%= form.text_field :qualification, type: 'birthday' %>
-    </div>
     <br/>
     <div class="submit-field">
       <%= form.submit %>
@@ -85,6 +43,7 @@
 
   <br/>
 
-  <div> Are you a provider? Sign up <%= link_to "here", "/providers/new" %> </div>
+  <div><b> OR: </b></div>
+  <div> Sign up with Facebook <%= link_to "here", "/auth/facebook" %> </div>
 
 </div>

@@ -32,6 +32,11 @@ class UsersController < Clearance::UsersController
    
     if @user.save
       sign_in(@user)
+      if @user.patient?
+        redirect_to edit_patient_path(@user)
+      else
+        redirect_to edit_provider_path(@user)
+      end
     else
       flash.now[:error] = "Email already taken"
       @user = User.new(user_params)
@@ -73,4 +78,5 @@ class UsersController < Clearance::UsersController
     def user_params
       params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token, :price, :location, :name, :treatment, :language, :image, :qualification)
     end
+
 end

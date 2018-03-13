@@ -21,6 +21,7 @@
    <!-- CSS Styling -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
             <%= link_to 'HealFly', welcome_index_path, class: "nav-item", id:"navbar_logo" %>
             </button>           
       <% if signed_in? %>
@@ -33,8 +34,6 @@
                     <%= link_to 'sign out', sign_out_path, method: :delete, class: "nav-item", id:"beige_text" %>
                 </ul>
               </div>
-
-
 
       <% else %>
 
@@ -50,12 +49,7 @@
                 </ul>
               </div>
 
-
-
-
       <% end %> 
-
-          </nav>
 
     <!-- Clearance flash notice -->
      <div id="flash">
