@@ -31,6 +31,14 @@ class AppointmentsController < ApplicationController
       @providers = @appointment.provider
         AppointmentMailer.appointment_email(current_user, @provider, @appointment).deliver
    redirect_to provider_appointment_path(@providers, @appointment), notice: 'Appointment was successfully created'
+      redirect_to provider_appointment_path(@providers, @appointment)
+        # format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
+        # format.json { render :show, status: :created, location: @appointment }
+        AppointmentMailer.appointment_email(current_user, @provider, @appointment).deliver
+   redirect_to appointment_path(@appointment.id), notice: 'Appointment was successfully created'
+
+        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
+        format.json { render :show, status: :created, location: @appointment }
       else
         redirect_to root_path
     end
