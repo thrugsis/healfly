@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
-
+<p id="appointmentMade"><%= notice %>
+Price:
+<%= @provider.price %><br>
+<%= @appointment.date %>
+<%= @appointment.date.strftime("%A") %><br>
+Start Time:
+<%= @appointment.start_time.strftime("%I:%M")%><br>
+End Time:
+<%= @appointment.end_time.strftime("%I:%M")%><br>
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>
+</p>

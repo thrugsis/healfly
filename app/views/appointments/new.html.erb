@@ -1,5 +1,28 @@
+
+<body class="appointment">
+<p><%= image_tag @provider.image %><br>
+<%= @provider.location %><br><br>
+<%= @provider.price %><br><br>
+<%= @provider.treatment %><br><br>
+<%= @provider.language %><br><br>
+<%= @provider.qualification %><br><br>
+</p
 <h1>New Appointment</h1>
 
-<%= render 'form', appointment: @appointment %>
+<%= form_for ([@provider,@appointment]) do |s| %>
+<p> <%= s.label :date, "Date" %>
+	<%= s.text_field :date, id:"dateAppoint"%> </p>
+<p><%= s.label :start_time, "Start time" %>
+	<%= s.time_select :start_time, :ignore_date => true %></p>
+<p> <%= s.label :end_time, "End time" %>
+	<%= s.time_select :end_time, id:"endAppoint", :ignore_date => true %></p>
+<%= s.submit %>
+<% end %>
+<%= link_to 'Back', provider_appointments_path %>
+</body>
 
-<%= link_to 'Back', appointments_path %>
+<script>
+	flatpickr('#dateAppoint', {dateFormat: 'd-m-Y'})
+	// flatpickr('#startAppoint', {dateFormat: 'h:i',enableTime: true,noCalendar: true,time_24hour: true})
+	// flatpickr('#endAppoint', {dateFormat: 'h:i',enableTime: true,noCalendar: true,time_24hour: true})
+</script>
