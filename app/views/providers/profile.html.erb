@@ -4,14 +4,11 @@
 
 </head>
 <body>
-Profile
-<%= form_for @provider, html: { multipart: true } do |f| %>
+<h1>Profile</h1>
   <p>
-    <label>My Avatar URL:</label>
-    <%= image_tag @provider.avatar_url if @provider.avatar? %>
+    <img src="https://image.flaticon.com/icons/png/512/194/194935.png" width="300px" height="300px">
   </p>
-<% end %>
-<div>Username:<%= @provider.name %></div>
-<div>Language:<%= @provider.language%></div>
+<div>Username:  <%= @provider.name %></div>
+<div>Language:  <%= @provider.language%></div>
 </body>
 </html>
