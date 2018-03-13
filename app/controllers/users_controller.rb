@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Clearance::UsersController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -25,18 +25,24 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.create(user_params)
-
-    respond_to do |format|
-      if @user.save
-      UserMailer.user_email(@user).deliver
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if params[:user][:type] == "patient"
+      @user = Patient.new(user_params)
+    else
+      @user = Provider.new(user_params)
     end
+   
+    if @user.save
+      sign_in(@user)
+      if @user.patient?
+        redirect_to edit_patient_path(@user)
+      else
+        redirect_to edit_provider_path(@user)
+      end
+    else
+      flash.now[:error] = "Email already taken"
+      @user = User.new(user_params)
+      render action: "new"
+    end 
   end
 
   # PATCH/PUT /users/1
@@ -71,6 +77,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token)
+      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token, :price, :location, :name, :treatment, :language, :image, :qualification)
     end
+
 end

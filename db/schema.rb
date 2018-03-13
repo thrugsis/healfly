@@ -11,20 +11,21 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20180312084152) do
+ActiveRecord::Schema.define(version: 20180309102942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appointments", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "patient_id"
     t.integer  "provider_id"
     t.time     "start_time"
     t.time     "end_time"
     t.date     "date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
     t.index ["provider_id"], name: "index_appointments_on_provider_id", using: :btree
-    t.index ["user_id"], name: "index_appointments_on_user_id", using: :btree
   end
 
   create_table "authentications", force: :cascade do |t|
@@ -54,25 +55,28 @@ ActiveRecord::Schema.define(version: 20180312084152) do
     t.string   "first_name",                     null: false
     t.string   "last_name",                      null: false
     t.string   "email",                          null: false
-    t.string   "password"
     t.string   "encrypted_password", limit: 128
     t.string   "remember_token",     limit: 128
     t.string   "confirmation_token", limit: 128
     t.string   "gender"
     t.string   "phone_number"
     t.date     "birthday"
-    t.text     "image"
-    t.text     "medical_history"
+    t.json     "image"
+    t.json     "medical_history"
+    t.integer  "price"
+    t.string   "location"
+    t.string   "name"
+    t.string   "treatment"
+    t.string   "language"
+    t.json     "qualification"
+    t.string   "type",                           null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "provider"
     t.string   "uid"
-    t.string   "name"
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end
 
-  add_foreign_key "appointments", "providers"
-  add_foreign_key "appointments", "users"
   add_foreign_key "authentications", "users"
 end

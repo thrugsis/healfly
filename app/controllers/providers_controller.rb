@@ -1,4 +1,4 @@
-class ProvidersController < ApplicationController
+class ProvidersController < UsersController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
 
   # GET /providers
@@ -13,7 +13,6 @@ class ProvidersController < ApplicationController
 
     #IF CURRENT USER NOT LOGGED IN, WILL STOP
     # allowed?(action: @provider, user: current_user)
-    #
     @provider = Provider.find(params[:id])
   end
 
@@ -89,7 +88,7 @@ class ProvidersController < ApplicationController
     end
 
     def search_params(params)
-      params.slice(:treatment, :location, :language)
+      params.slice(:treatment, :location, :language, :min_price, :max_price)
     end 
 
 end

@@ -1,3 +1,17 @@
 <p id="notice"><%= notice %></p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<% if signed_in? == false %>
+  <% controller.redirect_to welcome_index_path %>
+<% else %>
+  <% if current_user.patient? %>
+    <%= link_to 'Edit', edit_patient_path(@user) %> 
+  <% elsif current_user.provider? %>
+    <%= link_to 'Edit', edit_provider_path(@user) %>
+    <% end %>
+    |
+  <%= link_to 'Back', users_path %>
+<% end %>
+
+<!-- if patients and providers dont have /patients/show.html and providers/show.html, it will fall back on this form -->
