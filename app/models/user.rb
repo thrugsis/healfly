@@ -12,8 +12,9 @@ class User < ApplicationRecord
      username: auth_hash["info"]["name"],
      first_name: auth_hash["info"]["name"],
      last_name: auth_hash["info"]["name"],
-     image: auth_hash["info"]["image"],
+     image: [auth_hash["info"]["image"]],
      email: auth_hash["extra"]["raw_info"]["email"],
+     type: "Patient",
      password: SecureRandom.base64
    )
    user.authentications << authentication
