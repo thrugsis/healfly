@@ -1,1 +1,11 @@
-<%= Patient.all.first %>
+<% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.first_name%><br/></td>
+        <td><%= patient.last_name%><br/></td>
+        <td><%= patient.email%><br/></td>
+        <td><%= patient.username%><br/></td>  
+        <td><% if patient.image != [] or nil%> <img src=<%= patient.image %>> <br/>  <%end%></td>  
+        <td><% if patient.medical_history != [] or nil%> <img src=<%= patient.medical_history %>> <br/>  <%end%></td>  
+<br/><br/><br/>
+      </tr>
+    <% end %>

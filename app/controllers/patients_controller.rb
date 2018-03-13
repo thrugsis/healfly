@@ -9,7 +9,7 @@ class PatientsController < UsersController
   end
 
   def show
-
+    @patient = Patient.find(params[:id])
   end
 
   private
