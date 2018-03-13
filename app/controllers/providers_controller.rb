@@ -88,7 +88,7 @@ class ProvidersController < ApplicationController
     end
 
     def search_params(params)
-      params.slice(:treatment, :location, :language)
+      params.slice(:treatment, :location, :language, :min_price, :max_price)
     end 
 
 end
