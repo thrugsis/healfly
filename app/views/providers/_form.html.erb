@@ -11,9 +11,14 @@
     </div>
   <% end %>
 
-  <%= f.text_field :name, placeholder: "Your name" %>
+  <div>
+     <%#= form.label :last_name %>
+    <%= f.text_field :name, placeholder: "Your name" %>
+  </div>
+
+
   <%= f.text_field :treatment, placeholder: "Your treatment" %>
-  <%= f.integer_field :price, placeholder: "Your price" %>
+  <%#= f.integer_field :price, placeholder: "Your price" %>
   <%= f.text_field :location, placeholder: "Your location" %>
   <%= f.text_field :language, placeholder: "Your language" %>
   <div align="center">Image upload</div>

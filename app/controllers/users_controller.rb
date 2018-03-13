@@ -25,13 +25,20 @@ class UsersController < Clearance::UsersController
   # POST /users.json
   def create
     if params[:user][:type] == "patient"
+      byebug
       @user = Patient.new(user_params)
     else
       @user = Provider.new(user_params)
     end
    
     if @user.save
+      byebug
       sign_in(@user)
+      if @user.patient?
+        redirect_to edit_patient_path(@user)
+      else
+        redirect_to edit_provider_path(@user)
+      end
     else
       flash.now[:error] = "Email already taken"
       @user = User.new(user_params)
@@ -74,6 +81,4 @@ class UsersController < Clearance::UsersController
       params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token, :price, :location, :name, :treatment, :language, :image, :qualification)
     end
 
-    def hello
-    end
 end
