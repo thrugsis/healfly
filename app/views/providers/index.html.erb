@@ -4,11 +4,13 @@
 
 
 <%= form_tag search_path do%>
-  <%= text_field_tag "treatment", nil, placeholder: "by treatment" %>
-  <%= text_field_tag "location", nil, placeholder: "by location" %>
-  <%= text_field_tag "language", nil, placeholder: "by language" %>
+  <%= text_field_tag "treatment", nil, placeholder: "by treatment"%>
+  <%= text_field_tag "location", nil, placeholder: "by location"%>
+  <%= text_field_tag "language", nil, placeholder: "by language"%>
+  <%= text_field_tag "min_price", nil, placeholder: "min price"%>
+  <%= text_field_tag "max_price", nil, placeholder: "max price"%>
 
-  <%= submit_tag "Search" %> 
+  <%= submit_tag "Search"%>
 <%end%>
 
 

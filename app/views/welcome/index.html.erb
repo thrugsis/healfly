@@ -3,7 +3,7 @@
 </div>
 
 <div class="homepage_center">
-    <div id=healfly_logo_text> 
+    <div id="healfly_logo_text"> 
       <p id=title_healfly> Heal     Fly</p>   
     </div>
 
@@ -24,18 +24,22 @@
 
     <p id="I_am_looking_for" class="search_text"> I am looking for </p>
     <div class="near_and_price_container">
-    <p id="near" class="search_text"> near </p>
-    <p id="price" class="search_text"> price </p>
+        <p id="near" class="search_text"> near </p>
+        <p id="price" class="search_text"> price </p>
     </div>
+
+<!--     <form>
+      <div class="form-group">
 
     <form>
       
 
 <div class="form-group">
+
         
         <label for="treatment"></label>
         <input type="text" class="form-control" id="input_treatment" placeholder="dental cleaning">
-        
+
         <div class="near_and_price_input_container">
         <label for="location"></label>
         <input type="text" class="form-control" id="input_location" placeholder="tokyo">
@@ -48,8 +52,22 @@
 
         </div>
       </div> 
+
+    </form> -->
+
+    <%= form_tag search_path do%>
+        <%= text_field_tag "treatment", nil, placeholder: "by treatment"%>
+        <%= text_field_tag "location", nil, placeholder: "by location"%>
+        <%= text_field_tag "min_price", nil, placeholder: "min price"%>
+        <%= text_field_tag "max_price", nil, placeholder: "max price"%>
+
+        <%= submit_tag "Search"%>
+    <%end%>
+
+
     </form>
     
+
 </div>
 
     <div id="search_button">
