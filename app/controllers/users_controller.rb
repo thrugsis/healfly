@@ -29,23 +29,14 @@ class UsersController < Clearance::UsersController
     else
       @user = Provider.new(user_params)
     end
-    
-
-    respond_to do |format|
-      if @user.save
-        sign_in(@user)
-        byebug
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        flash.now[:error] = "Email already taken"
-        render action: "new"
-        # flash[:notice] = "Email already taken."
-        # format.html { render :new, notice: "Email already taken" }
-        # format.json { render json: @user.errors, status: :unprocessable_entity }
-        # @user = User.new(user_params)
-      end
-    end
+   
+    if @user.save
+      sign_in(@user)
+    else
+      flash.now[:error] = "Email already taken"
+      @user = User.new(user_params)
+      render action: "new"
+    end 
   end
 
   # PATCH/PUT /users/1
