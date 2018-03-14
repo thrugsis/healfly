@@ -6,6 +6,12 @@
   <body>
     <h1>Thank you, <%= @user.first_name %>! </h1>
 
-    <p> You have paid for your appointment. </p>
+    <p> You have paid for your appointment. Details are below: </p>
+    <div>
+      <%= @appointment.provider.name %><br/>
+      <%= @appointment.provider.price %><br/>
+      <%= @appointment.date %> <br/>
+      <%= link_to 'View Appointment', patient_url(@user) %> <br/>
+    </div>
   </body>
 </html>

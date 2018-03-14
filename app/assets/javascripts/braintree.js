@@ -1,5 +1,5 @@
 
-  document.addEventListener("DOMContentLoaded", function(){
+  document.addEventListener("turbolinks:load", function(){
     var form = document.querySelector('#cardForm');
     var submit = document.querySelector('#submit-payment-btn');
     var client_token = document.getElementById("hidden-field").value;

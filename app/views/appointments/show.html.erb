@@ -5,7 +5,7 @@
 <%= @appointment.date.strftime("%A") %><br>
 Time:
 <%= @appointment.start_time.strftime("%I:%M")%><br>
-<%= link_to 'Make Payment', braintree_new_path %> <br/>
+<%= link_to 'Make Payment', braintree_new_path(@appointment) %> <br/>
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %> 
 </p>
