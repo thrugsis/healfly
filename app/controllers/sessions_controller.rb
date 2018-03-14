@@ -23,6 +23,41 @@ class SessionsController < Clearance::SessionsController
     redirect_to root_path, :notice => @notice
   end
 
+  def user_sign_in
+    @user = User.new
+    @previous_page = URI(request.referer).path
+    render template: "sessions/user_sign_in"
+  end
+
+  def user_login_success
+
+      @user = authenticate(params)
+      sign_in(@user) do |status|
+        if status.success?
+          @user 
+          redirect_to @previous_page
+        else
+          flash[:notice] = "There is no record of your email or password"
+          render :new
+        end
+      end
+  end
+
+  def destroy
+    sign_out
+    redirect_to URI(request.referer).path
+  end
+
+  def provider_sign_in
+    @provider = Provider.new
+    render template: "sessions/provider_sign_in"
+  end
+
+  private
+
+  def user_params
+    params.require(:session).permit(:username, :password)
+  end
   #NO LONGER USING - WAS FOR CUSTOM ROUTES /sign_in/user & /sign_in/provider
   # def user_login_success
 
@@ -53,5 +88,4 @@ class SessionsController < Clearance::SessionsController
   # def user_params
   #   params.require(:session).permit(:username, :password)
   # end
-
 end

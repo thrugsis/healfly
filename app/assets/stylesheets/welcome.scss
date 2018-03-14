@@ -1,6 +1,6 @@
-/// Place all the styles related to the Welcome controller here.
+/*/// Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 body {
   height: 100%;
@@ -15,7 +15,7 @@ html {
   margin-left: -2vw;
 }
 
-// FONTS - - - - - - - - - - - - - - - - - - 
+/*// FONTS - - - - - - - - - - - - - - - - - - */
 
 @font-face {
   font-family: "Blanch_Caps_Light";
@@ -33,14 +33,16 @@ html {
 }
 
 @font-face {
+  font-family: "Futura-Medium";
+  src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
   font-family: "Futura";
   src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
 }
 
-// NAVBAR - - - - - - - - - - - - - - - - - -
+/*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
 .navbar_futura_font {
-  font-family: Futura; 
+  font-family: "Futura-Medium"; 
   font-size: 3vw;
   letter-spacing: .05vw;
   font-size: 13px;
@@ -73,12 +75,12 @@ html {
   text-decoration: none;
 }
 
-// BACKGROUND - - - - - - - - - - - - - - - - - - 
+/*// BACKGROUND - - - - - - - - - - - - - - - - - - */
 
 #lightblue_background {
   // the color is D6FFF8
   z-index: -5;
-  position: absolute;
+  position: absolute; 
   margin-top: -40vh;
   height: 2vh;
 }
@@ -87,7 +89,7 @@ html {
   width: 100%;
 }
  
-// LOGO - - - - - - - - - - - - - - - - - -
+/*// LOGO - - - - - - - - - - - - - - - - - -*/
 
 #healfly_logo {
   position: absolute;
@@ -118,7 +120,7 @@ html {
   left: 43.4vw;
 }
 
-// MOTTO & ICONS - - - - - - - - - - - - - - - - - -
+/*// MOTTO & ICONS - - - - - - - - - - - - - - - - - -*/
 
 .turquoise_icon_squares {
   // the color is 56FFD3
@@ -159,9 +161,10 @@ html {
   margin-left: 67.7vw;
 }
 
-// SEARCH ENGINE - - - - - - - - - - - - - - - - - -
-#homepage_search {
-  font-family: Futura-Medium;
+/*// SEARCH ENGINE - - - - - - - - - - - - - - - - - -*/
+
+.search_text {
+  font-family: Futura;
   font-size: 22px;
   color: #000000;
   letter-spacing: 1px;
@@ -210,7 +213,7 @@ html {
   z-index: 10;
 }
 
-// Map & Text - - - - - - - - - - - - - - - - - -
+/*// Map & Text - - - - - - - - - - - - - - - - - -*/
 
 .black_split_line {
   margin-left: 40%;
