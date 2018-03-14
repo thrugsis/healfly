@@ -32,6 +32,7 @@
                     <%= current_user.email %>
                     <%= p" | " %>
                     <%= link_to 'sign out', sign_out_path, method: :delete, class: "nav-item", id:"beige_text" %>
+                  </li>
                 </ul>
               </div>
 
@@ -41,15 +42,16 @@
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar_futura_font">
                   </li> 
                    <li class="nav-item">
-                    <%= link_to "join", sign_up_path, class: "nav-link", id: "beige_text" %>
+                    <%= link_to "join", sign_up_path, class: "nav-link", id: "beige_text" %> </li>
                   <li class="nav-item">
-                    <a class="nav-link disabled" href="#"> / </a>
+                    <a class="nav-link disabled" href="#"> / </a> </li>
                   <li class="nav-item">
-                    <%= link_to "login", sign_in_path, class: "nav-link", id: "beige_text" %>
+                    <%= link_to "login", sign_in_path, class: "nav-link", id: "beige_text" %> </li>
                 </ul>
               </div>
 
       <% end %> 
+    </nav>
 
     <!-- Clearance flash notice -->
      <div id="flash">

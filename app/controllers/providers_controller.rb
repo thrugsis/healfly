@@ -84,7 +84,7 @@ class ProvidersController < UsersController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def provider_params
-      params.require(:provider).permit(:name, :location, :treatment, :language, :price, {image:[]}, {qualification:[]})
+      params.require(:provider).permit(:name, :location, :treatment, :language, :gender, :price, {image:[]}, {qualification:[]})
     end
 
     def search_params(params)

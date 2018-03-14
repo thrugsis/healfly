@@ -6,43 +6,32 @@
 <body>
 <h1>Profile</h1>
   <p>
-    <%= image_tag current_user.image + "?type=large" %>
+  	<% if %>
+  	<%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
+  	<% else %>
+    <%= image_tag current_user.image %>
+    <% end %>
   </p>
 
-<div>Username:  <%= current_user.username %>
-</div>
-</div><br>
-<div>Language:  <%= @provider.language%>
-	<%#= form_tag provider_path,method: :get, remote: true do %>
-	<%#= submit_tag 'Edit' %>
-	<%# end %>
-</div><br>
-<div>Gender:  <%= current_user.gender %>
-	<%= link_to 'Edit', edit_provider_path(@provider) %>
-</div><br>
-<div>Contact: <%= current_user.phone_number %>
-	<%= link_to 'Edit', edit_provider_path(@provider) %>
-</div><br>
+<div>Username:  <%= current_user.username %></div><br>
+<div>First Name: <%= current_user.first_name %></div><br>
+<div>Last Name: <%= current_user.last_name %></div><br>
+<div>Password: <%= current_user.password %></div><br>
+<div>Language:  <%= current_user.language%></div><br>
+<div>Gender:  <%= current_user.gender %></div><br>
+<div>Treatment: <%= current_user.treatment %></div><br>
+<div>Location: <%= current_user.location %></div><br>
+<div>Email: <%= current_user.email %></div><br>
 
+	<%= link_to 'Edit', edit_provider_path(@provider) %>
 
 <div id="appointmentRecord">
-	
+		<%= form_tag provider_path,method: :get, remote: true do %>
+	<%= submit_tag 'Appointment' %>
+	<% end %>
 </div>
 </body>
 </html>
 
-<% if signed_in? == false %>
-  <% controller.redirect_to welcome_index_path %>
-<% else %>
-  <%= link_to 'Edit', edit_provider_path(@provider) %> |
-  <%= link_to 'Back', providers_path %>
-<% end %>
 
-Just displaying the image and the qualification
-<img src=<%= @provider.image.first.url %> ><br/>
-<% if @provider.qualification.first.url.include?".pdf" %>
-<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=<%= @provider.qualification.first.url %>" width="500" height="375">
-<% else %>
-<img src=<%= @provider.qualification.first.url %> > <br/>
-<%end%>
 

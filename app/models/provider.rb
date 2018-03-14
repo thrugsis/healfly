@@ -1,4 +1,4 @@
-class Provider < ApplicationRecord
+
 
 class Provider < User
 	has_many :appointments, :dependent => :destroy
@@ -23,6 +23,4 @@ class Provider < User
   scope :min_price, -> (input_min_price) { where("price >= ?", input_min_price) }
   scope :max_price, -> (input_max_price) { where("price <= ?", input_max_price) }
 end
-
-
 
