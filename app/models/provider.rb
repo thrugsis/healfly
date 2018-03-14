@@ -1,4 +1,5 @@
 
+
 class Provider < User
 	has_many :appointments, :dependent => :destroy
 	has_many :appointments, :dependent => :delete_all
@@ -18,8 +19,5 @@ class Provider < User
   scope :language, -> (input_language) { where("language ILIKE ?", "%#{input_language}%") }
   scope :min_price, -> (input_min_price) { where("price >= ?", input_min_price) }
   scope :max_price, -> (input_max_price) { where("price <= ?", input_max_price) }
-
 end
-
-
 

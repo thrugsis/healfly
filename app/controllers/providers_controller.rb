@@ -10,10 +10,7 @@ class ProvidersController < UsersController
   # GET /providers/1
   # GET /providers/1.json
   def show
-
-    #IF CURRENT USER NOT LOGGED IN, WILL STOP
-    # allowed?(action: @provider, user: current_user)
-    @provider = Provider.find(params[:id])
+    set_provider
   end
 
   # GET /providers/new
@@ -23,6 +20,7 @@ class ProvidersController < UsersController
 
   # GET /providers/1/edit
   def edit
+    @provider = Provider.find(params[:id])
   end
 
   # POST /providers
@@ -71,7 +69,15 @@ class ProvidersController < UsersController
 
     search_params(params).each do |key, value|
       @providers = @providers.public_send(key, value) if value.present?
-    end 
+    end
+
+    @params = params
+
+    respond_to do |format|
+     format.js
+     format.html { render :index }                    
+    end
+  
   end
 
 
@@ -83,7 +89,7 @@ class ProvidersController < UsersController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def provider_params
-      params.require(:provider).permit(:name, :location, :treatment, :language, :price, {image:[]}, {qualification:[]})
+      params.require(:provider).permit(:name, :location, :treatment, :language, :gender, :price, {image:[]}, {qualification:[]})
     end
 
     def search_params(params)

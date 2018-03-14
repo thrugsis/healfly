@@ -1,3 +1,4 @@
+
 <%= form_for(provider) do |f| %>
   <% if provider.errors.any? %>
     <div id="error_explanation">
@@ -10,16 +11,20 @@
       </ul>
     </div>
   <% end %>
-
+  <%= f.label "Username" %>
   <%= f.text_field :name, placeholder: "Your name" %> <br/> 
+  <%= f.label "Treatment" %>
   <%= f.text_field :treatment, placeholder: "Your treatment" %><br/>
-  <%= f.number_field :price, placeholder: "Your price" %><br/>
+  <%= f.label "Gender" %>
+  <%= f.select(:gender, [ 'Male', 'Female' ], {}, { :class => 'select' }) %><br/>
+  <%= f.label "Location" %>
   <%= f.text_field :location, placeholder: "Your location" %><br/>
+  <%= f.label "Language" %>
   <%= f.text_field :language, placeholder: "Your language" %><br/>
-  <div align="center">Image upload</div>
-  <%= f.file_field :image, multiple: true, placeholder: "Upload your image[s]" %>
-  <div align="center">Qualification upload</div>
-  <%= f.file_field :qualification, multiple: true, placeholder: "Upload your qualification[s]" %>
+  <div>Image upload
+  <%= f.file_field :image, multiple: true, placeholder: "Upload your image" %></div>
+  <div>Qualification upload
+  <%= f.file_field :qualification, multiple: true, placeholder: "Upload your qualification[s]" %></div>
   <div class="actions">
   <%= f.submit %>
   </div>
