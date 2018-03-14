@@ -77,8 +77,7 @@ class ProvidersController < UsersController
 
     respond_to do |format|
      format.js
-     format.html { render :index }                    # This will work. This is because render will carry all the logic of the method render is written.
-     # format.html { redirect_to providers_path }     # This won't work.
+     format.html { render :index }                    
     end
   
   end

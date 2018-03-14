@@ -1,3 +1,3 @@
 $("#provider-listings").html("");
 
-$("<%= escape_javascript(  render partial: 'providers/index', locals: {providers: @providers})%>").appendTo("#provider-listings");        // the purpose of writing 'providers: @providers' is because _index.html.erb file is not able to read instance variable with @ character. So in here we assign variable @providers into variable provider to be used in _index.html.erb file 
+$("<%= escape_javascript(  render partial: 'providers/index', locals: {providers: @providers})%>").appendTo("#provider-listings");        
