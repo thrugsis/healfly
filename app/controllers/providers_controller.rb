@@ -10,10 +10,7 @@ class ProvidersController < UsersController
   # GET /providers/1
   # GET /providers/1.json
   def show
-
-    #IF CURRENT USER NOT LOGGED IN, WILL STOP
-    # allowed?(action: @provider, user: current_user)
-    @provider = Provider.find(params[:id])
+    set_provider
   end
 
   # GET /providers/new
