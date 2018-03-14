@@ -71,8 +71,6 @@ class ProvidersController < UsersController
       @providers = @providers.public_send(key, value) if value.present?
     end
 
-    @params = params
-
     respond_to do |format|
      format.js
      format.html { render :index }                    
