@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180309102942) do
+ActiveRecord::Schema.define(version: 20180314084942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 20180309102942) do
     t.time     "start_time"
     t.time     "end_time"
     t.date     "date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "payment_status"
+    t.integer  "payment_amount"
     t.index ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
     t.index ["provider_id"], name: "index_appointments_on_provider_id", using: :btree
   end
@@ -47,14 +49,14 @@ ActiveRecord::Schema.define(version: 20180309102942) do
     t.string   "gender"
     t.string   "phone_number"
     t.date     "birthday"
-    t.json     "image"
-    t.json     "medical_history"
+    t.text     "image"
+    t.text     "medical_history"
     t.integer  "price"
     t.string   "location"
     t.string   "name"
     t.string   "treatment"
     t.string   "language"
-    t.json     "qualification"
+    t.text     "qualification"
     t.string   "type",                           null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false

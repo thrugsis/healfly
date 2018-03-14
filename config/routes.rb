@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+get '/:id/payment/new', to: "braintree#new", as: "braintree_new"
+post '/:id/payment/checkout', to: "braintree#checkout", as: "braintree_checkout"
+
 resources :providers do
 	resources :appointments
 end
   root "welcome#index"
 
   resources :appointments
-  resources :providers
   resources :patients
 
   resources :users, controller: "users", only: [:create] do
@@ -28,7 +30,7 @@ end
 
   resources :welcome
 
-  post "providers/search" => "providers#search", as: "search"
+  post "/providers/search" => "providers#search", as: "search" 
 
 
 match 'auth/:provider/callback', to: 'sessions#create_from_omniauth', via: [:get, :post]

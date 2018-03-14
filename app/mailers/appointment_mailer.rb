@@ -6,6 +6,13 @@ class AppointmentMailer < ApplicationMailer
     @provider = provider
     @appointment = appointment
     mail(to: @user.email, subject: 'Your appointment has been created, thank you')
-  	end
+  end
+
+  def payment_email(user, appointment)
+    @user = user
+    @appointment = appointment
+    @url = "https://healfly.herokuapp.com/"
+    mail(to: @user.email, subject: 'Thank you for your payment')
+  end
 
 end
