@@ -1,6 +1,6 @@
-/// Place all the styles related to the Welcome controller here.
+/*/// Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 body {
   height: 100%;
@@ -15,37 +15,37 @@ html {
   margin-left: -2vw;
 }
 
-// FONTS - - - - - - - - - - - - - - - - - - 
+/*// FONTS - - - - - - - - - - - - - - - - - - */
 
 @font-face {
   font-family: "Blanch_Caps_Light";
-  src: url(/assets/stylesheets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Blanch_CapsInline";
-  src: url(/assets/stylesheets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
 }
 
 @font-face {
   font-family: "Blanch_Caps";
-  src: url(/assets/stylesheets/fonts/BLANCH_CAPS.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS.ttf) format("truetype");
 }
 
 @font-face {
+  font-family: "Futura-Medium";
+  src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
   font-family: "Futura";
-  src: url(/assets/stylesheets/fonts/16020_FUTURAM.ttf) format("truetype");
+  src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
 }
 
-// NAVBAR - - - - - - - - - - - - - - - - - -
+/*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
 .navbar_futura_font {
-  font-family: Futura; 
+  font-family: "Futura-Medium"; 
   font-size: 3vw;
   letter-spacing: .05vw;
   font-size: 13px;
-  // color: white;
-  // text-decoration: none;
   margin-left: 71vw;
 }
 
@@ -75,11 +75,12 @@ html {
   text-decoration: none;
 }
 
-// BACKGROUND - - - - - - - - - - - - - - - - - - 
+/*// BACKGROUND - - - - - - - - - - - - - - - - - - */
 
 #lightblue_background {
+  // the color is D6FFF8
   z-index: -5;
-  position: absolute;
+  position: absolute; 
   margin-top: -40vh;
   height: 2vh;
 }
@@ -88,7 +89,7 @@ html {
   width: 100%;
 }
  
-// LOGO - - - - - - - - - - - - - - - - - -
+/*// LOGO - - - - - - - - - - - - - - - - - -*/
 
 #healfly_logo {
   position: absolute;
@@ -119,9 +120,10 @@ html {
   left: 43.4vw;
 }
 
-// MOTTO & ICONS - - - - - - - - - - - - - - - - - -
+/*// MOTTO & ICONS - - - - - - - - - - - - - - - - - -*/
 
 .turquoise_icon_squares {
+  // the color is 56FFD3
   position: absolute;
   margin-top: 55vh;
   margin-left: 26vw;
@@ -137,7 +139,6 @@ html {
   position: absolute;
   margin-top: 76.5vh;
   margin-left: 30.5vw;
-
   -webkit-transition: width .6s; 
   transition: width .6s;
   transition-timing-function: linear;
@@ -160,82 +161,59 @@ html {
   margin-left: 67.7vw;
 }
 
-// SEARCH ENGINE - - - - - - - - - - - - - - - - - -
+/*// SEARCH ENGINE - - - - - - - - - - - - - - - - - -*/
 
 .search_text {
   font-family: Futura;
   font-size: 22px;
   color: #000000;
   letter-spacing: 1px;
-}
-
-#I_am_looking_for {
-  margin-top: 23vh;
-  margin-left: 32.5vw;
-}
-
-.near_and_price_container {
-  display: flex;
-  flex-direction: row;
-}
-
-#near {
-  margin-left: 32.5vw;
-  margin-top: 4.5vw;
-}
-
-#price {
-  margin-left: 20vw;
-  margin-top: 4.5vw;
+  width: 60%;
+  margin-left: 30%;
 }
 
 .form-group {
-  width: 39%;
-  font-family: Futura;
-  position: absolute;
-  margin-left: 31.5vw;
+
 }
 
-#input_treatment {
+#treatment {
   border-radius: 0;
   border: none;
-  margin-top: -21vh;
+  width: 80%;
+  margin-top: 10%;
 }
 
-.near_and_price_input_container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 5.5vw;
-  width: 40%
+#near_maxprice_minprice_container {
 }
 
-#input_location {
+#location {
   border-radius: 0;
   border: none;
-  width: 15.2vw;
+  width: 50%;
+  margin-top: 5%;
 }
 
-#input_min_price {
+#min_price {
   border-radius: 0;
   border: none;
-  width: 7vw;
-  margin-left: 8.8vw;
+  width: 40%;
+  margin-left: 20%;
 }
 
-#input_max_price {
+#max_price {
   border-radius: 0;
   border: none;
-  width: 7vw;
-  margin-left: 1vw;
+  width: 40%;
+  margin-left: 40%;
 }
 
 #search_button {
-  margin-left: 47.4vw;
-  margin-top: -2.1vh;
+  margin-left: 49.4vw;
+  margin-top: -3%;
   z-index: 10;
 }
 
-// Map & Text - - - - - - - - - - - - - - - - - -
+/*// Map & Text - - - - - - - - - - - - - - - - - -*/
 
 .black_split_line {
   margin-left: 40%;
