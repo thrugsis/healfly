@@ -25,29 +25,29 @@
 
     <div id="search_container">
 
-    <div id="treatment" class="form-group">
-        <label for="treatment"> I am looking for: </label>
-        <%= text_field_tag "treatment", nil, placeholder: "  dental cleaning"%>
-    </div>    
-      
+        <div id="treatment" class="form-group">
+            <label for="treatment"> I am looking for: </label>
+            <%= text_field_tag "treatment", nil, placeholder: "  dental cleaning"%>
+        </div>    
+          
 
-      <div id="search_container_row">
-    
+        <div id="search_container_row">
+        
 
-    <div id="location" class="form-group">
-        <label for="location">near:</label>
-        <%= text_field_tag "location", nil, placeholder: "  tokyo"%>
-    </div>   
+            <div id="location" class="form-group">
+                <label for="location">near:</label>
+                <%= text_field_tag "location", nil, placeholder: "  tokyo"%>
+            </div>   
 
-             <div id="min_price" class="form-group">
+            <div id="min_price" class="form-group">
                 <label for="min_price"> min price:</label>
                 <%= text_field_tag "min_price", nil, placeholder: "  20"%>
             </div>
 
-            
+                
         </div>     
 
-<div id="search_container_row_two">
+        <div id="search_container_row_two">
             <div id="language" class="form-group">
                 <label for="language">speaks: </label>
                 <%= text_field_tag "language", nil, placeholder: "  french"%>
@@ -59,17 +59,15 @@
             </div>
 
             <div id="search_button" class="search_button">
-            <%= image_submit_tag ('search_button.svg')%>
+                <%= image_submit_tag ('search_button.svg')%>
             </div>
+        
+        </div>
+        
+        <%end%>
     
-    </div>
-
-    <%end%>
-
-
-    </form>
+        </form>
     
-
 </div>
 
     <div id="black_split_line">
