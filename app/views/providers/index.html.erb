@@ -2,15 +2,7 @@
 
 <h1>Providers</h1>
 
-
-
 <%= form_tag search_path, remote: true do%>
-
-<%= form_tag search_path do%>
-  <%= text_field_tag "treatment", nil, placeholder: "by treatment" %>
-  <%= text_field_tag "location", nil, placeholder: "by location" %>
-  <%= text_field_tag "language", nil, placeholder: "by language" %>
-  <%= submit_tag "Search" %> 
 
   <%= text_field_tag "treatment", nil, placeholder: "by treatment"%>
   <%= text_field_tag "location", nil, placeholder: "by location"%>
@@ -21,48 +13,35 @@
   <%= submit_tag "Search"%>
 <%end%>
 
+
 <div id="provider-listings">
+  
+  <div class="container">
+    <div class="row">    
 
-  <table>
-    <thead>
-      <tr>
-
-        <th colspan="3"></th>
-
-        <td><%= provider.name%></td>        
-        <td><%= provider.price%></td>
-        <td><%= provider.treatment%></td>
-        <td><%= provider.location%></td>
-        <td><%= provider.language%></td> 
-        <td><img src=<%= provider.image.first%>></td>  
-        <td><img src=<%= provider.qualification.first%>></td> 
-        
-        
-        <td><%= link_to 'Show', provider %></td>
-        <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
-        <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-      </tr>
-    </thead>
-
-    <tbody>
       <% @providers.each do |provider| %>
-        <tr>
-          <td><%= provider.name%></td>        
-          <td><%= provider.price%></td>
-          <td><%= provider.treatment%></td>
-          <td><%= provider.location%></td>
-          <td><%= provider.language%></td>  
-          <td><img src=<%= provider.image.first%>></td>  
-          <td><img src=<%= provider.qualification.first%>></td>  
 
-          <td><%= link_to 'Show', provider %></td>
-          <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
-          <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+           <div class="col-4">        
+
+                 <%provider.image.each do |img| %>
+                   <p> <%= image_tag img.url%> </p>
+                 <%end%>
+
+                 <p> Name: <%= provider.name%> </p>       
+                 <p> Treatment: <%= provider.treatment%> </p>
+                 <p> Location: <%= provider.location%> </p>
+                 <p> Language: <%= provider.language%> </p>  
+          
+                 <a class = "show-button" > <%= link_to ' ', provider %> </a>
+                 <%#= link_to 'Edit', edit_provider_path(provider) %>
+                 <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+           </div>
+
       <% end %>
-    </tbody>
-  </table>
+
+    </div>
+  </div>
 
 </div>
 
