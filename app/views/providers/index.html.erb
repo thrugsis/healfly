@@ -32,10 +32,11 @@
         <td><%= provider.price%></td>
         <td><%= provider.treatment%></td>
         <td><%= provider.location%></td>
-        <td><%= provider.language%></td>  
+        <td><%= provider.language%></td> 
         <td><img src=<%= provider.image.first%>></td>  
-        <td><img src=<%= provider.qualification.first%>></td>  
-
+        <td><img src=<%= provider.qualification.first%>></td> 
+        
+        
         <td><%= link_to 'Show', provider %></td>
         <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
         <td><%= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,3 +48,15 @@
 <br>
 
 <%= link_to 'New Provider', new_provider_path %>
+
+
+<!-- <%# if provider.image != [] or nil%> 
+          <td> <img src=<%=provider.image%>> </td> 
+        <%#end%> 
+        <%# if provider.qualification != [] or nil%>
+          <%# if provider.qualification.include?".pdf" %>
+            <td><embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=<%= @provider.qualification.first %>" width="500" height="375"> </td>
+          <%# else %>
+            <td> <img src=<%= provider.qualification %> > </td>
+          <%#end%> 
+        <%#end%>  -->

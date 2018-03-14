@@ -1,6 +1,6 @@
-/// Place all the styles related to the Welcome controller here.
+/*/// Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
 
 body {
   height: 100%;
@@ -15,7 +15,7 @@ html {
   margin-left: -2vw;
 }
 
-// FONTS - - - - - - - - - - - - - - - - - - 
+/*// FONTS - - - - - - - - - - - - - - - - - - */
 
 @font-face {
   font-family: "Blanch_Caps_Light";
@@ -39,7 +39,7 @@ html {
   src: url(/assets/stylesheets/fonts/16020_FUTURAM.ttf) format("truetype");
 }
 
-// NAVBAR - - - - - - - - - - - - - - - - - -
+/*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
 .navbar_futura_font {
   font-family: "Futura-Medium"; 
@@ -77,11 +77,11 @@ html {
   text-decoration: none;
 }
 
-// BACKGROUND - - - - - - - - - - - - - - - - - - 
+/*// BACKGROUND - - - - - - - - - - - - - - - - - - */
 
 #lightblue_background {
   z-index: -5;
-  position: absolute;
+  position: absolute; 
   margin-top: -40vh;
   height: 2vh;
 }
@@ -90,7 +90,7 @@ html {
   width: 100%;
 }
  
-// LOGO - - - - - - - - - - - - - - - - - -
+/*// LOGO - - - - - - - - - - - - - - - - - -*/
 
 #healfly_logo {
   position: absolute;
@@ -121,7 +121,7 @@ html {
   left: 43.4vw;
 }
 
-// MOTTO & ICONS - - - - - - - - - - - - - - - - - -
+/*// MOTTO & ICONS - - - - - - - - - - - - - - - - - -*/
 
 .turquoise_icon_squares {
   position: absolute;
@@ -162,7 +162,7 @@ html {
   margin-left: 67.7vw;
 }
 
-// SEARCH ENGINE - - - - - - - - - - - - - - - - - -
+/*// SEARCH ENGINE - - - - - - - - - - - - - - - - - -*/
 
 .search_text {
   font-family: Futura;
@@ -237,7 +237,7 @@ html {
   z-index: 10;
 }
 
-// Map & Text - - - - - - - - - - - - - - - - - -
+/*// Map & Text - - - - - - - - - - - - - - - - - -*/
 
 .black_split_line {
   margin-left: 40%;

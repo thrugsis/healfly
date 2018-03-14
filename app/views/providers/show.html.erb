@@ -33,5 +33,11 @@
 </body>
 </html>
 
-
+Just displaying the image and the qualification
+<img src=<%= @provider.image %> ><br/>
+<% if @provider.qualification.include?".pdf" %>
+<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=<%= @provider.qualification.first %>" width="500" height="375">
+<% else %>
+<img src=<%= @provider.qualification %> > <br/>
+<%end%>
 
