@@ -19,33 +19,31 @@ html {
 
 @font-face {
   font-family: "Blanch_Caps_Light";
-  src: url(/assets/stylesheets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS_LIGHT.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Blanch_CapsInline";
-  src: url(/assets/stylesheets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS_INLINE.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Blanch_Caps";
-  src: url(/assets/stylesheets/fonts/BLANCH_CAPS.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS.otf) format("opentype");
 }
 
 @font-face {
-  font-family: "Futura";
-  src: url(/assets/stylesheets/fonts/16020_FUTURAM.ttf) format("truetype");
+  font-family: "Futura-Medium";
+  src: url(/assets/fonts/16020_FUTURAM.otf) format("opentype");
 }
 
 /*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
 .navbar_futura_font {
-  font-family: Futura; 
+  font-family: Futura-Medium; 
   font-size: 3vw;
   letter-spacing: .05vw;
   font-size: 13px;
-  // color: white;
-  // text-decoration: none;
   margin-left: 71vw;
 }
 
@@ -78,6 +76,7 @@ html {
 /*// BACKGROUND - - - - - - - - - - - - - - - - - - */
 
 #lightblue_background {
+  // the color is D6FFF8
   z-index: -5;
   position: absolute; 
   margin-top: -40vh;
@@ -122,6 +121,7 @@ html {
 /*// MOTTO & ICONS - - - - - - - - - - - - - - - - - -*/
 
 .turquoise_icon_squares {
+  // the color is 56FFD3
   position: absolute;
   margin-top: 55vh;
   margin-left: 26vw;
@@ -129,7 +129,7 @@ html {
 }
 
 .motto {
-  font-family: Futura;
+  font-family: Futura-Medium;
   font-size: 18px;
   color: #000000;
   letter-spacing: 0.67px;
@@ -137,10 +137,9 @@ html {
   position: absolute;
   margin-top: 76.5vh;
   margin-left: 30.5vw;
-
-  -webkit-transition: width .6s; 
-  transition: width .6s;
-  transition-timing-function: linear;
+  // -webkit-transition: width .6s; 
+  // transition: width .6s;
+  // transition-timing-function: linear;
 }
 
 #motto_care {
@@ -162,77 +161,82 @@ html {
 
 /*// SEARCH ENGINE - - - - - - - - - - - - - - - - - -*/
 
-.search_text {
-  font-family: Futura;
-  font-size: 22px;
-  color: #000000;
+.form-group {
+  font-family: Futura-Medium;
   letter-spacing: 1px;
 }
 
-#I_am_looking_for {
-  margin-top: 23vh;
-  margin-left: 32.5vw;
+#search_container {
+  display: inline;
+  margin-left: 30%;
+  text-align: center;
+  margin-right: 2vw;
 }
 
-.near_and_price_container {
-  display: flex;
-  flex-direction: row;
+#search_container_row {
+  margin-left: 1.5vw;
 }
 
-#near {
-  margin-left: 32.5vw;
-  margin-top: 4.5vw;
+#search_container_row_two {
+  margin-left: 0vw;
 }
 
-#price {
-  margin-left: 20vw;
-  margin-top: 4.5vw;
-}
-
-.form-group {
-  width: 39%;
-  font-family: Futura;
-  position: absolute;
-  margin-left: 31.5vw;
-}
-
-#input_treatment {
+#treatment {
   border-radius: 0;
   border: none;
-  margin-top: -21vh;
+  width: 28%;
+  text-align: center;
+  display: inline;
+  margin-top: 13%;
 }
 
-.near_and_price_input_container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 5.5vw;
-  width: 40%
-}
-
-#input_location {
+#location {
   border-radius: 0;
   border: none;
-  width: 15.2vw;
+  width: 18%;
+  display: inline;
+  text-align: center;
+  margin-top: 2%;
+  margin-right: 1%;
 }
 
-#input_min_price {
+#language {
   border-radius: 0;
   border: none;
-  width: 7vw;
-  margin-left: 8.8vw;
+  width: 13%;
+  text-align: center;
+  display: inline;
+  margin-top: 2%;
+  margin-right: 1%;
 }
 
-#input_max_price {
+#min_price {
   border-radius: 0;
   border: none;
-  width: 7vw;
-  margin-left: 1vw;
+  width: 7%;
+  text-align: center;
+  margin-top: 2%;
+  margin-right: 2%;
+  display: inline;
+}
+
+#max_price {
+  border-radius: 0;
+  border: none;
+  width: 8%;
+  text-align: center;
+  display: inline;
+  margin-top: 2%;
+  margin-right: 2%;
+
 }
 
 #search_button {
-  margin-left: 47.4vw;
-  margin-top: -2.1vh;
+  margin-left: 1%;
+  margin-top: 1%;
+  position: absolute;
   z-index: 10;
+  display: inline;
 }
 
 /*// Map & Text - - - - - - - - - - - - - - - - - -*/
@@ -248,3 +252,4 @@ html {
   margin-top: 1.2%;
   margin-left: 9.5%;
 }
+

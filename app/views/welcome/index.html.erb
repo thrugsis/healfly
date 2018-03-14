@@ -21,58 +21,54 @@
     <p id="motto_treat" class="motto"> treat </p>
     <p id="motto_yourself" class="motto"> yourself </p>
 
-
-    <p id="I_am_looking_for" class="search_text"> I am looking for </p>
-    <div class="near_and_price_container">
-        <p id="near" class="search_text"> near </p>
-        <p id="price" class="search_text"> price </p>
-    </div>
-
-<!--     <form>
-      <div class="form-group">
-
-    <form>
-      
-
-<div class="form-group">
-
-        
-        <label for="treatment"></label>
-        <input type="text" class="form-control" id="input_treatment" placeholder="dental cleaning">
-
-        <div class="near_and_price_input_container">
-        <label for="location"></label>
-        <input type="text" class="form-control" id="input_location" placeholder="tokyo">
-        
-        <label for="min price"></label>
-        <input type="text" class="form-control" id="input_min_price" placeholder="20">
-        
-        <label for="max price"></label>
-        <input type="text" class="form-control" id="input_max_price" placeholder="80">
-
-        </div>
-      </div> 
-
-    </form> -->
-
     <%= form_tag search_path do%>
-        <%= text_field_tag "treatment", nil, placeholder: "by treatment"%>
-        <%= text_field_tag "location", nil, placeholder: "by location"%>
-        <%= text_field_tag "min_price", nil, placeholder: "min price"%>
-        <%= text_field_tag "max_price", nil, placeholder: "max price"%>
 
-        <%= submit_tag "Search"%>
-    <%end%>
+    <div id="search_container">
 
+        <div id="treatment" class="form-group">
+            <label for="treatment"> I am looking for: </label>
+            <%= text_field_tag "treatment", nil, placeholder: "  dental cleaning"%>
+        </div>    
+          
 
-    </form>
+        <div id="search_container_row">
+        
+
+            <div id="location" class="form-group">
+                <label for="location">near:</label>
+                <%= text_field_tag "location", nil, placeholder: "  tokyo"%>
+            </div>   
+
+            <div id="min_price" class="form-group">
+                <label for="min_price"> min price:</label>
+                <%= text_field_tag "min_price", nil, placeholder: "  20"%>
+            </div>
+
+                
+        </div>     
+
+        <div id="search_container_row_two">
+            <div id="language" class="form-group">
+                <label for="language">speaks: </label>
+                <%= text_field_tag "language", nil, placeholder: "  french"%>
+            </div>   
+
+            <div id="max_price" class="form-group">
+                <label for="max_price"> max price: </label>
+                <%= text_field_tag "max_price", nil, placeholder: "  80"%>
+            </div>
+
+            <div id="search_button" class="search_button">
+                <%= image_submit_tag ('search_button.svg')%>
+            </div>
+        
+        </div>
+        
+        <%end%>
     
-
+        </form>
+    
 </div>
-
-    <div id="search_button">
-      <%= inline_svg "search_button.svg", class: 'search_button' %> 
-    </div>
 
     <div id="black_split_line">
       <%= inline_svg "black_split_line.svg", class: 'black_split_line' %> 

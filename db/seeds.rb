@@ -51,16 +51,16 @@ ActiveRecord::Base.transaction do
  end
 end
 
-# appointment = {}
+appointment = {}
 
-# ActiveRecord::Base.transaction do
-#  20.times do
-#     appointment['date'] = Faker::Date.between(Date.today, 1.year.from_now)
-#     appointment['start_time'] = Faker::Time.between(appointment['date'], appointment['date'] + 24 * 60 * 60, :all)
-#     appointment['end_time'] = appointment['start_time'] + 2*60*60
-#     appointment['user_id'] = rand(1..20)
-# 	appointment['provider_id'] = rand(1..20)
+ActiveRecord::Base.transaction do
+ 20.times do
+    appointment['date'] = Faker::Date.between(Date.today, 1.year.from_now)
+    appointment['start_time'] = Faker::Time.between(appointment['date'], appointment['date'] + 24 * 60 * 60, :all)
+    appointment['end_time'] = appointment['start_time'] + 2*60*60
+    appointment['user_id'] = rand(1..20)
+	appointment['provider_id'] = rand(1..20)
 	
-#    Appointment.create(appointment)
-#  end
-# end
+   Appointment.create!(appointment)
+ end
+end

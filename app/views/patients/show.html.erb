@@ -1,8 +1,40 @@
 <p id="notice"><%= notice %></p>
-
-<% if signed_in? == false %>
-  <% controller.redirect_to welcome_index_path %>
+<% if current_user.id == @patient.id %>
+	<tr>
+	<td><%= @patient.first_name%><br/></td>
+	<td><%= @patient.last_name%><br/></td>
+	<td><%= @patient.email%><br/></td>
+	<td><%= @patient.username%><br/></td>  
+	<td><% if @patient.image != [] or nil%> <img src=<%= @patient.image %>> <br/>  <%end%></td>  
+	<td><% if @patient.medical_history != [] or nil%> <img src=<%= @patient.medical_history %>> <br/>  <%end%></td>
+	</tr>
+	<% if !Appointment.find_by(patient_id:@patient.id).nil? %>
+		<% @appointments = Appointment.find_by(patient_id:@patient.id)%> 
+		<% @appointments.each do |x| %>
+			<%= x.date%>
+			<%= x.start_time%>
+			<%= x.end_time%>
+			<%= x.provider.name%>
+			<%= x.provider.price%>
+			<%= x.provider.treatment%>
+			<% if x.provider.image != [] or nil%> 
+				<img src=<%=x.provider.image%>> <br/> 
+			<%end%> 
+			<% if x.provider.qualification != [] or nil%>
+				<% if @provider.qualification.include?".pdf" %>
+					<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=<%= @provider.qualification.first %>" width="500" height="375">
+				<% else %>
+					<img src=<%= @provider.qualification %> > <br/>
+				<%end%> 
+			<%end%> 
+			<%= link_to 'Provider profile', provider_path(x.provider) %>
+		<%end%>
+	<%else%>
+		<p> You don't have any appointments yet! </p>
+	<%end%>
+	<%= link_to 'Edit', edit_patient_path(@patient) %> |
+	<%= link_to 'Back', patients_path %>
 <% else %>
-  <%= link_to 'Edit', edit_patient_path(@user) %> |
-  <%= link_to 'Back', patients_path %>
+	  <% controller.redirect_to welcome_index_path %>
 <% end %>
+
