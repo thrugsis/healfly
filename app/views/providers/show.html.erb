@@ -16,12 +16,12 @@
   <div class="btn-group">
   <h1>
     <%= form_tag provider_path, method: :get, remote: true do %>
-    <%= button_tag 'Profile', :class => "buttonProvider"%>
+    <%= button_tag 'Profile', :class => "buttonProvider", :id => 'ProfileButton'%>
     <%end%>
   </h1>
   <h1>
     <%= form_tag provider_path, method: :get, remote: true do %>
-    <%= button_tag 'Appointment', :class => "buttonProvider"%>
+    <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%>
   </h1></div><br>
   <div id="myModal" class="modal">
@@ -31,24 +31,17 @@
 </div>
 ____________________________________________________
 
-<div>Username:  <%= current_user.username %></div><br>
-<div>First Name: <%= current_user.first_name %></div><br>
-<div>Last Name: <%= current_user.last_name %></div><br>
-<div>Password: ******</div><br>
-<div>Language:  <%= current_user.language%></div><br>
-<div>Gender:  <%= current_user.gender %></div><br>
-<div>Treatment: <%= current_user.treatment %></div><br>
-<div>Location: <%= current_user.location %></div><br>
-<div>Email: <%= current_user.email %></div><br>
-  <%= link_to 'Edit', edit_provider_path(@provider) %>
+<div id ="appointmentShow"></div>
+<div id="profileOfTheProvider">
+<%= render 'provider' %>
+</div>
 </div>
 
 </div>
 <script>
-// Get the modal
 var modal = document.getElementById('myModal');
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
+
 var img = document.getElementById('imageProvider');
 var modalImg = document.getElementById("imageProvider");
 var captionText = document.getElementById("caption");

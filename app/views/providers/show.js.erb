@@ -1,2 +1,14 @@
-$("#profileUsername").html("");
-$('#profileUsername').append('<%= escape_javascript (render(partial: 'partial')) %>');
+var apc = document.getElementById('AppointmentButton');
+apc.onclick = function(){
+$("#profileOfTheProvider").html("");
+$("#appointmentShow").html("");
+$("#appointmentShow").append('<%= escape_javascript (render(partial: 'partial')) %>');
+}
+
+var ppc = document.getElementById('ProfileButton');
+ppc.onclick = function(){
+$("#profileOfTheProvider").html("");
+$("#appointmentShow").html("");
+$("#appointmentShow").append('<%= escape_javascript (render(partial: 'provider')) %>');
+}
+
