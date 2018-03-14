@@ -5,17 +5,19 @@
 
 div#profileForm {
 	position: absolute;
-	margin-left: 40%;
-	top :100px;
+	margin-left: 673px;
+	margin-top: 2%;
+	background-color: rgba(56, 56, 56, 0.56);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	box-sizing: content-box;
 }
 
 div#imageProvider{
-	margin-left: 10%;
-	margin-top: 100px;
+	position: absolute;
+	margin-left: 15%;
+	margin-top: 2%;
 	margin-bottom: 150px;
-	display: block;
-	position: relative;
-	width: 300px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
 }
@@ -44,7 +46,7 @@ div#imageProvider:hover .overlay{
 
 div.textProvider {
 	text-align: center;
-	padding-top: 60%;
+	padding: 5%;
 	color: white;
 }
 
@@ -56,14 +58,20 @@ div.textProvider {
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
-    background-color: white;
     font-size: 25px;
-    padding: 15px;
+    background-color:hsla(0, 0%, 25%, 0.23);
+    padding-left: 68px;
+    padding-right: 60px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid white;
 }
 
 .btn-group .buttonProvider:hover {
-	background-color: black;
+	background-color:hsla(0, 0%, 25%, 0.5);
 	color: white;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
 }
 
 
@@ -144,3 +152,19 @@ div.textProvider {
         width: 100%;
     }
 }
+
+div.backgroundProvider{
+}
+
+img.imgtop {
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+
+div.flowAppoint{
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 455px;
+}
+
