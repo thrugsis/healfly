@@ -14,13 +14,21 @@
 </p>
 <div id="profileForm">
   <div class="btn-group">
-  <button class="buttonProvider"><h1>Profile</h1></button>
-  <button class="buttonProvider"><h1>
-    <%= button_tag provider_path,method: :get, remote: true do %>
-    <%= submit_tag 'Appointment' %>
+  <h1>
+    <%= form_tag provider_path, method: :get, remote: true do %>
+    <%= button_tag 'Profile', :class => "buttonProvider"%>
     <%end%>
   </h1>
-  </button><br></div>
+  <h1>
+    <%= form_tag provider_path, method: :get, remote: true do %>
+    <%= button_tag 'Appointment', :class => "buttonProvider"%>
+    <%end%>
+  </h1></div><br>
+  <div id="myModal" class="modal">
+  <span class="close">×</span>
+  <%= image_tag @provider.image.first, :size => "300x400", :class => "modal-content", :id => "imageProvider"%>
+  <div id="caption"></div>
+</div>
 ____________________________________________________
 
 <div>Username:  <%= current_user.username %></div><br>
@@ -36,3 +44,25 @@ ____________________________________________________
 </div>
 
 </div>
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('imageProvider');
+var modalImg = document.getElementById("imageProvider");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+}
+</script>
