@@ -21,18 +21,20 @@
 
       <% @providers.each do |provider| %>
 
-           <div class="col-4">        
+           <div class="col-3">        
 
-                 <%provider.image.each do |img| %>
-                   <p> <%= image_tag img.url%> </p>
-                 <%end%>
+                <%provider.image.each do |img| %>
+                  <p class ="image-container"> <%= image_tag img.url, class: "provider-image"%> </p>
+                <%end%>
 
-                 <p> Name: <%= provider.name%> </p>       
-                 <p> Treatment: <%= provider.treatment%> </p>
-                 <p> Location: <%= provider.location%> </p>
-                 <p> Language: <%= provider.language%> </p>  
-          
-                 <a class = "show-button" > <%= link_to ' ', provider %> </a>
+                <div class="description-container">
+                  <p class="provider-listing-description"> Name: <%= provider.name%> </p>       
+                  <p class="provider-listing-description"> Treatment: <%= provider.treatment%> </p>
+                  <p class="provider-listing-description"> Location: <%= provider.location%> </p>
+                  <p class="provider-listing-description"> Language: <%= provider.language%> </p>  
+                </div>
+
+                <%= link_to raw('<span></span>'), provider_path(provider), class: "show-button" %> 
                  <%#= link_to 'Edit', edit_provider_path(provider) %>
                  <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
 
