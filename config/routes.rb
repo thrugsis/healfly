@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+get 'braintree/new'
+post 'braintree/checkout'
+
 resources :providers do
 	resources :appointments
 end
