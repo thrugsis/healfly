@@ -1,0 +1,14 @@
+</tr><%= form_for(@patient) do |f| %>
+<tr>
+<%= f.text_field :first_name, placeholder: "Edit your first name" %> <br/> 
+<%= f.text_field :last_name, placeholder: "Edit your last name" %><br/>
+<%= f.text_field :email, placeholder: "Edit your email" %><br/>
+<td><% if @patient.image != [] or nil%> <img src=<%= @patient.image.first %> height=200px width=200px> <br/>  <%end%></td>
+Update your image
+<%= f.file_field :image, multiple: true%><br> 
+Update your medical history
+<td><% if @patient.medical_history != [] or nil%> <img src=<%= @patient.medical_history %> height=200px width=200px> <br/>  <%end%></td>
+<%= f.file_field :medical_history, multiple: true, placeholder: "Upload your medical_history" %>
+<div class="actions">
+<%= f.submit %>
+<%end%>
