@@ -5,6 +5,7 @@ class PatientsController < UsersController
   end
 
   def edit
+    @patient = Patient.find(params[:id])
     
   end
 

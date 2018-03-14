@@ -1,40 +1,91 @@
-<p id="notice"><%= notice %></p>
-<% if current_user.id == @patient.id %>
-	<tr>
-	<td><%= @patient.first_name%><br/></td>
-	<td><%= @patient.last_name%><br/></td>
-	<td><%= @patient.email%><br/></td>
-	<td><%= @patient.username%><br/></td>  
-	<td><% if @patient.image != [] or nil%> <img src=<%= @patient.image %>> <br/>  <%end%></td>  
-	<td><% if @patient.medical_history != [] or nil%> <img src=<%= @patient.medical_history %>> <br/>  <%end%></td>
-	</tr>
-	<% if !Appointment.find_by(patient_id:@patient.id).nil? %>
-		<% @appointments = Appointment.find_by(patient_id:@patient.id)%> 
-		<% @appointments.each do |x| %>
-			<%= x.date%>
-			<%= x.start_time%>
-			<%= x.end_time%>
-			<%= x.provider.name%>
-			<%= x.provider.price%>
-			<%= x.provider.treatment%>
-			<% if x.provider.image != [] or nil%> 
-				<img src=<%=x.provider.image%>> <br/> 
-			<%end%> 
-			<% if x.provider.qualification != [] or nil%>
-				<% if @provider.qualification.include?".pdf" %>
-					<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=<%= @provider.qualification.first %>" width="500" height="375">
-				<% else %>
-					<img src=<%= @provider.qualification %> > <br/>
-				<%end%> 
-			<%end%> 
-			<%= link_to 'Provider profile', provider_path(x.provider) %>
-		<%end%>
-	<%else%>
-		<p> You don't have any appointments yet! </p>
-	<%end%>
-	<%= link_to 'Edit', edit_patient_path(@patient) %> |
-	<%= link_to 'Back', patients_path %>
-<% else %>
-	  <% controller.redirect_to welcome_index_path %>
-<% end %>
+<style>
+	.wrapper {
+	  display: grid;
+	  grid-template-columns: 1fr 25vw 25vw 25vw 1fr;
+	  grid-template-rows: 100px 40vh 50px ;
+	  grid-gap: 10px;
+	  background-color: #fff;
+	  color: #444;
+	}
+	.a {
+	    
+	    font-size: 4vh;
+	    color: black;
+		grid-column-start: 3;
+		grid-column-end: 5;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	.b {
+		grid-column-start: 1;
+		grid-column-end: 6;
+		grid-row-start: 3;
+		grid-row-end: 4;
+		border-bottom: solid;
+	}
+	.c {
+		text-align: center;
+		line-height: 60px;
+		font-size: 44px;
+		color: black;
+		grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 1;
+		grid-row-end: 2;
+	}
+	.d {
+		color:black;
+		text-align:center;
+		line-height:40vh;
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+</style>
 
+
+
+
+	<% if current_user.id == @patient.id %>
+		
+
+<div class="wrapper">
+   <div class="c">My Appointments</div>
+		<% if !Appointment.find_by(patient_id:@patient.id).nil? %>
+			<% @appointments = Appointment.find_by(patient_id:@patient.id)%> 
+			<% @appointments.each do |x| %>
+
+  				<div class="a">
+					<%= x.provider.treatment%>
+				    <%= x.date%>
+					<%= x.start_time%>
+					<%= x.end_time%>
+					<%= x.provider.name%>
+					<%= x.provider.price%>
+				</div>
+
+  				<div class="d">
+					<% if x.provider.image != [] or nil%> 
+						<img src=<%=x.provider.image.first%>> <br/> 
+					<%end%> 
+					<% if x.provider.qualification != [] or nil%>
+						<% if x.provider.qualification.include?".pdf" %>
+							<embed src="https://drive.google.com/viewerng/viewer?embedded=true&url=<%= @provider.qualification.first %>" width="500" height="375">
+						<% else %>
+							<img src=<%= x.provider.qualification.first %> > <br/>
+						<%end%> 
+					<%end%> 
+					<%= link_to 'Provider profile', provider_path(x.provider) %>
+				</div>
+  				<div class="b"></div>
+			<%end%>
+		<%else%>
+			<div class="a"><p> You have no appointments</p></div> <div class="d"> <img src="data:image/jpeg;base64,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"></div>
+		<%end%>
+</div>
+		<%= link_to 'Edit', edit_patient_path(@patient) %> |
+		<%= link_to 'Back', patients_path %>
+	<% else %>
+		  <% controller.redirect_to welcome_index_path %>
+	<% end %>
