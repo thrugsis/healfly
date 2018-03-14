@@ -1,20 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Providers</h1>
-
-
-<%= form_tag search_path, remote: true do%>
-  <%= text_field_tag "treatment", nil, placeholder: "by treatment"%>
-  <%= text_field_tag "location", nil, placeholder: "by location"%>
-  <%= text_field_tag "language", nil, placeholder: "by language"%>
-  <%= text_field_tag "min_price", nil, placeholder: "min price"%>
-  <%= text_field_tag "max_price", nil, placeholder: "max price"%>
-
-  <%= submit_tag "Search"%>
-<%end%>
-
-<div id="provider-listings">
-
   <table>
     <thead>
       <tr>
@@ -23,7 +6,7 @@
     </thead>
 
     <tbody>
-      <% @providers.each do |provider| %>
+      <% providers.each do |provider| %>
         <tr>
           <td><%= provider.name%></td>        
           <td><%= provider.price%></td>
@@ -40,9 +23,3 @@
       <% end %>
     </tbody>
   </table>
-
-</div>
-
-<br>
-
-<%= link_to 'New Provider', new_provider_path %>

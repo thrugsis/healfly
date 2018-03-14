@@ -6,7 +6,6 @@ end
   root "welcome#index"
 
   resources :appointments
-  resources :providers
   resources :patients
 
   resources :users, controller: "users", only: [:create] do
@@ -28,7 +27,7 @@ end
 
   resources :welcome
 
-  post "providers/search" => "providers#search", as: "search"
+  post "/providers/search" => "providers#search", as: "search" 
 
 match 'auth/:provider/callback', to: 'sessions#create_from_omniauth', via: [:get, :post]
 match 'auth/failure', to: redirect('/'), via: [:get, :post]

@@ -71,7 +71,16 @@ class ProvidersController < UsersController
 
     search_params(params).each do |key, value|
       @providers = @providers.public_send(key, value) if value.present?
-    end 
+    end
+
+    @params = params
+
+    respond_to do |format|
+     format.js
+     format.html { render :index }                    # This will work. This is because render will carry all the logic of the method render is written.
+     # format.html { redirect_to providers_path }     # This won't work.
+    end
+  
   end
 
 
