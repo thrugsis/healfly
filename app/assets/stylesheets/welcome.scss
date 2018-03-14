@@ -19,30 +19,28 @@ html {
 
 @font-face {
   font-family: "Blanch_Caps_Light";
-  src: url(/assets/fonts/BLANCH_CAPS_LIGHT.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS_LIGHT.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Blanch_CapsInline";
-  src: url(/assets/fonts/BLANCH_CAPS_INLINE.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS_INLINE.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Blanch_Caps";
-  src: url(/assets/fonts/BLANCH_CAPS.ttf) format("truetype");
+  src: url(/assets/fonts/BLANCH_CAPS.otf) format("opentype");
 }
 
 @font-face {
   font-family: "Futura-Medium";
-  src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
-  font-family: "Futura";
-  src: url(/assets/fonts/16020_FUTURAM.ttf) format("truetype");
+  src: url(/assets/fonts/16020_FUTURAM.otf) format("opentype");
 }
 
 /*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
 .navbar_futura_font {
-  font-family: "Futura-Medium"; 
+  font-family: Futura-Medium; 
   font-size: 3vw;
   letter-spacing: .05vw;
   font-size: 13px;
@@ -131,7 +129,7 @@ html {
 }
 
 .motto {
-  font-family: Futura;
+  font-family: Futura-Medium;
   font-size: 18px;
   color: #000000;
   letter-spacing: 0.67px;
@@ -164,7 +162,7 @@ html {
 /*// SEARCH ENGINE - - - - - - - - - - - - - - - - - -*/
 
 .form-group {
-  font-family: Futura;
+  font-family: Futura-Medium;
   letter-spacing: 1px;
 }
 
@@ -182,7 +180,6 @@ html {
 #search_container_row_two {
   margin-left: 0vw;
 }
-
 
 #treatment {
   border-radius: 0;
