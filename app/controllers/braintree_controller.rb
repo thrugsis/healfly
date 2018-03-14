@@ -5,7 +5,7 @@ class BraintreeController < ApplicationController
   end
 
   def checkout
-    @appointment = Appointment.find(params[:id]) 
+    @appointment = Appointment.includes(:provider).find(params[:id])
     @user = current_user
 
     nonce_from_the_client = params[:checkout_form][:payment_method_nonce]
@@ -19,8 +19,7 @@ class BraintreeController < ApplicationController
      )
 
     if result.success?
-      @appointment.update(payment_status: "Paid")
-      @appointment.update(payment_amount: @appointment.provider.price.to_s)
+      @appointment.payment_update(@appointment.provider.price.to_s)
       AppointmentMailer.payment_email(@user, @appointment).deliver
       
       redirect_to :root, :flash => { :success => "Transaction successful!" }
