@@ -14,7 +14,6 @@ class AppointmentsController < ApplicationController
   # GET /appointments/new
   def new
     @appointment = Appointment.new
-    @appointment.update(payment_status: "Not Paid")
     @provider = Provider.find(params[:provider_id])
   end
 
@@ -27,6 +26,7 @@ class AppointmentsController < ApplicationController
   def create
     @provider = Provider.find(params[:provider_id])  
     @appointment = @provider.appointments.new(appointment_params)
+    @appointment.update(payment_status: "Not Paid")
     # respond_to do |format|
       if @appointment.save
       @providers = @appointment.provider
