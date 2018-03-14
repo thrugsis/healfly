@@ -19,6 +19,7 @@ class UsersController < Clearance::UsersController
 
   # GET /users/1/edit
   def edit
+    
   end
 
   # POST /users
