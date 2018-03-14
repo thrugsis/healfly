@@ -16,6 +16,7 @@ div#imageProvider{
 	display: block;
 	position: relative;
 	width: 300px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 div#editProvider{
@@ -43,5 +44,21 @@ div#imageProvider:hover .overlay{
 div.textProvider {
 	text-align: center;
 	padding-top: 60%;
+	color: white;
+}
+
+.btn-group .buttonProvider {
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.btn-group .buttonProvider:hover {
+	background-color: black;
 	color: white;
 }

@@ -13,7 +13,14 @@
   </div>
 </p>
 <div id="profileForm">
-  <h1>Profile</h1>
+  <div class="btn-group">
+  <button class="buttonProvider"><h1>Profile</h1></button>
+  <button class="buttonProvider"><h1>
+    <%= button_tag provider_path,method: :get, remote: true do %>
+    <%= submit_tag 'Appointment' %>
+    <%end%>
+  </h1>
+  </button><br></div>
 ____________________________________________________
 
 <div>Username:  <%= current_user.username %></div><br>
