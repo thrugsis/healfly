@@ -17,30 +17,12 @@ html {
 
 /*// FONTS - - - - - - - - - - - - - - - - - - */
 
-@font-face {
-  font-family: "Blanch_Caps_Light";
-  src: url(/assets/fonts/BLANCH_CAPS_LIGHT.otf) format("opentype");
-}
 
-@font-face {
-  font-family: "Blanch_CapsInline";
-  src: url(/assets/fonts/BLANCH_CAPS_INLINE.otf) format("opentype");
-}
-
-@font-face {
-  font-family: "Blanch_Caps";
-  src: url(/assets/fonts/BLANCH_CAPS.otf) format("opentype");
-}
-
-@font-face {
-  font-family: "Futura-Medium";
-  src: url(/assets/fonts/16020_FUTURAM.otf) format("opentype");
-}
 
 /*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
 .navbar_futura_font {
-  font-family: Futura-Medium; 
+  font-family: 'Fredoka One', cursive; 
   font-size: 3vw;
   letter-spacing: .05vw;
   font-size: 13px;
@@ -62,10 +44,10 @@ html {
 }
 
 #navbar_logo {
-  font-family: Blanch-CapsInline;
+  font-family: 'Fredoka One', cursive; 
   color: beige;
-  font-size: 25px;
-  letter-spacing: .8vw;
+  font-size: 16px;
+  // letter-spacing: .8vw;
   text-align: left;
   display: inline-block;
   position: absolute;
@@ -94,28 +76,28 @@ html {
 }
 
 #title_healfly {
-  font-family: Blanch-CapsInline;
-  font-size: 160px;
+  font-family: 'Fredoka One'; 
+  font-size: 100px;
   color: #000000;
-  letter-spacing: 0;
+  // letter-spacing: 0;
   text-align: center;
-  word-spacing: 16vw;
+  // word-spacing: 16vw;
   display: inline-block;
-  margin-left: 30.5vw;
+  margin-left: 31%;
   position: absolute;
-  top: 0vw;
+  top: 10%;
 }
 
 #healfly_logo_text {
   display: inline-block;
 }
 
-#healfly_logo_pillwings {
+#paperpill {
   display: inline-block;
   position: absolute;
   text-align: center;
-  top: 5vw;
-  left: 43.4vw;
+  top: 13.8%;
+  left: 57.5%;
 }
 
 /*// MOTTO & ICONS - - - - - - - - - - - - - - - - - -*/
@@ -129,7 +111,7 @@ html {
 }
 
 .motto {
-  font-family: Futura-Medium;
+  font-family: 'Fredoka One', cursive; 
   font-size: 18px;
   color: #000000;
   letter-spacing: 0.67px;
@@ -162,7 +144,8 @@ html {
 /*// SEARCH ENGINE - - - - - - - - - - - - - - - - - -*/
 
 .form-group {
-  font-family: Futura-Medium;
+  font-family: 'Fredoka One', cursive; 
+  word-spacing: 2px;
   letter-spacing: 1px;
 }
 
@@ -187,7 +170,7 @@ html {
   width: 28%;
   text-align: center;
   display: inline;
-  margin-top: 13%;
+  margin-top: 12.5%;
 }
 
 #location {
@@ -232,7 +215,7 @@ html {
 }
 
 #search_button {
-  margin-left: 1%;
+  margin-left: -1%;
   margin-top: 1%;
   position: absolute;
   z-index: 10;
