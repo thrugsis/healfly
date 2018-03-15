@@ -45,8 +45,6 @@
                       <%end%>>
                     <img src=<%= current_user.image.first %> height=50px width=50px></a>
 
-                    <!-- <a class="patient_icon" href=<%= patient_path(current_user.id)%>> <img src=<%= current_user.image.first %> height=50px width=50px></a> -->
-
                     <%= p" | " %>
                     <%= link_to 'sign out', sign_out_path, method: :delete, class: "nav-item", id:"beige_text" %>
                   </li>
