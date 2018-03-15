@@ -9,7 +9,7 @@
 	}
 	.a {
 	    
-	    font-size: 4vh;
+	    font-size: 1.5vw;
 	    color: black;
 		grid-column-start: 3;
 		grid-column-end: 5;
@@ -26,7 +26,7 @@
 	.c {
 		text-align: center;
 		line-height: 60px;
-		font-size: 44px;
+		font-size: 2.5vw;
 		color: black;
 		grid-column-start: 3;
 		grid-column-end: 4;
@@ -67,7 +67,7 @@
 
   				<div class="d">
 					<% if x.provider.image != [] or nil%> 
-						<img src=<%=x.provider.image.first%>> <br/> 
+						<img src=<%=x.provider.image.first%> height=90% width=60% > <br/> 
 					<%end%> 
 					<% if x.provider.qualification != [] or nil%>
 						<% if x.provider.qualification.include?".pdf" %>
