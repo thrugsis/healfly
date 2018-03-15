@@ -10,6 +10,7 @@ class PatientsController < UsersController
   end
 
   def show
+    patient_allowed?(action: @patient, user: current_user)
     @patient = Patient.find(params[:id])
   end
 
