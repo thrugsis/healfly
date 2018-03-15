@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Poiret+One" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Cagliostro" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -34,11 +34,16 @@
             </button>           
       <% if signed_in? %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar_futura_font">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar_fredoka_font">
                    <li class="nav-item" id="beige_text">
-                    
 
-                    <a class="patient_icon" href=<%= patient_path(current_user.id)%>> <img src=<%= current_user.image.first %> height="30vw" width="30vw"></a>
+                    <a class="patient_icon" href=
+                    <%if current_user.patient? %>
+                        <%= patient_path(current_user.id) %>
+                      <%else%>
+                        <%= provider_path(current_user.id) %> 
+                      <%end%>>
+                    <img src=<%= current_user.image.first %> height=30vw width=30vw></a>
 
                     <%= p" | " %>
                     <%= link_to 'sign out', sign_out_path, method: :delete, class: "nav-item", id:"beige_text" %>
@@ -49,7 +54,7 @@
       <% else %>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar_futura_font">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar_fredoka_font">
                   </li> 
                    <li class="nav-item">
                     <%= link_to "join", sign_up_path, class: "nav-link", id: "beige_text" %> </li>
