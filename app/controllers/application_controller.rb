@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if user.patient?
       action
     else
-      return redirect_to URI(request.referrer).path
+      return redirect_to URI(request.referrer).path, notice: "Sorry, as a Provider, you do not have access to this page."
     end
   end
 
