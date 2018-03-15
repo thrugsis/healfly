@@ -4,53 +4,36 @@
 
 
 div#profileForm {
+	margin: 2%;
 	position: absolute;
-	background-color: rgba(56, 56, 56, 0.56);
+	// background-color: rgba(63, 191, 136, 0.94);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	color: white;
-	width: 80vw;
-	text-align: center;
-	margin-left: 10vw;
+	width: 100vw;
+	color: black;
 }
 
-@media only screen and (max-width: 1178px){
-	div#profileForm{
-	width: 80vw;
-	margin-left: 0;
-	margin-left: 10vw;
-	}
 
-	div#imageProvider img {
-	width: 80vw;
+
+div#imageProvider  {
+	width: 25vw;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	float: left;
-}
-
-.btn-group .buttonProvider{
-	width: 40vw;
-	}
-
-.btn-group #AppointmentButton{
-	font-size: 4vw;
+	background-color: rgba(22, 28, 28, 0.83);
+	height: 100vw;
 	text-align: center;
-}
-
-.btn-group #ProfileButton{
-	font-size: 4vw;
-	text-align: center;
-
-}
 }
 
 div#imageProvider img {
-
-	float: left;
+	border-radius: 50%;
+	border: 3px solid rgba(63, 191, 136, 0.94);
 }
 
 
 div#formProvider{
-	overflow: scroll;
-	overflow-x: hidden;
-	height: 455px;
+	height: 100vw;
+	padding-top: 5%;
+	padding-left: 10%;
 }
 
 div#editProvider{
@@ -66,14 +49,14 @@ a.editProvider{
   	text-decoration: none;
   	outline: none;
   	color: #fff;
-  	background-color: grey;
+  	background-color: white;
   	border: none;
   	border-radius: 15px;
   	box-shadow: 0 9px #999;
   	margin-bottom: 10%;
   	padding: 5px;
-  	padding-left: 20%;
-  	padding-right: 20%;
+  	padding-left: 5%;
+  	padding-right: 5%;
 }
 
 a.editProvider:active {
@@ -107,23 +90,25 @@ a.editProvider:active {
 
 .btn-group .buttonProvider {
     border: none;
-    color: black;
+    color: white;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
     font-size: 25px;
-    background-color:hsla(255, 255, 255, 0.75);
+    background-color:rgba(22, 28, 28, 0.0);
     padding-left: 68px;
     padding-right: 60px;
     padding-top: 25px;
     padding-bottom: 25px;
     border-bottom: 1px solid white;
+    display: block;
+    width: 25vw;
 }
 
 .btn-group .buttonProvider:hover {
-	background-color:hsla(0, 0%, 25%, 0.5);
-	color: white;
+	background-color:hsla(0, 0%, 25%, 0.1);
+	color: grey;
 	-webkit-transition-duration: 0.5s;
 	transition-duration: 0.5s;
 }
