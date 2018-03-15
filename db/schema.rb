@@ -49,14 +49,14 @@ ActiveRecord::Schema.define(version: 20180314084942) do
     t.string   "gender"
     t.string   "phone_number"
     t.date     "birthday"
-    t.text     "image"
-    t.text     "medical_history"
+    t.json     "image"
+    t.json     "medical_history"
     t.integer  "price"
     t.string   "location"
     t.string   "name"
     t.string   "treatment"
     t.string   "language"
-    t.text     "qualification"
+    t.json     "qualification"
     t.string   "type",                           null: false
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
