@@ -10,7 +10,7 @@ class ProvidersController < UsersController
   # GET /providers/1
   # GET /providers/1.json
   def show
-    set_provider
+    provider_allowed?(user: current_user, action: set_provider)
     @appoint = @provider.appointments.all
   end
 

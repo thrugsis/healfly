@@ -1,11 +1,13 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <img src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2017/03/zocdoc_feat.jpg" class="imgtop" height="750px">
-<div class="providerBackground">
-<p>
+
+<div id="profileForm">
 <div class="profileContainer">
 <div id="imageProvider">
-  	<% if @provider.present? %>
-    <%= image_tag current_user.image.first, :size => "470x545"%>
-  	<% else %>
+    <% if @provider.present? %>
+    <%= image_tag @provider.image.first, :size => "470x545"%>
+    <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>
     <div class="overlay">
@@ -15,29 +17,26 @@
     </div>
   </div>
   </div>
-</p>
-<div id="profileForm">
   <div class="btn-group">
-  <h1>
+  
     <%= form_tag provider_path, method: :get, remote: true do %>
     <%= button_tag 'Profile', :class => "buttonProvider", :id => 'ProfileButton'%>
     <%end%>
-  </h1>
-  <h1>
+
+
     <%= form_tag provider_path, method: :get, remote: true do %>
     <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%>
-  </h1></div><br>
+</div><br>
   <div id="myModal" class="modal">
   <span class="close">×</span>
-  <%= image_tag current_user.image.first, :size => "300x400", :class => "modal-content", :id => "imageProvider"%>
+  <%= image_tag @provider.image.first, :size => "300x400", :class => "modal-content", :id => "imageProvider"%>
   <div id="caption"></div>
 </div>
 
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">
 <%= render 'provider' %>
-</div>
 </div>
 </div>
 <script>
