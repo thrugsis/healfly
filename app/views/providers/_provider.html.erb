@@ -1,11 +1,14 @@
-
-<div>Username:  <%= current_user.username %></div><br>
-<div>First Name: <%= current_user.first_name %></div><br>
-<div>Last Name: <%= current_user.last_name %></div><br>
-<div>Password: ******</div><br>
-<div>Language:  <%= current_user.language%></div><br>
-<div>Gender:  <%= current_user.gender %></div><br>
-<div>Treatment: <%= current_user.treatment %></div><br>
-<div>Location: <%= current_user.location %></div><br>
-<div>Email: <%= current_user.email %></div><br>
-  <%= link_to 'Edit', edit_provider_path(@provider) %>
+<div id="formProvider">
+<h1>Profile</h1>________________________<br>
+<div><span class="provText">  Username: </span> <%= current_user.username %></div><br>
+<div><span class="provText">  Price: </span> <%= current_user.price %></div><br>
+<div><span class="provText">First Name: </span> <%= current_user.first_name %></div><br>
+<div><span class="provText">Last Name: </span> <%= current_user.last_name %></div><br>
+<div><span class="provText">Password: </span> ******</div><br>
+<div><span class="provText">Language: </span>  <%= current_user.language%></div><br>
+<div><span class="provText">Gender:  </span> <%= current_user.gender %></div><br>
+<div><span class="provText">Treatment: </span> <%= current_user.treatment %></div><br>
+<div><span class="provText">Location: </span> <%= current_user.location %></div><br>
+<div><span class="provText">Email: </span> <%= current_user.email %></div><br>
+  <%= link_to 'Edit', edit_provider_path(@provider), :class => "editProvider" %>
+</div>
