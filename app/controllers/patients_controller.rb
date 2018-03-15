@@ -1,6 +1,7 @@
 class PatientsController < UsersController
 
   def index
+    public_allowed?(user: current_user, action: @patients)
     @patients = Patient.all
   end
 
@@ -10,7 +11,7 @@ class PatientsController < UsersController
   end
 
   def show
-    patient_allowed?(action: @patient, user: current_user)
+    patient_allowed?(user: current_user, action: @patient)
     @patient = Patient.find(params[:id])
   end
 
