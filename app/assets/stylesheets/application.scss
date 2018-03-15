@@ -2,3 +2,9 @@
 @import "appointments";
 @import "providers";
 @import "braintree";
+
+.modal {
+    /*position: fixed;*/
+    z-index: 3000;
+    /*background-color: #000;*/
+}
