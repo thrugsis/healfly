@@ -1,4 +1,16 @@
 <div id="formProvider">
+	<div id="imageProvider">
+  	<% if @provider.present? %>
+    <%= image_tag @provider.image.first, :size => "150x200"%>
+  	<% else %>
+    <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
+    <% end %>
+    <div class="overlay">
+      <div class="textProvider">Description<br>_______________________________<br>
+        Plastic surgery is a surgical specialty involving the restoration, reconstruction, or alteration of the human body. It can be divided into two categories. The first is reconstructive surgery which includes craniofacial surgery, hand surgery, microsurgery, and the treatment of burns. The other is cosmetic or aesthetic surgery. While reconstructive surgery aims to reconstruct a part of the body or improve its functioning, cosmetic surgery aims at improving the appearance of it.
+      </div>
+    </div>
+  </div>
 <div>Username:  <%= current_user.username %></div><br>
 <div>First Name: <%= current_user.first_name %></div><br>
 <div>Last Name: <%= current_user.last_name %></div><br>
