@@ -21,7 +21,7 @@ html {
 
 /*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
-.navbar_futura_font {
+.navbar_fredoka_font {
   font-family: 'Fredoka One', cursive; 
   font-size: 3vw;
   letter-spacing: .05vw;
@@ -47,7 +47,6 @@ html {
   font-family: 'Fredoka One', cursive; 
   color: beige;
   font-size: 16px;
-  // letter-spacing: .8vw;
   text-align: left;
   display: inline-block;
   position: absolute;
@@ -79,9 +78,7 @@ html {
   font-family: 'Fredoka One'; 
   font-size: 100px;
   color: #000000;
-  // letter-spacing: 0;
   text-align: center;
-  // word-spacing: 16vw;
   display: inline-block;
   margin-left: 31%;
   position: absolute;
@@ -98,7 +95,15 @@ html {
   text-align: center;
   top: 13.8%;
   left: 57.5%;
+  //  -webkit-transition: width 8s, height 8s; 
+  // transition: width 4s, height 4s;
+  // transition-timing-function: ease-in;
 }
+
+
+// #paperpill:hover {
+  
+// }
 
 /*// MOTTO & ICONS - - - - - - - - - - - - - - - - - -*/
 
@@ -119,9 +124,6 @@ html {
   position: absolute;
   margin-top: 76.5vh;
   margin-left: 30.5vw;
-  // -webkit-transition: width .6s; 
-  // transition: width .6s;
-  // transition-timing-function: linear;
 }
 
 #motto_care {
@@ -170,7 +172,7 @@ html {
   width: 28%;
   text-align: center;
   display: inline;
-  margin-top: 12.5%;
+  margin-top: 13%;
 }
 
 #location {
@@ -230,9 +232,83 @@ html {
   width: 18%;
 }
 
+#black_split_line_2 {
+  margin-top: 21%;
+}
+
+#black_split_line_3 {
+  margin-top: -14.5%;
+}
+
+#black_split_line_4 {
+  margin-top: -2.5%;
+}
+
 #maptable {
   width: 80%;
-  margin-top: 1.2%;
+  margin-top: 1%;
   margin-left: 9.5%;
 }
 
+#our_solution {
+  font-family: Cagliostro;
+  font-size: 16px;
+  margin-left: 19.5%;
+  margin-top: -39.5%;
+  color: white;
+}
+
+#we_wants {
+  font-family: Cagliostro;
+  font-size: 16px;
+}
+
+#we_want_1 {
+
+  margin-left: 18%;
+  margin-top: 2.5%;
+}
+
+
+#we_want_2 {
+  position: absolute;
+  margin-left: 42%;
+  margin-top: -6.8%;
+}
+
+
+#we_want_3 {
+  position: absolute;
+  margin-left: 65%;
+  margin-top: -6.8%;
+}
+
+
+#a_border_free {
+  font-family: Cagliostro;
+  font-size: 16px;
+  margin-left: 34%;
+  margin-top: 2.5%;
+  position: absolute; 
+  text-align: center;
+}
+
+.maptext {
+  font-family: Cagliostro;
+  margin-left: 20%;
+  margin-top: 20%;
+  width: 20%;
+  text-align: left;
+}
+
+#beach {
+  width: 63.7%;
+  margin-left: 17.2%;
+}
+
+.turquoise_square {
+// background: #56FFD3;
+width: 20%;
+margin-top: 10%;
+margin-left: 10%; 
+}
