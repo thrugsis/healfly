@@ -8,4 +8,4 @@
 <div>Treatment: <%= current_user.treatment %></div><br>
 <div>Location: <%= current_user.location %></div><br>
 <div>Email: <%= current_user.email %></div><br>
-  <%= link_to 'Edit', edit_provider_path(@provider) %>
+  <%= link_to 'Edit', edit_provider_path(@provider), :class => "editProvider" %>

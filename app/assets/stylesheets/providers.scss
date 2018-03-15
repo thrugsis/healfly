@@ -15,7 +15,7 @@ div#profileForm {
 
 div#imageProvider{
 	position: absolute;
-	margin-left: 15%;
+	margin-left: 20%;
 	margin-top: 2%;
 	margin-bottom: 150px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -25,6 +25,28 @@ div#imageProvider{
 div#editProvider{
 	top: 50%;
 	margin-left: 40%
+}
+
+a.editProvider{
+	display: inline-block;
+  	font-size: 24px;
+  	cursor: pointer;
+  	text-align: center;
+  	text-decoration: none;
+  	outline: none;
+  	color: #fff;
+  	background-color: grey;
+  	border: none;
+  	border-radius: 15px;
+  	box-shadow: 0 9px #999;
+  	margin-left: 75%;
+  	margin-bottom: 10%;
+}
+
+a.editProvider:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 div.overlay {
