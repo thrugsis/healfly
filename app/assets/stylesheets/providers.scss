@@ -191,7 +191,77 @@ div.flowAppoint{
 }
 
 .show-button {
-	border: 1px solid red;
+	border: 1px solid #EAEAEA;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 100%;	
 	height: 100%;
 }
+
+
+.col-3{ 
+	padding:0px;
+	height:330px;
+	margin-left:22px;
+	margin-bottom: 50px;
+	max-width: 23%;
+}
+
+.image-container {
+	height:100%;
+	margin-bottom: 0px;
+	position: relative;
+	border-radius: 5px;
+}
+
+.provider-image {
+	width: 100%;
+	height:100%;
+	margin-bottom: 0px;
+	border-radius: 5px;
+}
+
+.description-container {		
+	width:100%;
+	background-color: rgb(3,1,1);
+	opacity: 0.79;
+	margin-bottom: 0px;
+	border-radius: 5px;
+	position: absolute;
+	left:0px;
+	bottom:0px;
+	padding: 3.5px 0px 3.5px 0px;	
+}
+
+.provider-listing-description {
+	font-size: 13.3px;
+	color: white;
+	margin-bottom: 1px;
+	margin-left:3px;
+	font-family: arial;
+}
+
+
+
+
+
+
+
+
+// .image-container {
+// 	margin-bottom: 0px;
+// }
+
+// .description-container {		
+// 	// border: 1px solid red;
+// 	width:100%;
+// 	background-color: rgb(3,1,1);
+// 	opacity: 0.6;
+// 	    position: absolute;
+//     top: 50%;
+//     // left: 50%;
+
+// }
+
