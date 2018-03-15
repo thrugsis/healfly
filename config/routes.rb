@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+get '/:id/payment/new', to: "braintree#new", as: "braintree_new"
+post '/:id/payment/checkout', to: "braintree#checkout", as: "braintree_checkout"
+
 resources :providers do
 	resources :appointments
 end

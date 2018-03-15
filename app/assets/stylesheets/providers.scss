@@ -5,17 +5,21 @@
 
 div#profileForm {
 	position: absolute;
-	margin-left: 40%;
-	top :100px;
+	margin-left: 673px;
+	margin-top: 2%;
+	background-color: rgba(56, 56, 56, 0.56);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: white;
+	box-sizing: content-box;
 }
 
 div#imageProvider{
-	margin-left: 10%;
-	margin-top: 100px;
+	position: absolute;
+	margin-left: 15%;
+	margin-top: 2%;
 	margin-bottom: 150px;
-	display: block;
-	position: relative;
-	width: 300px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
 }
 
 div#editProvider{
@@ -42,6 +46,198 @@ div#imageProvider:hover .overlay{
 
 div.textProvider {
 	text-align: center;
-	padding-top: 60%;
+	padding: 5%;
 	color: white;
 }
+
+.btn-group .buttonProvider {
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-size: 25px;
+    background-color:hsla(0, 0%, 25%, 0.23);
+    padding-left: 68px;
+    padding-right: 60px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid white;
+}
+
+.btn-group .buttonProvider:hover {
+	background-color:hsla(0, 0%, 25%, 0.5);
+	color: white;
+	-webkit-transition-duration: 0.5s;
+	transition-duration: 0.5s;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 400px;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)} 
+    to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+div.backgroundProvider{
+}
+
+img.imgtop {
+	position: absolute;
+	width: 100%;
+	top: 0;
+}
+
+div.flowAppoint{
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 455px;
+}
+.show-button {
+	border: 1px solid #EAEAEA;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;	
+	height: 100%;
+}
+
+
+.col-3{ 
+	padding:0px;
+	height:330px;
+	margin-left:22px;
+	margin-bottom: 50px;
+	max-width: 23%;
+}
+
+.image-container {
+	height:100%;
+	margin-bottom: 0px;
+	position: relative;
+	border-radius: 5px;
+}
+
+.provider-image {
+	width: 100%;
+	height:100%;
+	margin-bottom: 0px;
+	border-radius: 5px;
+}
+
+.description-container {		
+	width:100%;
+	background-color: rgb(3,1,1);
+	opacity: 0.79;
+	margin-bottom: 0px;
+	border-radius: 5px;
+	position: absolute;
+	left:0px;
+	bottom:0px;
+	padding: 3.5px 0px 3.5px 0px;	
+}
+
+.provider-listing-description {
+	font-size: 13.3px;
+	color: white;
+	margin-bottom: 1px;
+	margin-left:3px;
+	font-family: arial;
+}
+
+
+
+
+
+
+
+
+// .image-container {
+// 	margin-bottom: 0px;
+// }
+
+// .description-container {		
+// 	// border: 1px solid red;
+// 	width:100%;
+// 	background-color: rgb(3,1,1);
+// 	opacity: 0.6;
+// 	    position: absolute;
+//     top: 50%;
+//     // left: 50%;
+
+// }

@@ -11,6 +11,7 @@ class ProvidersController < UsersController
   # GET /providers/1.json
   def show
     set_provider
+    @appoint = @provider.appointments.all
   end
 
   # GET /providers/new
@@ -70,8 +71,6 @@ class ProvidersController < UsersController
     search_params(params).each do |key, value|
       @providers = @providers.public_send(key, value) if value.present?
     end
-
-    @params = params
 
     respond_to do |format|
      format.js
