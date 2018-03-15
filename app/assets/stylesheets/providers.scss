@@ -5,23 +5,52 @@
 
 div#profileForm {
 	position: absolute;
-	margin-left: 673px;
-	margin-top: 2%;
 	background-color: rgba(56, 56, 56, 0.56);
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	color: white;
-	box-sizing: content-box;
+	width: 80vw;
+	text-align: center;
+	margin-left: 10vw;
 }
+
+@media only screen and (max-width: 1178px){
+	div#profileForm{
+	width: 80vw;
+	margin-left: 0;
+	margin-left: 10vw;
+	}
+
+	div#imageProvider img {
+	width: 80vw;
+	float: left;
+}
+
+.btn-group .buttonProvider{
+	width: 40vw;
+	}
+
+.btn-group #AppointmentButton{
+	font-size: 4vw;
+	text-align: center;
+}
+
+.btn-group #ProfileButton{
+	font-size: 4vw;
+	text-align: center;
+
+}
+}
+
+div#imageProvider img {
+
+	float: left;
+}
+
 
 div#formProvider{
 	overflow: scroll;
 	overflow-x: hidden;
 	height: 455px;
-}
-div#imageProvider{
-	margin-top: 2%;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    cursor: pointer;
 }
 
 div#editProvider{
@@ -63,10 +92,10 @@ div.overlay {
 	transition: .5s ease;
 }
 
-// div#imageProvider:hover .overlay{
-// 	bottom: 0;
-// 	height: 100%;
-// }
+div#imageProvider:hover .overlay{
+	bottom: 0;
+	height: 100%;
+}
 
 div.textProvider {
 	text-align: center;
@@ -79,7 +108,6 @@ div.textProvider {
     color: black;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     cursor: pointer;
     font-size: 25px;
@@ -244,24 +272,3 @@ div.flowAppoint{
 	font-family: arial;
 }
 
-
-
-
-
-
-
-
-// .image-container {
-// 	margin-bottom: 0px;
-// }
-
-// .description-container {		
-// 	// border: 1px solid red;
-// 	width:100%;
-// 	background-color: rgb(3,1,1);
-// 	opacity: 0.6;
-// 	    position: absolute;
-//     top: 50%;
-//     // left: 50%;
-
-// }

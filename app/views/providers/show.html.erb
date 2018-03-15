@@ -1,22 +1,33 @@
-<img src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2017/03/zocdoc_feat.jpg" class="imgtop" height="750px">
-<div class="providerBackground">
-<p>
-<div class="profileContainer">
 
-  </div>
-</p>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<img src="http://s3.amazonaws.com/digitaltrends-uploads-prod/2017/03/zocdoc_feat.jpg" class="imgtop" height="750px">
+
 <div id="profileForm">
+<div class="profileContainer">
+<div id="imageProvider">
+    <% if @provider.present? %>
+    <%= image_tag @provider.image.first, :size => "470x545"%>
+    <% else %>
+    <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
+    <% end %>
+    <div class="overlay">
+      <div class="textProvider">Description<br>_______________________________<br>
+        Plastic surgery is a surgical specialty involving the restoration, reconstruction, or alteration of the human body. It can be divided into two categories. The first is reconstructive surgery which includes craniofacial surgery, hand surgery, microsurgery, and the treatment of burns. The other is cosmetic or aesthetic surgery. While reconstructive surgery aims to reconstruct a part of the body or improve its functioning, cosmetic surgery aims at improving the appearance of it.
+      </div>
+    </div>
+  </div>
+  </div>
   <div class="btn-group">
-  <h1>
+  
     <%= form_tag provider_path, method: :get, remote: true do %>
     <%= button_tag 'Profile', :class => "buttonProvider", :id => 'ProfileButton'%>
     <%end%>
-  </h1>
-  <h1>
+
+
     <%= form_tag provider_path, method: :get, remote: true do %>
     <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%>
-  </h1></div><br>
+</div><br>
   <div id="myModal" class="modal">
   <span class="close">×</span>
   <%= image_tag @provider.image.first, :size => "300x400", :class => "modal-content", :id => "imageProvider"%>
@@ -26,7 +37,6 @@
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">
 <%= render 'provider' %>
-</div>
 </div>
 </div>
 <script>
