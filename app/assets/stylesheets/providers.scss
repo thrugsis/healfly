@@ -13,6 +13,11 @@ div#profileForm {
 	box-sizing: content-box;
 }
 
+div#formProvider{
+	overflow: scroll;
+	overflow-x: hidden;
+	height: 455px;
+}
 div#imageProvider{
 	position: absolute;
 	margin-left: 20%;

@@ -1,4 +1,4 @@
-
+<div id="formProvider">
 <div>Username:  <%= current_user.username %></div><br>
 <div>First Name: <%= current_user.first_name %></div><br>
 <div>Last Name: <%= current_user.last_name %></div><br>
@@ -9,3 +9,4 @@
 <div>Location: <%= current_user.location %></div><br>
 <div>Email: <%= current_user.email %></div><br>
   <%= link_to 'Edit', edit_provider_path(@provider), :class => "editProvider" %>
+</div>
