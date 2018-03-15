@@ -11,6 +11,7 @@ class ProvidersController < UsersController
   # GET /providers/1.json
   def show
     set_provider
+    @appoint = @provider.appointments.all
   end
 
   # GET /providers/new
