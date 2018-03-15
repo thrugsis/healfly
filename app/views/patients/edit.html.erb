@@ -1,4 +1,7 @@
-</tr><%= form_for(@patient) do |f| %>
+
+
+
+<%= form_for(@patient) do |f| %>
 <tr>
 <%= f.text_field :first_name, placeholder: "Edit your first name" %> <br/> 
 <%= f.text_field :last_name, placeholder: "Edit your last name" %><br/>
@@ -11,4 +14,6 @@ Update your medical history
 <%= f.file_field :medical_history, multiple: true, placeholder: "Upload your medical_history" %>
 <div class="actions">
 <%= f.submit %>
+</div>
 <%end%>
+</tr>

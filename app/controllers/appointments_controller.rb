@@ -26,6 +26,7 @@ class AppointmentsController < ApplicationController
   def create
     @provider = Provider.find(params[:provider_id])  
     @appointment = @provider.appointments.new(appointment_params)
+    @appointment.patient_id = current_user.id
     # respond_to do |format|
       if @appointment.save
         @providers = @appointment.provider
@@ -74,6 +75,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:provider_id, :date, :start_time, :end_time, :id)
+      params.require(:appointment).permit(:patient_id, :provider_id, :date, :start_time, :end_time, :id)
     end
 end
