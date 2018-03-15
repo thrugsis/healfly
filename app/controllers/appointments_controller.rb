@@ -26,17 +26,11 @@ class AppointmentsController < ApplicationController
   def create
     @provider = Provider.find(params[:provider_id])  
     @appointment = @provider.appointments.new(appointment_params)
-    @appointment.payment_status = "Not Paid"
     # respond_to do |format|
       if @appointment.save
-      @providers = @appointment.provider
+        @providers = @appointment.provider
         AppointmentMailer.appointment_email(current_user, @provider, @appointment).deliver
-   redirect_to provider_appointment_path(@providers, @appointment), notice: 'Appointment was successfully created'
-        # format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        # format.json { render :show, status: :created, location: @appointment }
-
-        # format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
-        # format.json { render :show, status: :created, location: @appointment }
+        redirect_to provider_appointment_path(@providers, @appointment), notice: 'Appointment was successfully created'
       else
         redirect_to root_path
     end
