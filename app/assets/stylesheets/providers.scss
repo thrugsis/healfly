@@ -3,30 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-div#profileForm {
+#profile_form {
+  font-family: Cagliostro;
   position: absolute;
-  background-color: rgba(56, 56, 56, 0.56);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: white;
+  color: black;
   width: 80vw;
   text-align: left;
   margin-left: 16vw;
   margin-top: 1vw;
 }
 
-button {
-    border-radius: 40px;
-    color: black;
-    padding-right: 2vw;
-    padding-left: 2vw;
-}
-
 .buttonProvider {
+  border: none;
   margin-left: 5vw;
-}
-
-#ProfileButton {
-  margin-left: 10vw;
 }
 
 #provider_profile_picture {
@@ -34,47 +23,42 @@ button {
 }
 
 @media only screen and (max-width: 1178px){
-  div#profileForm{
+  div#profile_form{
   width: 80vw;
   margin-left: 0;
   margin-left: 10vw;
   }
-}
 
-  div#imageProvider img {
+#image {
   width: 80vw;
   float: left;
+  margin-right: 5vw;
 }
 
-.btn-group .buttonProvider{
-  width: 40vw;
-  }
-
-.btn-group #AppointmentButton{
-  font-size: 4vw;
-  text-align: center;
+.prov_text {
+  margin-left: 10vw;
 }
 
-.btn-group #ProfileButton{
-  font-size: 4vw;
-  text-align: center;
+#AppointmentButton {
+
 }
 
-div#imageProvider img {
-
+#provider_profile_picture {
   float: left;
+  // margin-bottom: 5%;
+  // margin-left: 5%;
 }
 
 
-div#formProvider{
+#form_provider{
   overflow: scroll;
   overflow-x: hidden;
   height: 455px;
 }
 
-div#editProvider{
+#editProvider{
   top: 50%;
-  margin-left: 40%;
+  margin-left: 40%
 }
 
 a.editProvider{
@@ -85,7 +69,7 @@ a.editProvider{
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: grey;
+    background-color: red;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -111,7 +95,7 @@ div.overlay {
   transition: .5s ease;
 }
 
-div#imageProvider:hover .overlay{
+div#provider_profile_picture:hover .overlay{
   bottom: 0;
   height: 100%;
 }
@@ -147,87 +131,7 @@ div.textProvider {
 
 
 /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
-}
-
-/* Modal Content (image) */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 400px;
-    max-width: 700px;
-}
-
-/* Caption of Modal Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
-}
-
-/* Add Animation */
-.modal-content, #caption {    
-    -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
-    animation-name: zoom;
-    animation-duration: 0.6s;
-}
-
-@-webkit-keyframes zoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
-}
-
-@keyframes zoom {
-    from {transform: scale(0.1)} 
-    to {transform: scale(1)}
-}
-
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-
-    .modal-content {
-        width: 100%;
-    }
-    
-}
-
-div.backgroundProvider{
-}
+  
 
 img.imgtop {
   position: absolute;
@@ -240,6 +144,7 @@ div.flowAppoint{
   overflow-x: hidden;
   height: 455px;
 }
+
 .show-button {
   border: 1px solid #EAEAEA;
   border-radius: 5px;
@@ -299,14 +204,12 @@ div.flowAppoint{
   font-size:13px;
 }
 
-.center-search-bar{
-  // border:1px solid blue;
+.center-search-bar {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.search-bar{
-  // border:1px solid red;
+.search-bar {
   border-radius: 3px;
   display: inline-block;
   text-align: center;
@@ -320,7 +223,4 @@ div.flowAppoint{
   position: absolute;
   z-index: 10;
   display: inline-block;
-}
-
-
-
+} }
