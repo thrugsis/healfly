@@ -4,3 +4,7 @@
 @import "braintree";
 @import "users";
 
+.modal {
+    z-index: 3000;
+}
+
