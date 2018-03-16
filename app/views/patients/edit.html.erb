@@ -1,19 +1,65 @@
+<style>
+	.wrapper {
+	  display: grid;
+	  grid-template-columns: 1fr 256px 768px 1fr;
+	  grid-gap: 10px;
+	  background-color: #fff;
+	  color: #444;
+	}
+	.a {
+	    
+	    font-size: 4vh;
+	    color: black;
+		grid-column-start: 3;
+		grid-column-end: 4;
+	}
+	.b {
+		grid-column-start: 2;
+		grid-column-end: 3;
+	}
+	<div class="panel-header">
+	    Required
+	</div>
+	<div class="row row-condensed space-4">
+        <label class="text-right col-sm-3" for="user_first_name">
+        	First Name 
+        </label>
+        <div class="col-sm-9">
+      		<input id="user_first_name" name="user[first_name]" size="30" type="text" value="Harold">
+  		</div>
+	</div>
+</style>
 
 
+<center>
 
 <%= form_for(@patient) do |f| %>
 <tr>
-<%= f.text_field :first_name, placeholder: "Edit your first name" %> <br/> 
-<%= f.text_field :last_name, placeholder: "Edit your last name" %><br/>
-<%= f.text_field :email, placeholder: "Edit your email" %><br/>
-<td><% if @patient.image != [] or nil%> <img src=<%= @patient.image.first %> height=200px width=200px> <br/>  <%end%></td>
+First name: <%= f.text_field :first_name, placeholder: "Edit your first name" %> <br/>
+		<div>
+      		First Name: <input id="user_first_name" name="user[first_name]" size="30" type="text" value="Harold">
+  		</div>
+  		<div class="col-sm-9">
+      		Last Name: <input id="user_first_name" name="user[first_name]" size="30" type="text" value="Harold">
+  		</div>
+
+  		<div class="col-sm-9">
+      		I am: <input id="user_first_name" name="user[first_name]" size="30" type="text" value="Harold">
+  		</div>
+<br/> 
+Last Name: <%= f.text_field :last_name, placeholder: "Edit your last name" %><br/>
+<br/>
+Email: <%= f.text_field :email, placeholder: "Edit your email" %><br/>
+<br/>
 Update your image
 <%= f.file_field :image, multiple: true%><br> 
+<br/>
 Update your medical history
 <td><% if @patient.medical_history != [] or nil%> <img src=<%= @patient.medical_history %> height=200px width=200px> <br/>  <%end%></td>
 <%= f.file_field :medical_history, multiple: true, placeholder: "Upload your medical_history" %>
-<div class="actions">
+<br/><br/><div class="actions">
 <%= f.submit %>
 </div>
 <%end%>
 </tr>
+</center>
