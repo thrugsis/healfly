@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
-get '/:id/payment/new', to: "braintree#new", as: "braintree_new"
-post '/:id/payment/checkout', to: "braintree#checkout", as: "braintree_checkout"
+  get '/:id/payment/new', to: "braintree#new", as: "braintree_new"
+  post '/:id/payment/checkout', to: "braintree#checkout", as: "braintree_checkout"
+  get "/providers/search" => "providers#search"                                           #Note: Need this 'get' function, or else it will cause an error. The 'get' function have to be written before the 'providers' route to avoid it clashes with "providers#show" due to same url pattern
+  post "/providers/search" => "providers#search", as: "search" 
 
-resources :providers do
-	resources :appointments
-end
+  resources :providers do
+    resources :appointments
+  end
+
   root "welcome#index"
 
   resources :appointments
@@ -14,9 +17,7 @@ end
   resources :users, controller: "users", only: [:create] do
     resource :password,
       controller: "clearance/passwords",
-      only: [:create, :edit, :update]
-      
-      
+      only: [:create, :edit, :update]    
   end
 
   get "/sign_in" => "sessions#new", as: "sign_in"
@@ -32,13 +33,9 @@ end
 
   resources :welcome
 
-  post "/providers/search" => "providers#search", as: "search" 
-
-
-match 'auth/:provider/callback', to: 'sessions#create_from_omniauth', via: [:get, :post]
-match 'auth/failure', to: redirect('/'), via: [:get, :post]
-match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
-
+  match 'auth/:provider/callback', to: 'sessions#create_from_omniauth', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
   
