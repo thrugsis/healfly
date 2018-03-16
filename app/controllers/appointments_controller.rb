@@ -15,7 +15,9 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new
     @provider = Provider.find(params[:provider_id])
+
   end
+
 
   # GET /appointments/1/edit
   def edit

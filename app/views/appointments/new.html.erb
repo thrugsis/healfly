@@ -1,8 +1,7 @@
-<body class="appointment">
-
-    <div class="appointment-container">
+<div class="appointment-container">
 
         <div class="provider-info-container">
+
 
             <% @provider.image.each do |img| %>
               <p class="appointment-image-container"><%= image_tag img.url, class: "appointment-image" %></p>
@@ -26,6 +25,24 @@
               </div>
             </div>
 
+          <% @provider.image.each do |img| %>
+            <p class="appointment-image-container"><%= image_tag img.url, class: "appointment-image" %></p>
+          <%end%>
+
+<iframe class ="map"
+ height="500px"
+ frameborder="0" style="border:0"
+ src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBX8hQcoSEtucwisPltvD2u0Xsl7nZg77I
+   &q=<%= (@provider.location).gsub(/(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)/, '\1+\2+\3+\4+\5+\6+\7+\8')%>&q=seattle+washington&q=arizona" allowfullscreen>
+</iframe><br>
+
+          <span>Name: </span><%= @provider.name %><br><br>
+          <span>Location: </span><%= @provider.location %><br><br>
+          <span>Price: </span><%= @provider.price %><br><br>
+          <span>Treatment: </span><%= @provider.treatment %><br><br>
+          <span>Language: </span><%= @provider.language %><br><br>
+
+
         </div>
 
 
@@ -45,7 +62,8 @@
 
     </div>
 
-</body>
+
+
 
 
 <script>
@@ -53,6 +71,7 @@
   // flatpickr('#startAppoint', {dateFormat: 'h:i',enableTime: true,noCalendar: true,time_24hour: true})
   // flatpickr('#endAppoint', {dateFormat: 'h:i',enableTime: true,noCalendar: true,time_24hour: true})
 </script>
+
 
 
 <script>
@@ -82,3 +101,4 @@ window.onclick = function(event) {
     }
 }
 </script>
+

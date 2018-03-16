@@ -1,19 +1,140 @@
+<style>
+		header {
+	    background-color: #edefed;
+	}
+
+	.panel-header {
+		background-color: #edefed;
+		padding-left: 12px;
+	    color: #484848;
+	    font-size: 16px;
+	    padding-top: 12px;
+	    padding-bottom: 12px;
+	    margin-bottom: 24px;
+	    border-bottom: 1px solid #dce0e0;
+	}
+
+	.space-4 {
+		margin-bottom: 24px;
+	}
+
+	#site-content{
+		margin-left: 25vw;
+	}
 
 
 
-<%= form_for(@patient) do |f| %>
-<tr>
-<%= f.text_field :first_name, placeholder: "Edit your first name" %> <br/> 
-<%= f.text_field :last_name, placeholder: "Edit your last name" %><br/>
-<%= f.text_field :email, placeholder: "Edit your email" %><br/>
-<td><% if @patient.image != [] or nil%> <img src=<%= @patient.image.first %> height=200px width=200px> <br/>  <%end%></td>
-Update your image
-<%= f.file_field :image, multiple: true%><br> 
-Update your medical history
-<td><% if @patient.medical_history != [] or nil%> <img src=<%= @patient.medical_history %> height=200px width=200px> <br/>  <%end%></td>
-<%= f.file_field :medical_history, multiple: true, placeholder: "Upload your medical_history" %>
-<div class="actions">
-<%= f.submit %>
+	#dashboard-content{
+		border: 1px solid #dce0e0;
+	}
+</style>
+
+
+<main id="site-content" role="main" tabindex="-1">
+<div id="notification-area"></div>
+<div class="page-container-responsive space-top-4 space-4">
+	<div class="row">
+    	<div class="col-md-8" >
+    		<div id="dashboard-content">
+        
+
+
+
+<div class="panel space-4">
+  	<div class="panel-header">
+    	Update Information
+  	</div>
+  	<div class="panel-body">
+		<%= form_for(@patient) do |f| %>
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3" for="user_first_name">
+		        	First Name 
+		        </label>
+		        <div class="col-sm-9">
+		        	<%= f.text_field :first_name, placeholder: "Edit your first name", size:30, style:'padding-left:10px;'  %> 
+		        </div>
+		    </div>
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3" for="user_last_name">
+		    	    Last Name 
+		        </label>
+		        <div class="col-sm-9">  
+		    		<%= f.text_field :last_name, placeholder: "Edit your last name", size:30, style:'padding-left:10px;'  %>
+		        	<div class="text-muted space-top-1"  type="text">
+		        		Your public profile only shows your first name. When you request a booking, your host will see your first and last name.
+		        	</div>
+		        </div>
+		    </div>
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3" for="user_first_name">
+		        	Email 
+		        </label>
+		        <div class="col-sm-9">
+		        	<%= f.text_field :email, placeholder: "Edit your email", size:30, style:'padding-left:10px;'  %>
+		        	<div class="text-muted space-top-1">
+		        		We won’t share your private email address with other HealFly users.
+		        	</div>
+		        </div>
+		    </div>
+
+
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3" for="user_sex">
+		        	I Am <i class="icon icon-lock icon-ebisu" data-behavior="tooltip" tabindex="0" aria-label="Private"></i>
+		        </label>
+		        <div class="col-sm-9">
+		    		<%= f.select(:gender, [ 'Male', 'Female', 'Other' ], {}, { :class => 'select' }) %>
+		        	<div class="text-muted space-top-1">
+		        		We use this data for analysis and never share it with other users.
+		        	</div>
+		        </div>
+		    </div>
+
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3" for="user_phone">
+		        	Phone Number <i class="icon icon-lock icon-ebisu" data-behavior="tooltip" tabindex="0" aria-label="Private"></i>
+		        </label>
+		        <div class="col-sm-9">
+		        	<%= f.text_field :phone_number, placeholder: "Add your phone number", size:30, style:'padding-left:10px;'  %>
+		        	<div class="text-muted space-top-1">
+		        		This is only shared once you have a confirmed appointment with your provider. This is how we can all get in touch.
+		        	</div>
+		        </div>
+		    </div>
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3" for="patient_image">
+		        	Update image 
+		        </label>
+		        <div class="col-sm-9">
+		        	<%= f.file_field :image, style:'padding-left:10px;'  %>
+		        </div>
+		    </div>
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3" for="patient_medical_history">
+		        	Update medical history 
+		        </label>
+		        <div class="col-sm-9">
+		        	<%= f.file_field :medical_history, style:'padding-left:10px;'  %>
+		        </div>
+		    </div>
+<center>
+	
+		<%= f.submit %>
+</center>
+		<%end%>
+
+	</div>
 </div>
-<%end%>
-</tr>
+
+      </div>
+    </div>
+  </div>
+</div>
+</main>
