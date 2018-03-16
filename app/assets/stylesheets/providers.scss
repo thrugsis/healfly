@@ -4,76 +4,77 @@
 
 
 div#profileForm {
-	position: absolute;
-	background-color: rgba(56, 56, 56, 0.56);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	color: white;
-	width: 80vw;
-	text-align: center;
-	margin-left: 10vw;
+  position: absolute;
+  background-color: rgba(56, 56, 56, 0.56);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: white;
+  width: 80vw;
+  text-align: center;
+  margin-left: 10vw;
 }
 
 
 @media only screen and (max-width: 1178px){
-	div#profileForm{
-	width: 80vw;
-	margin-left: 0;
-	margin-left: 10vw;
-	}
+  div#profileForm{
+  width: 80vw;
+  margin-left: 0;
+  margin-left: 10vw;
+  }
 
-	div#imageProvider img {
-	width: 80vw;
-	float: left;
+  div#imageProvider img {
+  width: 80vw;
+  float: left;
 }
 
 .btn-group .buttonProvider{
-	width: 40vw;
-	}
+  width: 40vw;
+  }
 
 .btn-group #AppointmentButton{
-	font-size: 4vw;
-	text-align: center;
+  font-size: 4vw;
+  text-align: center;
 }
 
 .btn-group #ProfileButton{
-	font-size: 4vw;
-	text-align: center;
+  font-size: 4vw;
+  text-align: center;
 
 }
 }
 
 div#imageProvider img {
-  height: 13vw;
-  width: 13vw;
-	float: left;
+
+
+  float: left;
+
 }
 
 
 div#formProvider{
-	overflow: scroll;
-	overflow-x: hidden;
-	height: 455px;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 455px;
 }
 
 div#editProvider{
-	top: 50%;
-	margin-left: 40%
+  top: 50%;
+  margin-left: 40%
 }
 
 a.editProvider{
-	display: inline-block;
-  	font-size: 24px;
-  	cursor: pointer;
-  	text-align: center;
-  	text-decoration: none;
-  	outline: none;
-  	color: #fff;
-  	background-color: grey;
-  	border: none;
-  	border-radius: 15px;
-  	box-shadow: 0 9px #999;
-  	margin-left: 75%;
-  	margin-bottom: 10%;
+  display: inline-block;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: grey;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    margin-left: 75%;
+    margin-bottom: 10%;
 }
 
 a.editProvider:active {
@@ -83,26 +84,26 @@ a.editProvider:active {
 }
 
 div.overlay {
-	position: absolute;
-	bottom: 100%;
-	left: 0;
-	right: 0;
-	background-color: rgba(47, 39, 39, 0.59);
-	overflow: hidden;
-	width: 100%;
-	height: 0;
-	transition: .5s ease;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: rgba(47, 39, 39, 0.59);
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
 }
 
 div#imageProvider:hover .overlay{
-	bottom: 0;
-	height: 100%;
+  bottom: 0;
+  height: 100%;
 }
 
 div.textProvider {
-	text-align: center;
-	padding: 5%;
-	color: white;
+  text-align: center;
+  padding: 5%;
+  color: white;
 }
 
 .btn-group .buttonProvider {
@@ -122,10 +123,10 @@ div.textProvider {
 }
 
 .btn-group .buttonProvider:hover {
-	background-color:hsla(0, 0%, 25%, 0.5);
-	color: white;
-	-webkit-transition-duration: 0.5s;
-	transition-duration: 0.5s;
+  background-color:hsla(0, 0%, 25%, 0.5);
+  color: white;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
 
@@ -211,67 +212,67 @@ div.backgroundProvider{
 }
 
 img.imgtop {
-	position: absolute;
-	width: 100%;
-	top: 0;
+  position: absolute;
+  width: 100%;
+  top: 0;
 }
 
 div.flowAppoint{
-	overflow: scroll;
-	overflow-x: hidden;
-	height: 455px;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 455px;
 }
 .show-button {
-	border: 1px solid #EAEAEA;
-	border-radius: 5px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;	
-	height: 100%;
+  border: 1px solid #EAEAEA;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 100%;
 }
 
 
 .col-3{ 
-	padding:0px;
-	height:330px;
-	margin-left:22px;
-	margin-bottom: 50px;
-	max-width: 23%;
+  padding:0px;
+  height:330px;
+  margin-left:22px;
+  margin-bottom: 50px;
+  max-width: 23%;
 }
 
 .image-container {
-	height:100%;
-	margin-bottom: 0px;
-	position: relative;
-	border-radius: 5px;
+  height:100%;
+  margin-bottom: 0px;
+  position: relative;
+  border-radius: 5px;
 }
 
 .provider-image {
-	width: 100%;
-	height:100%;
-	margin-bottom: 0px;
-	border-radius: 5px;
+  width: 100%;
+  height:100%;
+  margin-bottom: 0px;
+  border-radius: 5px;
 }
 
-.description-container {		
-	width:100%;
-	background-color: rgb(3,1,1);
-	opacity: 0.79;
-	margin-bottom: 0px;
-	border-radius: 5px;
-	position: absolute;
-	left:0px;
-	bottom:0px;
-	padding: 3.5px 0px 3.5px 0px;	
+.description-container {    
+  width:100%;
+  background-color: rgb(3,1,1);
+  opacity: 0.79;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  position: absolute;
+  left:0px;
+  bottom:0px;
+  padding: 3.5px 0px 3.5px 0px; 
 }
 
 .provider-listing-description {
-	font-size: 13.3px;
-	color: white;
-	margin-bottom: 1px;
-	margin-left:3px;
-	font-family: arial;
+  font-size: 13.3px;
+  color: white;
+  margin-bottom: 1px;
+  margin-left:3px;
+  font-family: arial;
 }
 
 
@@ -311,15 +312,15 @@ div.flowAppoint{
 
 
 // .image-container {
-// 	margin-bottom: 0px;
+//  margin-bottom: 0px;
 // }
 
-// .description-container {		
-// 	// border: 1px solid red;
-// 	width:100%;
-// 	background-color: rgb(3,1,1);
-// 	opacity: 0.6;
-// 	    position: absolute;
+// .description-container {   
+//  // border: 1px solid red;
+//  width:100%;
+//  background-color: rgb(3,1,1);
+//  opacity: 0.6;
+//      position: absolute;
 //     top: 50%;
 //     // left: 50%;
 
