@@ -1,0 +1,14 @@
+$('#build_error').remove();
+<% if @user.errors.any? %>
+  var build_error = "<div class='alert alert-danger' id='build_error'>";
+  build_error += "The form contains <%= pluralize(@email.errors.count, 'error') %>.";
+  build_error +=   "<ul id='error_explanation'>";
+  <% @email.errors.full_messages.each do |msg| %>
+    build_error += "<li><%= j msg %></li>";
+  <% end %>
+  build_error +=   "</ul>";
+  build_error += "</div>";
+  $(build_error).insertBefore( "#sign-up-form" );
+<% else %>
+  $('#email-modal').modal_success();
+<% end %>

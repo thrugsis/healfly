@@ -3,11 +3,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<div id="profileForm">
+<div id="profile_form">
 <div class="profileContainer">
-<div id="imageProvider">
+<div id="provider_profile_picture">
     <% if @patient.present? %>
-    <%= image_tag @patient.image.first, :size => "470x545"%>
+      <%if @patient.image.first == nil %>
+        <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
+      <%else%>
+        <%= image_tag @patient.image.first, :size => "470x545"%>
+      <%end%>
     <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>
@@ -24,14 +28,6 @@
 <div class="btn-group"> <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%></div><br>
- 
-
-
- <div id="myModal" class="modal">
-  <span class="close">×</span>
-  <%= image_tag @patient.image.first, :size => "300x400", :class => "modal-content", :id => "imageProvider"%>
-  <div id="caption"></div>
-</div>
 
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">
@@ -42,8 +38,8 @@
 var modal = document.getElementById('myModal');
 
 
-var img = document.getElementById('imageProvider');
-var modalImg = document.getElementById("imageProvider");
+var img = document.getElementById('provider_profile_picture');
+var modalImg = document.getElementById("provider_profile_picture");
 var captionText = document.getElementById("caption");
 img.onclick = function(){
     modal.style.display = "block";
@@ -59,3 +55,5 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
+
+<!-- Delete me! I don't amount to anything -->

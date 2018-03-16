@@ -15,10 +15,6 @@ html {
   margin-left: -2vw;
 }
 
-/*// FONTS - - - - - - - - - - - - - - - - - - */
-
-
-
 /*// NAVBAR - - - - - - - - - - - - - - - - - -*/
 
 .navbar_fredoka_font {
@@ -53,6 +49,11 @@ html {
   margin-left: 15vw;
   text-decoration: none;
 }
+
+span.no-underline { 
+  color: beige;
+  text-decoration: none  
+} 
 
 /*// BACKGROUND - - - - - - - - - - - - - - - - - - */
 
@@ -307,7 +308,6 @@ html {
 }
 
 .turquoise_square {
-// background: #56FFD3;
 width: 20%;
 margin-top: 10%;
 margin-left: 10%; 

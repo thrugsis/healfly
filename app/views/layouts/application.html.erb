@@ -48,9 +48,12 @@
                       <%else%>
                         <%= provider_path(current_user.id) %> 
                       <%end%>>
-                    <img src=<%= current_user.image.first %> height=30vw width=30vw></a>
-
-                    <%= p" | " %>
+                    <%if current_user.image.first == nil %>
+                      <span class="no-underline"> <%= current_user.email %> </span>
+                    <%else%>
+                      <img src=<%= current_user.image.first %> height=30vw width=30vw></a>
+                    <%end%>
+                    <span class="no-underline"> <%= p" | " %>
                     <%= link_to 'sign out', sign_out_path, method: :delete, class: "nav-item", id:"beige_text" %>
                   </li>
                 </ul>
@@ -76,7 +79,11 @@
     <!-- Clearance flash notice -->
      <div id="flash">
       <% flash.each do |key, value| -%>
-        <div id="flash_<%= key %>"><%=h value %></div>
+        <div class="alert alert-<%= key %> alert-dismissible" role="alert"> 
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+         <%=h value %> </div>
       <% end %>
     </div>
     <br>
@@ -95,7 +102,7 @@
             <%= form_tag session_path, :id => "log-in-form" do %>
               <div> Email: <%= text_field_tag 'session[email]', params[:email], :class => "form-control" %> </div>
               <br/>
-              <div> Password: <%= text_field_tag 'session[password]', params[:password], :class => "form-control" %> </div>
+              <div> Password: <%= password_field_tag 'session[password]', params[:password], :class => "form-control" %> </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='/auth/facebook'">Sign In with Facebook</button>
@@ -118,12 +125,12 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= form_tag users_path, :id => "sign-up-form" do %>
+            <%= form_tag users_path, :id => "sign-up-form", remote: true do %>
               <div> Email: <%= text_field_tag 'user[email]', params[:email], :class => "form-control" %> </div>
               <div> Username: <%= text_field_tag 'user[username]', params[:username], :class => "form-control" %> </div>
               <div> First name: <%= text_field_tag 'user[first_name]', params[:first_name], :class => "form-control" %> </div>
               <div> Last name: <%= text_field_tag 'user[last_name]', params[:last_name], :class => "form-control" %> </div>
-              <div> Password: <%= text_field_tag 'user[password]', params[:password], :class => "form-control" %> </div>
+              <div> Password: <%= password_field_tag 'user[password]', params[:password], :class => "form-control" %> </div>
           </div>
           <div class="modal-footer">
             <%= submit_tag "Sign Up", :name => nil, :class=>"btn btn-primary" %>

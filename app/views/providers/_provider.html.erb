@@ -1,14 +1,14 @@
-<div id="formProvider">
-<h1>Profile</h1>________________________<br>
-<div><span class="provText">  Username: </span> <%= current_user.username %></div><br>
-<div><span class="provText">  Price: </span> <%= current_user.price %></div><br>
-<div><span class="provText">First Name: </span> <%= current_user.first_name %></div><br>
-<div><span class="provText">Last Name: </span> <%= current_user.last_name %></div><br>
-<div><span class="provText">Password: </span> ******</div><br>
-<div><span class="provText">Language: </span>  <%= current_user.language%></div><br>
-<div><span class="provText">Gender:  </span> <%= current_user.gender %></div><br>
-<div><span class="provText">Treatment: </span> <%= current_user.treatment %></div><br>
-<div><span class="provText">Location: </span> <%= current_user.location %></div><br>
-<div><span class="provText">Email: </span> <%= current_user.email %></div><br>
-  <%= link_to 'Edit', edit_provider_path(@provider), :class => "editProvider" %>
+<div id="form_provider">
+
+<div><span class="prov_text">Username: </span> <%= current_user.name %></div>
+<div><span class="prov_text">Treatment: </span> <%= current_user.treatment %></div>
+<div><span class="prov_text">Price: </span> <%= current_user.price %></div>
+<div><span class="prov_text">First Name: </span> <%= current_user.first_name %></div> 
+<div><span class="prov_text">Last Name: </span> <%= current_user.last_name %></div>
+<div><span class="prov_text">Language: </span>  <%= current_user.language%></div>
+<div><span class="prov_text">Email: </span> <%= current_user.email %></div>
+<div><span class="prov_text">Location: </span> <%= current_user.location %></div>
+<div><span class="prov_text">Gender:  </span> <%= current_user.gender %></div>
+<br><br>
+<%= link_to 'Edit', edit_provider_path(@provider), :class => "editProvider" %>
 </div>
