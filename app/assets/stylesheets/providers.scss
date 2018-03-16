@@ -9,10 +9,29 @@ div#profileForm {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: white;
   width: 80vw;
-  text-align: center;
+  text-align: left;
+  margin-left: 16vw;
+  margin-top: 1vw;
+}
+
+button {
+    border-radius: 40px;
+    color: black;
+    padding-right: 2vw;
+    padding-left: 2vw;
+}
+
+.buttonProvider {
+  margin-left: 5vw;
+}
+
+#ProfileButton {
   margin-left: 10vw;
 }
 
+#provider_profile_picture {
+  margin-bottom: 5%;
+}
 
 @media only screen and (max-width: 1178px){
   div#profileForm{
@@ -38,8 +57,6 @@ div#profileForm {
 .btn-group #ProfileButton{
   font-size: 4vw;
   text-align: center;
-
-}
 }
 
 div#imageProvider img {
