@@ -3,9 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<div id="profileForm">
+<div id="profile_form">
 <div class="profileContainer">
-<div id="imageProvider">
+<div id="provider_profile_picture">
     <% if @patient.present? %>
     <%= image_tag @patient.image.first, :size => "470x545"%>
     <% else %>
@@ -29,7 +29,7 @@
 
  <div id="myModal" class="modal">
   <span class="close">×</span>
-  <%= image_tag @patient.image.first, :size => "300x400", :class => "modal-content", :id => "imageProvider"%>
+  <%= image_tag @patient.image.first, :size => "300x400", :class => "modal-content", :id => "provider_profile_picture"%>
   <div id="caption"></div>
 </div>
 
@@ -42,8 +42,8 @@
 var modal = document.getElementById('myModal');
 
 
-var img = document.getElementById('imageProvider');
-var modalImg = document.getElementById("imageProvider");
+var img = document.getElementById('provider_profile_picture');
+var modalImg = document.getElementById("provider_profile_picture");
 var captionText = document.getElementById("caption");
 img.onclick = function(){
     modal.style.display = "block";
