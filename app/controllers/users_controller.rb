@@ -69,13 +69,13 @@ class UsersController < Clearance::UsersController
   end
 
   def verification
-  @user_id = User.find(params[:id])
+    @user_id = User.find(params[:id])
   end
 
   def verification_submit
-    if @user_id.provider = true
-      @user.update(@user.provider)
-    end
+      @user = User.find(current_user)
+      @user.update(type: "Provider") 
+      redirect_to root_url
   end  
 
   private
