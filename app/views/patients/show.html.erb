@@ -7,7 +7,11 @@
 <div class="profileContainer">
 <div id="provider_profile_picture">
     <% if @patient.present? %>
-    <%= image_tag @patient.image.first, :size => "470x545"%>
+      <%if @patient.image.first == nil %>
+        <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
+      <%else%>
+        <%= image_tag @patient.image.first, :size => "470x545"%>
+      <%end%>
     <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>
@@ -51,3 +55,5 @@ span.onclick = function() {
     modal.style.display = "none";
 }
 </script>
+
+<!-- Delete me! I don't amount to anything -->
