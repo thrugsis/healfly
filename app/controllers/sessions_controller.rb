@@ -23,4 +23,12 @@ class SessionsController < Clearance::SessionsController
     redirect_to root_path, :notice => @notice
   end
 
+  def destroy
+    current_user.destroy
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'User was successfully logged out.' }
+      format.json { head :no_content }
+    end
+  end
+
 end
