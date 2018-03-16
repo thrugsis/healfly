@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20180316090532) do
     t.time     "start_time"
     t.time     "end_time"
     t.date     "date"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.boolean  "payment_status", default: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "payment_status"
     t.integer  "payment_amount"
     t.index ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
     t.index ["provider_id"], name: "index_appointments_on_provider_id", using: :btree

@@ -28,6 +28,7 @@
   margin-left: 0;
   margin-left: 10vw;
   }
+}
 
 #image {
   width: 80vw;
@@ -45,8 +46,6 @@
 
 #provider_profile_picture {
   float: left;
-  // margin-bottom: 5%;
-  // margin-left: 5%;
 }
 
 
@@ -58,7 +57,7 @@
 
 #editProvider{
   top: 50%;
-  margin-left: 40%
+  margin-left: 40%;
 }
 
 a.editProvider{
@@ -224,4 +223,4 @@ div.flowAppoint{
   position: absolute;
   z-index: 10;
   display: inline-block;
-} }
+}}
