@@ -1,10 +1,11 @@
 class User < ApplicationRecord
   include Clearance::User
   has_many :appointments, :dependent => :delete_all
+  has_many :images
+  has_many :authentications, :dependent => :destroy
 
   scope :patients, -> { where(type: 'Patients')}
   scope :providers, -> { where(type: 'Providers')}
-  has_many :authentications, :dependent => :destroy
 
  def self.create_with_auth_and_hash(authentication, auth_hash)
    user = self.create!(
@@ -12,7 +13,7 @@ class User < ApplicationRecord
      username: auth_hash["info"]["name"],
      first_name: auth_hash["info"]["name"],
      last_name: auth_hash["info"]["name"],
-     image: [auth_hash["info"]["image"]],
+     default_picture: auth_hash["info"]["image"],
      email: auth_hash["extra"]["raw_info"]["email"],
      type: "Patient",
      password: SecureRandom.base64
