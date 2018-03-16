@@ -1,124 +1,57 @@
-// Place all the styles related to the providers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-div#profileForm {
-	margin: 2%;
-	position: absolute;
-	// background-color: rgba(63, 191, 136, 0.94);
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	color: white;
-	width: 100vw;
-	color: black;
-	width: 80vw;
-	text-align: center;
-	margin-left: 10vw;
+#profile_form {
+  font-family: Cagliostro;
   position: absolute;
-  background-color: rgba(56, 56, 56, 0.56);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  color: white;
+  color: black;
   width: 80vw;
-  text-align: center;
-  margin-left: 10vw;
+  text-align: left;
+  margin-left: 16vw;
+  margin-top: 1vw;
 }
 
+.buttonProvider {
+  border: none;
+  margin-left: 5vw;
+}
+
+#provider_profile_picture {
+  margin-bottom: 5%;
+}
 
 @media only screen and (max-width: 1178px){
-	div#profileForm{
-	width: 80vw;
-	margin-left: 0;
-	margin-left: 10vw;
-	}
-
-	div#imageProvider img {
-	width: 80vw;
-	float: left;
-}
-
-
-
-div#imageProvider  {
-	width: 25vw;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	float: left;
-	background-color: rgba(22, 28, 28, 0.83);
-	height: 100vw;
-	text-align: center;
-}
-
-div#imageProvider img {
-	border-radius: 50%;
-	border: 3px solid rgba(63, 191, 136, 0.94);
-
-  div#profileForm{
+  div#profile_form{
   width: 80vw;
   margin-left: 0;
   margin-left: 10vw;
   }
 
-  div#imageProvider img {
+#image {
   width: 80vw;
   float: left;
+  margin-right: 5vw;
 }
 
-.btn-group .buttonProvider{
-  width: 40vw;
-  }
-
-.btn-group #AppointmentButton{
-  font-size: 4vw;
-  text-align: center;
+.prov_text {
+  margin-left: 10vw;
 }
 
-.btn-group #ProfileButton{
-  font-size: 4vw;
-  text-align: center;
+#AppointmentButton {
 
 }
-}
 
-div#imageProvider img {
-
-<<<<<<< HEAD
-  float: left;]
-}
-
-
-div#formProvider{]
-	height: 100vw;
-	padding-top: 5%;
-	padding-left: 10%;
+#provider_profile_picture {
   float: left;
+  // margin-bottom: 5%;
+  // margin-left: 5%;
 }
 
-div#editProvider{
-	top: 50%;
-	margin-left: 40%
-}
 
-a.editProvider{
-	display: inline-block;
-  	font-size: 24px;
-  	cursor: pointer;
-  	text-align: center;
-  	text-decoration: none;
-  	outline: none;
-  	color: #fff;
-  	background-color: white;
-  	border: none;
-  	border-radius: 15px;
-  	box-shadow: 0 9px #999;
-  	margin-bottom: 10%;
-  	padding: 5px;
-  	padding-left: 5%;
-  	padding-right: 5%;]
+#form_provider{
   overflow: scroll;
   overflow-x: hidden;
   height: 455px;
 }
 
-div#editProvider{
+#editProvider{
   top: 50%;
   margin-left: 40%
 }
@@ -131,7 +64,7 @@ a.editProvider{
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: grey;
+    background-color: red;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -145,15 +78,6 @@ a.editProvider:active {
   transform: translateY(4px);
 }
 
-div.textProvider {
-	text-align: center;
-	padding: 5%;
-	color: white;
-}
-
-.btn-group .buttonProvider {
-    border: none;
-    color: white;
 div.overlay {
   position: absolute;
   bottom: 100%;
@@ -166,7 +90,7 @@ div.overlay {
   transition: .5s ease;
 }
 
-div#imageProvider:hover .overlay{
+div#provider_profile_picture:hover .overlay{
   bottom: 0;
   height: 100%;
 }
@@ -185,22 +109,12 @@ div.textProvider {
     font-size: 16px;
     cursor: pointer;
     font-size: 25px;
-    background-color:rgba(22, 28, 28, 0.0);
     background-color:hsla(0, 0%, 25%, 0.23);
     padding-left: 68px;
     padding-right: 60px;
     padding-top: 25px;
     padding-bottom: 25px;
     border-bottom: 1px solid white;
-    display: block;
-    width: 25vw;
-}
-
-.btn-group .buttonProvider:hover {
-	background-color:hsla(0, 0%, 25%, 0.1);
-	color: grey;
-	-webkit-transition-duration: 0.5s;
-	transition-duration: 0.5s;
 }
 
 .btn-group .buttonProvider:hover {
@@ -211,27 +125,10 @@ div.textProvider {
 }
 
 
-
+/* The Modal (background) */
+  
 
 img.imgtop {
-	position: absolute;
-	width: 100%;
-	top: 0;
-}
-
-div.flowAppoint{
-	overflow: scroll;
-	overflow-x: hidden;
-	height: 455px;
-}
-.show-button {
-	border: 1px solid #EAEAEA;
-	border-radius: 5px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;	
-	height: 100%;
   position: absolute;
   width: 100%;
   top: 0;
@@ -242,6 +139,7 @@ div.flowAppoint{
   overflow-x: hidden;
   height: 455px;
 }
+
 .show-button {
   border: 1px solid #EAEAEA;
   border-radius: 5px;
@@ -254,45 +152,6 @@ div.flowAppoint{
 
 
 .col-3{ 
-	padding:0px;
-	height:330px;
-	margin-left:22px;
-	margin-bottom: 50px;
-	max-width: 23%;
-}
-
-.image-container {
-	height:100%;
-	margin-bottom: 0px;
-	position: relative;
-	border-radius: 5px;
-}
-
-.provider-image {
-	width: 100%;
-	height:100%;
-	margin-bottom: 0px;
-	border-radius: 5px;
-}
-
-.description-container {		
-	width:100%;
-	background-color: rgb(3,1,1);
-	opacity: 0.79;
-	margin-bottom: 0px;
-	border-radius: 5px;
-	position: absolute;
-	left:0px;
-	bottom:0px;
-	padding: 3.5px 0px 3.5px 0px;	
-}
-
-.provider-listing-description {
-	font-size: 13.3px;
-	color: white;
-	margin-bottom: 1px;
-	margin-left:3px;
-	font-family: arial;
   padding:0px;
   height:330px;
   margin-left:22px;
@@ -340,14 +199,12 @@ div.flowAppoint{
   font-size:13px;
 }
 
-.center-search-bar{
-  // border:1px solid blue;
+.center-search-bar {
   text-align: center;
   margin-bottom: 30px;
 }
 
-.search-bar{
-  // border:1px solid red;
+.search-bar {
   border-radius: 3px;
   display: inline-block;
   text-align: center;
@@ -361,13 +218,4 @@ div.flowAppoint{
   position: absolute;
   z-index: 10;
   display: inline-block;
-}
-}
-
-
-
-
-
-
-
-
+} }
