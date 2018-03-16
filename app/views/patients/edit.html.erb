@@ -108,7 +108,16 @@
 		    </div>
 
 		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3" for="patient_image">
+		        <label class="text-right col-sm-3">
+		        	Update default picture
+		        </label>
+		        <div class="col-sm-9">
+		        	<%= f.file_field :default_picture, style:'padding-left:10px;'  %>
+		        </div>
+		    </div>
+
+		    <div class="row row-condensed space-4">
+		        <label class="text-right col-sm-3">
 		        	Update image 
 		        </label>
 		        <div class="col-sm-9">

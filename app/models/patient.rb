@@ -4,5 +4,6 @@ class Patient < User
 
   mount_uploaders :image, ImageUploader
   mount_uploaders :medical_history, MedicalHistoryUploader
+  mount_uploaders :default_picture, DefaultPictureUploader
 
 end
