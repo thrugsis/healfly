@@ -35,18 +35,15 @@ class UsersController < Clearance::UsersController
       if @user.save
         sign_in(@user)
         if @user.patient?
-          redirect_to edit_patient_path(@user)
+          format.html { redirect_to edit_patient_path(@user) }
         else
-          redirect_to edit_provider_path(@user) 
+          format.html { redirect_to edit_provider_path(@user) } 
         end
       else
         format.js 
-        # @user = User.new(user_params) #where to put this
       end 
     end
   end
-
-  # format.html { redirect_to root_url, notice: 'Email already taken.' }
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
