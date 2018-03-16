@@ -20,34 +20,43 @@
     </div>
   </div>  
 
+
+  <%if @providers.length > 0%>
+
+      <div class="container">
+        <div class="row">    
+
+          <% @providers.each do |provider| %>
+
+               <div class="col-3">        
+
+                    <%provider.image.each do |img| %>
+                      <p class ="image-container"> <%= image_tag img.url, class: "provider-image"%> </p>
+                    <%end%>
+
+                    <div class="description-container">
+                      <p class="provider-listing-description"> Name: <%= provider.name%> </p>       
+                      <p class="provider-listing-description"> Treatment: <%= provider.treatment%> </p>
+                      <p class="provider-listing-description"> Location: <%= provider.location%> </p>
+                      <p class="provider-listing-description"> Language: <%= provider.language%> </p>  
+                    </div>
+
+                    <%= link_to raw('<span></span>'), new_provider_appointment_path(provider), class: "show-button" %> 
+                    <%#= link_to 'Edit', edit_provider_path(provider) %>
+                    <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+               </div>
+
+          <% end %>
+
+        </div>
+      </div>
+
+  <%else%>
+      
+      <p class="no-search-result"><%= "Your search keyword does not match any result. Kindly try again." %></p>
   
-  <div class="container">
-    <div class="row">    
+  <%end%>
 
-      <% @providers.each do |provider| %>
-
-           <div class="col-3">        
-
-                <%provider.image.each do |img| %>
-                  <p class ="image-container"> <%= image_tag img.url, class: "provider-image"%> </p>
-                <%end%>
-
-                <div class="description-container">
-                  <p class="provider-listing-description"> Name: <%= provider.name%> </p>       
-                  <p class="provider-listing-description"> Treatment: <%= provider.treatment%> </p>
-                  <p class="provider-listing-description"> Location: <%= provider.location%> </p>
-                  <p class="provider-listing-description"> Language: <%= provider.language%> </p>  
-                </div>
-
-                <%= link_to raw('<span></span>'), new_provider_appointment_path(provider), class: "show-button" %> 
-                <%#= link_to 'Edit', edit_provider_path(provider) %>
-                <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-           </div>
-
-      <% end %>
-
-    </div>
-  </div>
 
 </div>
