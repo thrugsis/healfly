@@ -18,7 +18,6 @@
             <button id="certBtn", class="btn btn-outline-primary btn-sm">Certification</button>
             <div id="myModal" class="modal">
               <div class="modal-content-qualification">
-                <span class="close">&times;</span>
                 <% @provider.qualification.each do |qua| %>
                   <%= image_tag qua.url, class: "qualification-image" %>
                 <%end%>
