@@ -24,14 +24,6 @@
 <div class="btn-group"> <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%></div><br>
- 
-
-
- <div id="myModal" class="modal">
-  <span class="close">×</span>
-  <%= image_tag @patient.image.first, :size => "300x400", :class => "modal-content", :id => "provider_profile_picture"%>
-  <div id="caption"></div>
-</div>
 
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">
