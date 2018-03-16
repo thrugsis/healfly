@@ -7,11 +7,7 @@
 <div class="profileContainer">
 <div id="provider_profile_picture">
     <% if @patient.present? %>
-      <%if @patient.image.first == nil %>
-        <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
-      <%else%>
-        <%= image_tag @patient.image.first, :size => "470x545"%>
-      <%end%>
+    <%= image_tag @patient.default_picture, :size => "470x545"%>
     <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>
@@ -28,6 +24,17 @@
 <div class="btn-group"> <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%></div><br>
+<<<<<<< HEAD
+ 
+
+
+ <div id="myModal" class="modal">
+  <span class="close">×</span>
+  <%= image_tag @patient.default_picture, :size => "300x400", :class => "modal-content", :id => "provider_profile_picture"%>
+  <div id="caption"></div>
+</div>
+=======
+>>>>>>> 81c1953227e3a948c94d68b795fefbe00d36dcf0
 
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">

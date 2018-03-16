@@ -48,12 +48,14 @@
                       <%else%>
                         <%= provider_path(current_user.id) %> 
                       <%end%>>
-                    <%if current_user.image.first == nil %>
+
+        <%if current_user.default_picture == nil %>
                       <span class="no-underline"> <%= current_user.email %> </span>
                     <%else%>
-                      <img src=<%= current_user.image.first %> height=30vw width=30vw></a>
+                      <img src=<%= current_user.default_picture %> height=30vw width=30vw></a>
                     <%end%>
                     <span class="no-underline"> <%= p" | " %>
+
                     <%= link_to 'sign out', sign_out_path, method: :delete, class: "nav-item", id:"beige_text" %>
                   </li>
                 </ul>

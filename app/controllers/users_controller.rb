@@ -30,6 +30,7 @@ class UsersController < Clearance::UsersController
     else
       @user = Provider.new(user_params)
     end
+
    
     respond_to do |format|
       if @user.save
@@ -86,7 +87,7 @@ class UsersController < Clearance::UsersController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token, :price, :location, :name, :treatment, :language, :image, :qualification)
+      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, {image:[]}, {medical_history:[]}, :remember_token, :price, :location, :name, :treatment, :language, {qualification:[]})
     end
 
 end
