@@ -31,18 +31,19 @@ class UsersController < Clearance::UsersController
       @user = Provider.new(user_params)
     end
 
-    if @user.save
-      sign_in(@user)
-      if @user.patient?
-        redirect_to edit_patient_path(@user)
+   
+    respond_to do |format|
+      if @user.save
+        sign_in(@user)
+        if @user.patient?
+          format.html { redirect_to edit_patient_path(@user) }
+        else
+          format.html { redirect_to edit_provider_path(@user) } 
+        end
       else
-        redirect_to edit_provider_path(@user)
-      end
-    else
-      flash.now[:error] = "Email already taken"
-      @user = User.new(user_params)
-      render action: "new"
-    end 
+        format.js 
+      end 
+    end
   end
 
   # PATCH/PUT /users/1
