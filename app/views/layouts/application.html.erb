@@ -95,7 +95,7 @@
             <%= form_tag session_path, :id => "SearchForm" do %>
               <div> Email: <%= text_field_tag 'session[email]', params[:email], :class => "form-control" %> </div>
               <br/>
-              <div> Password: <%= text_field_tag 'session[password]', params[:user], :class => "form-control" %> </div>
+              <div> Password: <%= text_field_tag 'session[password]', params[:password], :class => "form-control" %> </div>
           </div>
           <div class="modal-footer">
             <%= submit_tag "Sign In", :name => nil, :class=>"btn btn-primary" %>
