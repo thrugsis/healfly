@@ -7,6 +7,7 @@ class Provider < User
 
   mount_uploaders :image, ImageUploader
   mount_uploaders :qualification, QualificationUploader
+  mount_uploaders :default_picture, DefaultPictureUploader
   
   def provider?
     self.type == "Provider"
