@@ -30,23 +30,21 @@ class UsersController < Clearance::UsersController
     else
       @user = Provider.new(user_params)
     end
+
    
     respond_to do |format|
       if @user.save
         sign_in(@user)
         if @user.patient?
-          redirect_to edit_patient_path(@user)
+          format.html { redirect_to edit_patient_path(@user) }
         else
-          redirect_to edit_provider_path(@user) 
+          format.html { redirect_to edit_provider_path(@user) } 
         end
       else
         format.js 
-        # @user = User.new(user_params) #where to put this
       end 
     end
   end
-
-  # format.html { redirect_to root_url, notice: 'Email already taken.' }
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -89,7 +87,7 @@ class UsersController < Clearance::UsersController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, :image, :medical_history, :remember_token, :price, :location, :name, :treatment, :language, :image, :qualification)
+      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, {image:[]}, {medical_history:[]}, :remember_token, :price, :location, :name, :treatment, :language, {qualification:[]})
     end
 
 end

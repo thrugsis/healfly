@@ -9,6 +9,12 @@
     <div class="search-bar">
       <%= form_tag search_path, remote: true do%>
 
+    <h1></h1>
+
+      <div class="search-bar">
+        <%= form_tag search_path, remote: true do%>
+
+
         <%= text_field_tag "treatment", nil, placeholder: "by treatment", id:"search-field"%>
         <%= text_field_tag "location", nil, placeholder: "by location", id:"search-field"%>
         <%= text_field_tag "language", nil, placeholder: "by language", id:"search-field"%>
@@ -19,6 +25,12 @@
       <%end%>
     </div>
   </div>  
+
+
+
+          <%= submit_tag "Search"%>
+        <%end%>
+      </div>
 
 
   <%if @providers.length > 0%>
