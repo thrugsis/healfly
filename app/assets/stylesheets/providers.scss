@@ -13,9 +13,19 @@
   margin-top: 1vw;
 }
 
+button {
+    border-radius: 40px;
+    color: black;
+    padding-right: 2vw;
+    padding-left: 2vw;
+}
+
 .buttonProvider {
-  border: none;
   margin-left: 5vw;
+}
+
+#ProfileButton {
+  margin-left: 10vw;
 }
 
 #provider_profile_picture {
