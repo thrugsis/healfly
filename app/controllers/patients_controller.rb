@@ -1,7 +1,9 @@
+
 class PatientsController < UsersController
 
+  before_action :patient_allowed?
+
   def index
-    public_allowed?(user: current_user, action: @patients)
     @patients = Patient.all
   end
 
@@ -11,7 +13,7 @@ class PatientsController < UsersController
   end
 
   def show
-    patient_allowed?(user: current_user, action: @patient)
+    # patient_allowed?(user: current_user, action: @patient)
     @patient = Patient.find(params[:id])
   end
 
@@ -20,6 +22,12 @@ class PatientsController < UsersController
   def user_params
       params.require(:patient).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, {image:[]}, {medical_history:[]}, :remember_token, :price, :location, :name, :treatment, :language, {image:[]}, {qualification:[]})
   end
-end
 
-# params.fetch(:patient, {})
+  def patient_allowed?
+    unless current_user.patient?
+      flash[:danger] = "Sorry, as a Provider, you do not have access to this page."
+      redirect_back fallback_location: root_path
+      # return redirect_back fallback_location: root_path, notice: "Sorry, as a Provider, you do not have access to this page."
+    end
+  end
+end

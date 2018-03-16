@@ -131,6 +131,14 @@
               <div> First name: <%= text_field_tag 'user[first_name]', params[:first_name], :class => "form-control" %> </div>
               <div> Last name: <%= text_field_tag 'user[last_name]', params[:last_name], :class => "form-control" %> </div>
               <div> Password: <%= password_field_tag 'user[password]', params[:password], :class => "form-control" %> </div>
+              <div class="button-field">
+                <br/>
+                <span class="radio-button-padding"> Are you a: </span>
+                <div> 
+                  <span class="radio-button-padding"> Patient <%= radio_button_tag "user[type]", "Patient", true, class: "radio-button" %> </span>
+                  <span class="radio-button-padding"> Provider <%= radio_button_tag "user[type]", "Provider", false, class: "radio-button" %> </span>
+                </div>
+              </div>
           </div>
           <div class="modal-footer">
             <%= submit_tag "Sign Up", :name => nil, :class=>"btn btn-primary" %>
