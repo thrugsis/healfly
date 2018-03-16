@@ -59,8 +59,7 @@ class UsersController < Clearance::UsersController
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
+
   def destroy
     @user.destroy
     respond_to do |format|
@@ -68,6 +67,16 @@ class UsersController < Clearance::UsersController
       format.json { head :no_content }
     end
   end
+
+  def verification
+  @user_id = User.find(params[:id])
+  end
+
+  def verification_submit
+    if @user_id.provider = true
+      @user.update(@user.provider)
+    end
+  end  
 
   private
     # Use callbacks to share common setup or constraints between actions.
