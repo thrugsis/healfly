@@ -1,4 +1,4 @@
-// Place all the styles related to the providers controller here.
+/ Place all the styles related to the providers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -40,15 +40,11 @@
 }
 
 #AppointmentButton {
-
 }
 
 #provider_profile_picture {
   float: left;
-  // margin-bottom: 5%;
-  // margin-left: 5%;
 }
-
 
 #form_provider{
   overflow: scroll;
@@ -58,7 +54,7 @@
 
 #editProvider{
   top: 50%;
-  margin-left: 40%
+  margin-left: 40%;
 }
 
 a.editProvider{
@@ -158,7 +154,7 @@ div.flowAppoint{
 }
 
 
-.col-3{ 
+.col-3 { 
   padding:0px;
   height:330px;
   margin-left:22px;
@@ -224,4 +220,4 @@ div.flowAppoint{
   position: absolute;
   z-index: 10;
   display: inline-block;
-} }
+}}
