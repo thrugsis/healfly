@@ -2,35 +2,62 @@
 
         <div class="provider-info-container">
 
+
+            <% @provider.image.each do |img| %>
+              <p class="appointment-image-container"><%= image_tag img.url, class: "appointment-image" %></p>
+            <%end%>
+
+            <span>Name: </span><%= @provider.name %><br><br>
+            <span>Location: </span><%= @provider.location %><br><br>
+            <span>Price: </span><%= @provider.price %><br><br>
+            <span>Treatment: </span><%= @provider.treatment %><br><br>
+            <span>Language: </span><%= @provider.language %><br><br>
+
+
+
+            <button id="certBtn", class="btn btn-outline-primary btn-sm">Certification</button>
+            <div id="myModal" class="modal">
+              <div class="modal-content-qualification">
+                <span class="close">&times;</span>
+                <% @provider.qualification.each do |qua| %>
+                  <%= image_tag qua.url, class: "qualification-image" %>
+                <%end%>
+              </div>
+            </div>
+
           <% @provider.image.each do |img| %>
             <p class="appointment-image-container"><%= image_tag img.url, class: "appointment-image" %></p>
           <%end%>
+
 <iframe class ="map"
  height="500px"
  frameborder="0" style="border:0"
  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBX8hQcoSEtucwisPltvD2u0Xsl7nZg77I
    &q=<%= (@provider.location).gsub(/(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)\s?(\S*)/, '\1+\2+\3+\4+\5+\6+\7+\8')%>&q=seattle+washington&q=arizona" allowfullscreen>
 </iframe><br>
+
           <span>Name: </span><%= @provider.name %><br><br>
           <span>Location: </span><%= @provider.location %><br><br>
           <span>Price: </span><%= @provider.price %><br><br>
           <span>Treatment: </span><%= @provider.treatment %><br><br>
           <span>Language: </span><%= @provider.language %><br><br>
 
+
         </div>
 
 
         <div class="create-appointment-container">
 
-          <h1 class="create-appointment-heading">New Appointment</h1>  
+            <h1 class="create-appointment-heading">New Appointment</h1>  
 
-          <%= form_for ([@provider,@appointment]) do |s| %>
-            <p> <%= s.label :date, "Date" %> <%= s.text_field :date, id:"dateAppoint"%> </p>
-            <p><%= s.label :start_time, "Time" %> <%= s.time_select :start_time, :ignore_date => true %></p> 
-            <%= s.submit %>
-          <% end %>
+            <%= form_for ([@provider,@appointment]) do |s| %>
+              <p> <%= s.label :date, "Date" %> <%= s.text_field :date, id:"dateAppoint"%> </p>
+              <p><%= s.label :start_time, "Time" %> <%= s.time_select :start_time, :ignore_date => true %></p> 
+              <%= s.submit %>
+            <% end %>
 
-          <%= link_to 'Back', provider_appointments_path %>
+            <%= link_to 'Back', provider_appointments_path %>
+
         </div>
 
     </div>
@@ -43,5 +70,35 @@
   flatpickr('#dateAppoint', {dateFormat: 'd-m-Y'})
   // flatpickr('#startAppoint', {dateFormat: 'h:i',enableTime: true,noCalendar: true,time_24hour: true})
   // flatpickr('#endAppoint', {dateFormat: 'h:i',enableTime: true,noCalendar: true,time_24hour: true})
+</script>
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("certBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
 
