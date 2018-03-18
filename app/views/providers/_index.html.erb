@@ -2,23 +2,26 @@
 
   <p id="notice"><%= notice %></p>
 
-  <h1>Providers</h1>
+  <div class="header-container">      <!--for centering-->
 
+      <div class="header-background"></div>
 
-  <div class="center-search-bar">
-    <div class="search-bar">
-      <%= form_tag search_path, remote: true do%>
+      <h1 class="header-title">The Ultimate Travel Nursing Contact Checklist <p class="header-title-healfly">healfly.com<p> </h1>
 
-        <%= text_field_tag "treatment", nil, placeholder: "by treatment", id:"search-field"%>
-        <%= text_field_tag "location", nil, placeholder: "by location", id:"search-field"%>
-        <%= text_field_tag "language", nil, placeholder: "by language", id:"search-field"%>
-        <%= text_field_tag "min_price", nil, placeholder: "min price", id:"search-field"%>
-        <%= text_field_tag "max_price", nil, placeholder: "max price", id:"search-field"%>
+      <div class="search-container">
+            <%= form_tag search_path, remote: true do%>
+                <p class="search-field"><%= text_field_tag "treatment", nil, placeholder: "by treatment", id:"search-field"%></p>
+                <p class="search-field"><%= text_field_tag "location", nil, placeholder: "by location", id:"search-field"%></p>
+                <p class="search-field"><%= text_field_tag "language", nil, placeholder: "by language", id:"search-field"%></p>
+                <p class="search-field">
+                    <%= text_field_tag "min_price", nil, placeholder: "min price", id:"search-field-price"%> 
+                    <%= text_field_tag "max_price", nil, placeholder: "max price", id:"search-field-price"%>
+                </p>
+                <%= submit_tag "Search", class:"btn btn-danger search-button"%>
+            <%end%>
+      </div>
 
-        <%= submit_tag "Search"%>
-      <%end%>
-    </div>
-  </div>  
+  </div>
 
 
   <%if @providers.length > 0%>
@@ -54,7 +57,7 @@
 
   <%else%>
       
-      <p class="no-search-result"><%= "Your search keyword does not match any result. Kindly try again." %></p>
+      <p class="no-search-result"><i><%= "Your search keyword does not match any result. Kindly try again." %></i></p>
   
   <%end%>
 
