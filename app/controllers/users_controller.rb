@@ -25,7 +25,7 @@ class UsersController < Clearance::UsersController
   # POST /users
   # POST /users.json
   def create
-    if params[:user][:type] == "patient"
+    if params[:user][:type] == "Patient"
       @user = Patient.new(user_params)
     else
       @user = Provider.new(user_params)
@@ -33,6 +33,7 @@ class UsersController < Clearance::UsersController
 
    
     respond_to do |format|
+      byebug
       if @user.save
         sign_in(@user)
         if @user.patient?
