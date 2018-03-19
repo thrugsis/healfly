@@ -33,7 +33,6 @@ class UsersController < Clearance::UsersController
 
    
     respond_to do |format|
-      byebug
       if @user.save
         sign_in(@user)
         if @user.patient?
