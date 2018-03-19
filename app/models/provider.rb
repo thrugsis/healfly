@@ -5,9 +5,10 @@ class Provider < User
 	has_many :appointments, :dependent => :delete_all
 
 
-  mount_uploaders :image, ImageUploader
   mount_uploaders :qualification, QualificationUploader
-  mount_uploaders :default_picture, DefaultPictureUploader
+  mount_uploaders :image, ImageUploader
+  mount_uploader :profile_picture, ProfilePictureUploader
+
   
   def provider?
     self.type == "Provider"

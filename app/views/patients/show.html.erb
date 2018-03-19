@@ -6,11 +6,14 @@
 <div id="profile_form">
 <div class="profileContainer">
 <div id="provider_profile_picture">
-    <% if @patient.present? %>
-    <%= image_tag @patient.default_picture, :size => "470x545"%>
+    <% if @patient.profile_picture.url != nil %>
+    <%= image_tag @patient.profile_picture, :size => "470x545"%>
+    <% elsif @patient.fb_picture %>
+    <%= image_tag @patient.fb_picture, :size => "470x545"%>
     <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>
+
     
   </div>
   </div>
@@ -29,8 +32,8 @@
 
  <div id="myModal" class="modal">
   <span class="close">×</span>
-  <%= image_tag @patient.default_picture, :size => "300x400", :class => "modal-content", :id => "provider_profile_picture"%>
-  <div id="caption"></div>
+  <center><%= image_tag @patient.fb_picture,  width:300, style:'padding-top:25vh;', :id => "provider_profile_picture"%>
+  <div id="caption">Your profile picture</div></center>
 </div>
 
 <div id ="appointmentShow"></div>
@@ -40,5 +43,22 @@
 </div>
 <script>
 
+
+var img = document.getElementById('provider_profile_picture');
+var modalImg = document.getElementById("provider_profile_picture");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+modal.onclick = function() { 
+    modal.style.display = "none";
+}
 </script>
 

@@ -25,7 +25,7 @@ class UsersController < Clearance::UsersController
   # POST /users
   # POST /users.json
   def create
-    if params[:user][:type] == "patient"
+    if params[:user][:type] == "Patient"
       @user = Patient.new(user_params)
     else
       @user = Provider.new(user_params)
@@ -70,7 +70,7 @@ class UsersController < Clearance::UsersController
   end
 
   def verification
-    @user_id = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def verification_submit
@@ -87,7 +87,7 @@ class UsersController < Clearance::UsersController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, {image:[]}, {medical_history:[]}, :remember_token, :price, :location, :name, :treatment, :language, {qualification:[]})
+      params.require(:user).permit(:email, {profile_picture_json:[]}, :profile_picture, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, {image:[]}, {medical_history:[]}, {default_picture:[]}, :remember_token, :price, :location, :name, :treatment, :language, {qualification:[]})
     end
 
 end
