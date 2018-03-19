@@ -249,6 +249,7 @@ div.textProvider {
   margin-left: 30%;
   text-align: center;
   margin-right: 2vw;
+  position: absolute;
 }
 
 #s_search_container_row {
@@ -317,14 +318,11 @@ div.textProvider {
   display: inline;
 }
 
-#search_background {
-  width: 100%;
-}
-
 div#search_form {
-  position: absolute;
-    top: 6vw;
-    right: 8vw;
+  background-color: #F0F8FF;
+  height: 300px;
+  margin-bottom: 2vw;
+
 }
 // PATIENT PROFILE ---------------------------------------------------------------------
 
