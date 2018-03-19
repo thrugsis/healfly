@@ -6,7 +6,7 @@
 #profile_form {
   font-family: Cagliostro;
   position: absolute;
-  color: red;
+  color: black;
   width: 80vw;
   text-align: left;
   margin-left: 16vw;
@@ -53,31 +53,9 @@
   height: 455px;
 }
 
-#editProvider{
+#edit_profile_button{
   top: 50%;
   margin-left: 40%;
-}
-
-a.editProvider{
-  display: inline-block;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: red;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    margin-left: 75%;
-    margin-bottom: 10%;
-}
-
-a.editProvider:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
 }
 
 div.overlay {
@@ -354,5 +332,8 @@ div.flowAppoint{
   display: inline;
 }
 
+// PATIENT PROFILE ---------------------------------------------------------------------
 
-
+.patient_text {
+  margin-left: 10vw;
+}
