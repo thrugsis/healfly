@@ -43,14 +43,13 @@ class ProvidersController < UsersController
   # PATCH/PUT /providers/1
   # PATCH/PUT /providers/1.json
   def update
-    respond_to do |format|
-      if @provider.update(provider_params)
-        format.html { redirect_to @provider, notice: 'Provider was successfully updated.' }
-        format.json { render :show, status: :ok, location: @provider }
-      else
-        format.html { render :edit }
-        format.json { render json: @provider.errors, status: :unprocessable_entity }
-      end
+    @provider = Provider.find(params[:id])
+    @provider = @provider.update(provider_params)
+
+    if @provider.save
+      redirect_to root_url, :flash => { :success => 'Provider was successfully updated.' } 
+    else
+      redirect_to provider_path(@provider), :flash => { :danger => "Could not update Provider profile." }
     end
   end
 
