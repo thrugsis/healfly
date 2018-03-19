@@ -41,6 +41,11 @@
 }
 
 #AppointmentButton {
+font-size: 1em;
+}
+
+#ProfileButton {
+font-size: 1em;
 }
 
 #provider_profile_picture {
@@ -83,42 +88,22 @@ div.textProvider {
 
 .btn-group .buttonProvider {
     border: none;
-    color: black;
+    color: white;
     text-align: center;
-    text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    font-size: 25px;
-    background-color:hsla(0, 0%, 25%, 0.23);
-    padding-left: 68px;
-    padding-right: 60px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid white;
+    font-size: 1em;
+    background-color: black;
+    border: 1px black;
 }
 
 .btn-group .buttonProvider:hover {
-  background-color:hsla(0, 0%, 25%, 0.5);
-  color: white;
+  background-color: white;
+  color: black;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
 
-
-/* The Modal (background) */
-  
-
-img.imgtop {
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-div.flowAppoint{
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 455px;
-}
 
 //Header & Search----------------------------------
 
