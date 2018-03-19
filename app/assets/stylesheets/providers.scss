@@ -6,7 +6,7 @@
 #profile_form {
   font-family: Cagliostro;
   position: absolute;
-  color: red;
+  color: black;
   width: 80vw;
   text-align: left;
   margin-left: 16vw;
@@ -41,6 +41,11 @@
 }
 
 #AppointmentButton {
+font-size: 1em;
+}
+
+#ProfileButton {
+font-size: 1em;
 }
 
 #provider_profile_picture {
@@ -53,31 +58,9 @@
   height: 455px;
 }
 
-#editProvider{
+#edit_profile_button{
   top: 50%;
   margin-left: 40%;
-}
-
-a.editProvider{
-  display: inline-block;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: red;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    margin-left: 75%;
-    margin-bottom: 10%;
-}
-
-a.editProvider:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
 }
 
 div.overlay {
@@ -105,42 +88,22 @@ div.textProvider {
 
 .btn-group .buttonProvider {
     border: none;
-    color: black;
+    color: white;
     text-align: center;
-    text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    font-size: 25px;
-    background-color:hsla(0, 0%, 25%, 0.23);
-    padding-left: 68px;
-    padding-right: 60px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid white;
+    font-size: 1em;
+    background-color: black;
+    border: 1px black;
 }
 
 .btn-group .buttonProvider:hover {
-  background-color:hsla(0, 0%, 25%, 0.5);
-  color: white;
+  background-color: white;
+  color: black;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
 
-
-/* The Modal (background) */
-  
-
-img.imgtop {
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-div.flowAppoint{
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 455px;
-}
 
 //Header & Search----------------------------------
 
@@ -354,5 +317,17 @@ div.flowAppoint{
   display: inline;
 }
 
+#search_background {
+  width: 100%;
+}
 
+div#search_form {
+  position: absolute;
+    top: 6vw;
+    right: 8vw;
+}
+// PATIENT PROFILE ---------------------------------------------------------------------
 
+.patient_text {
+  margin-left: 10vw;
+}

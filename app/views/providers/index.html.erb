@@ -1,3 +1,8 @@
+    <div id="search_background">
+        <%= image_tag("beach2.jpg", id:"search_background", :alt => "A background should be here in search", :size => "300") %>
+    </div>
+
+<div id="search_form">
 <%= form_tag search_path do%>
 
     <div id="s_search_container">
@@ -6,7 +11,6 @@
             <label for="treatment"> I am looking for: </label>
             <%= text_field_tag "treatment", nil, placeholder: "  dental cleaning"%>
         </div>    
-          
 
         <div id="s_search_container_row">
         
@@ -42,7 +46,7 @@
         </div>
         
         <%end%>
-    
+    </div>
         </form>
     
 </div>

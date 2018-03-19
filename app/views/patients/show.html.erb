@@ -1,5 +1,3 @@
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
@@ -7,9 +5,9 @@
 <div class="profileContainer">
 <div id="provider_profile_picture">
     <% if @patient.profile_picture.url != nil %>
-    <%= image_tag @patient.profile_picture, :size => "470x545"%>
+    <%= image_tag @patient.profile_picture, :size => "150x150", style:'border-radius:100px;'%>
     <% elsif @patient.fb_picture %>
-    <%= image_tag @patient.fb_picture, :size => "470x545"%>
+    <%= image_tag @patient.fb_picture, :size => "150x150", style:'border-radius:100px;'%>
     <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>
@@ -17,48 +15,21 @@
     
   </div>
   </div>
-  <div class="btn-group">
-  
+
+  <div class="btn-group">  
     <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Profile', :class => "buttonProvider", :id => 'ProfileButton'%>
-    <%end%>
-    
-</div><br>
+    <%end%>  
+  </div>
+
+  <br><br>
+
 <div class="btn-group"> <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%></div><br>
- 
-
-
- <div id="myModal" class="modal">
-  <span class="close">×</span>
-  <center><%= image_tag @patient.fb_picture,  width:300, style:'padding-top:25vh;', :id => "provider_profile_picture"%>
-  <div id="caption">Your profile picture</div></center>
-</div>
 
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">
 <%= render 'patient' %>
 </div>
 </div>
-<script>
-
-
-var img = document.getElementById('provider_profile_picture');
-var modalImg = document.getElementById("provider_profile_picture");
-var captionText = document.getElementById("caption");
-img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-modal.onclick = function() { 
-    modal.style.display = "none";
-}
-</script>
-
