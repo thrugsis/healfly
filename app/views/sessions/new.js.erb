@@ -1,0 +1,13 @@
+$('#build_error').remove();
+<%# byebug %>
+<%# if @user.errors.any? %>
+  var build_error = "<div class='alert alert-danger' id='build_error'>";
+  build_error +=   "<id='error_explanation'>";
+  <%# @user.errors.full_messages.each do |msg| %>
+    build_error += "Incorrect email or password";
+  <%# end %>
+  build_error += "</div>";
+  $(build_error).insertBefore( "#sign-in-form" );
+<%# else %>
+  $('#sign-in-modal').modal_success();
+<%# end %>
