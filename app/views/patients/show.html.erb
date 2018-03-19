@@ -6,11 +6,14 @@
 <div id="profile_form">
 <div class="profileContainer">
 <div id="provider_profile_picture">
-    <% if @patient.present? %>
-    <%= image_tag @patient.default_picture, :size => "470x545"%>
+    <% if @patient.profile_picture.url != nil %>
+    <%= image_tag @patient.profile_picture, :size => "470x545"%>
+    <% elsif @patient.fb_picture %>
+    <%= image_tag @patient.fb_picture, :size => "470x545"%>
     <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>
+
     
   </div>
   </div>
@@ -24,17 +27,14 @@
 <div class="btn-group"> <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Appointment', :class => "buttonProvider", :id => "AppointmentButton" %>
     <%end%></div><br>
-<<<<<<< HEAD
  
 
 
  <div id="myModal" class="modal">
   <span class="close">×</span>
-  <%= image_tag @patient.default_picture, :size => "300x400", :class => "modal-content", :id => "provider_profile_picture"%>
-  <div id="caption"></div>
+  <center><%= image_tag @patient.fb_picture,  width:300, style:'padding-top:25vh;', :id => "provider_profile_picture"%>
+  <div id="caption">Your profile picture</div></center>
 </div>
-=======
->>>>>>> 81c1953227e3a948c94d68b795fefbe00d36dcf0
 
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">
@@ -51,14 +51,14 @@ var captionText = document.getElementById("caption");
 img.onclick = function(){
     modal.style.display = "block";
     modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
+
 }
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
+modal.onclick = function() { 
     modal.style.display = "none";
 }
 </script>
