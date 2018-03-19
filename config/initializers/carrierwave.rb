@@ -7,6 +7,7 @@ CarrierWave.configure do |config|
     region:                'ap-southeast-1'  
                           # required
     }
-  config.fog_directory  = 'healfly-photos'                                   # required
+  config.fog_directory  = 'healfly-photos'  
+                                   # required
 end
 

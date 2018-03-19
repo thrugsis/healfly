@@ -15,6 +15,7 @@ class PatientsController < UsersController
   def show
     # patient_allowed?(user: current_user, action: @patient)
     @patient = Patient.find(params[:id])
+    @appoint = @patient.appointments.all
   end
 
   private
