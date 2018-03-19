@@ -1,12 +1,8 @@
-<br><br><br><br><br><br>
-<div class="flowAppoint">
-<br> 
-<% @appoint = Appointment.where(patient_id:current_user.id)%>
 <% @appoint.each do |appointment|%>
-Provider: <%= appointment.provider.username %><br>
-Location: <%= appointment.provider.location %><br><br>
-Meeting time:  <%= appointment.start_time %><br>
-Date of appointment:  <%= appointment.date %><br>
-Appointment created:  <%= appointment.created_at %><br>
-__________________________________________________<br><br>
+Patient:<%= appointment.provider_id %><br>
+Provider First Name:<%= appointment.provider.first_name %><br>
+Provider Last Name:<%= appointment.provider.first_name %><br>
+Time:<%= appointment.start_time.strftime("%I:%M") %><br>
+Date:<%= appointment.date %><br>
+__________________________________________________<br>
 <% end %>

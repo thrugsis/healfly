@@ -1,7 +1,8 @@
 <div class="flowAppoint">
 <% @appoint.each do |appointment|%>
 Patient:<%= appointment.patient_id %><br>
-Provider:<%= appointment.provider.first_name %><br>
+Patient First Name:<%= appointment.patient.first_name %><br>
+Patient Last Name:<%= appointment.patient.last_name %><br>
 Time:<%= appointment.start_time.strftime("%I:%M") %><br>
 Date:<%= appointment.date %><br>
 __________________________________________________<br>
