@@ -1,6 +1,8 @@
-<%= form_tag search_path do%>
+<div id="s_lightblue_background">
+  <%= inline_svg "lightblue_homepage_background", class: 'lightblue_background' %> 
+</div>
 
-    <div id="s_search_container">
+<%= form_tag search_path do%>
 
         <div id="s_treatment" class="s_form-group">
             <label for="treatment"> I am looking for: </label>
@@ -18,27 +20,21 @@
             <div id="s_min_price" class="s_form-group">
                 <label for="min_price"> min price:</label>
                 <%= text_field_tag "min_price", nil, placeholder: "  20"%>
-            </div>
-
-                
-        </div>     
-
-        <div id="s_search_container_row_two">
-            <div id="s_language" class="s_form-group">
-                <label for="language">speaks: </label>
-                <%= text_field_tag "language", nil, placeholder: "  french"%>
-            </div>   
+            </div>    
 
             <div id="s_max_price" class="s_form-group">
                 <label for="max_price"> max price: </label>
                 <%= text_field_tag "max_price", nil, placeholder: "  80"%>
             </div>
 
+            <div id="s_language" class="s_form-group">
+                <label for="language">speaks: </label>
+                <%= text_field_tag "language", nil, placeholder: "  french"%>
+            </div>   
+
             <div id="s_search_button" class="s_search_button">
                 <%= image_submit_tag ('search_button.svg')%>
             </div>
-        
-        </div>
         
         <%end%>
     
@@ -87,3 +83,5 @@
 
 
 </div>
+
+<br> <br> <br> 
