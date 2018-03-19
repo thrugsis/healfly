@@ -3,7 +3,7 @@ class SessionsController < Clearance::SessionsController
 
   def new
     @user = User.find_by(email: params[:session][:email], password: params[:session][:password])
-    # @user = User.where(strong_params)
+    # @user = User.find_by(strong_params)
     respond_to do |format|
       if sign_in(@user)
         format.html { redirect_to root_url }
