@@ -249,6 +249,7 @@ div.textProvider {
   margin-left: 30%;
   text-align: center;
   margin-right: 2vw;
+  position:absolute;
 }
 
 #s_search_container_row {
@@ -322,10 +323,17 @@ div.textProvider {
 }
 
 div#search_form {
-  position: absolute;
-    top: 6vw;
-    right: 8vw;
+  top: 8vw;
+  right: 8vw;
+  background-color: #f0f8ff;
+  height:250px;
 }
+
+.treatment-field{
+  width:411px;
+}
+
+
 // PATIENT PROFILE ---------------------------------------------------------------------
 
 .patient_text {
