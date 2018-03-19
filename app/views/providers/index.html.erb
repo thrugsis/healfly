@@ -1,28 +1,55 @@
+<%= form_tag search_path do%>
+
+    <div id="s_search_container">
+
+        <div id="s_treatment" class="s_form-group">
+            <label for="treatment"> I am looking for: </label>
+            <%= text_field_tag "treatment", nil, placeholder: "  dental cleaning"%>
+        </div>    
+          
+
+        <div id="s_search_container_row">
+        
+
+            <div id="s_location" class="s_form-group">
+                <label for="location">near:</label>
+                <%= text_field_tag "location", nil, placeholder: "  tokyo"%>
+            </div>   
+
+            <div id="s_min_price" class="s_form-group">
+                <label for="min_price"> min price:</label>
+                <%= text_field_tag "min_price", nil, placeholder: "  20"%>
+            </div>
+
+                
+        </div>     
+
+        <div id="s_search_container_row_two">
+            <div id="s_language" class="s_form-group">
+                <label for="language">speaks: </label>
+                <%= text_field_tag "language", nil, placeholder: "  french"%>
+            </div>   
+
+            <div id="s_max_price" class="s_form-group">
+                <label for="max_price"> max price: </label>
+                <%= text_field_tag "max_price", nil, placeholder: "  80"%>
+            </div>
+
+            <div id="s_search_button" class="s_search_button">
+                <%= image_submit_tag ('search_button.svg')%>
+            </div>
+        
+        </div>
+        
+        <%end%>
+    
+        </form>
+    
+</div>
+
 <div id="provider-listings">
 
   <p id="notice"><%= notice %></p>
-
-  <div class="header-container">      <!--for centering-->
-
-      <div class="header-background"></div>
-
-      <h1 class="header-title">The Ultimate Travel Nursing Contact Checklist <p class="header-title-healfly">healfly.com<p> </h1>
-
-      <div class="search-container">
-            <%= form_tag search_path, remote: true do%>
-                <p class="search-field"><%= text_field_tag "treatment", nil, placeholder: "by treatment", id:"search-field"%></p>
-                <p class="search-field"><%= text_field_tag "location", nil, placeholder: "by location", id:"search-field"%></p>
-                <p class="search-field"><%= text_field_tag "language", nil, placeholder: "by language", id:"search-field"%></p>
-                <p class="search-field">
-                    <%= text_field_tag "min_price", nil, placeholder: "min price", id:"search-field-price"%> 
-                    <%= text_field_tag "max_price", nil, placeholder: "max price", id:"search-field-price"%>
-                </p>
-                <%= submit_tag "Search", class:"btn btn-danger search-button"%>
-            <%end%>
-      </div>
-
-  </div>
-
 
   <%if @providers.length > 0%>
 
@@ -45,8 +72,6 @@
                     </div>
 
                     <%= link_to raw('<span></span>'), new_provider_appointment_path(provider), class: "show-button" %> 
-                    <%#= link_to 'Edit', edit_provider_path(provider) %>
-                    <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
 
                </div>
 
@@ -57,7 +82,7 @@
 
   <%else%>
       
-      <p class="no-search-result"><i><%= "Your search keyword does not match any result. Kindly try again." %></i></p>
+      <p class="no-search-result"><i><%= "Your search did not match any result. Please try a different search." %></i></p>
   
   <%end%>
 

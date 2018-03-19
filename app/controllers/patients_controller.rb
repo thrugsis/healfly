@@ -20,7 +20,7 @@ class PatientsController < UsersController
   private
 
   def user_params
-      params.require(:patient).permit(:email, :username, :password, :first_name, :last_name, :gender, :phone_number, :birthday, {image:[]}, {medical_history:[]}, :remember_token, :price, :location, :name, :treatment, :language, {image:[]}, {qualification:[]})
+      params.require(:patient).permit(:email, :username, :profile_picture, :password, :first_name, :default_picture, :last_name, :gender, :phone_number, :birthday, {image:[]}, {medical_history:[]}, :remember_token, :price, :location, :name, :treatment, :language, {profile_picture_json:[]}, {qualification:[]})
   end
 
   def patient_allowed?

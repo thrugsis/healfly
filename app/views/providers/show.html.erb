@@ -3,8 +3,10 @@
   <div id="profile_form">
 
     <div id="provider_profile_picture">
-    <% if @provider.present? %>
-    <%= image_tag @provider.default_picture, :size => "200x200"%>
+    <% if @provider.profile_picture.url != nil %>
+    <%= image_tag @provider.profile_picture, :size => "470x545"%>
+    <% elsif @provider.fb_picture %>
+    <%= image_tag @provider.fb_picture, :size => "470x545"%>
     <% else %>
     <%= image_tag image_url("https://cdn.iconscout.com/public/images/icon/free/png-512/avatar-user-old-lady-3295dab3713f6121-512x512.png"), :size => "150x150" %>
     <% end %>   
@@ -21,11 +23,3 @@
         <%end%>
     </div>
   </div>
-</div>
-
-
-<div id ="appointmentShow"></div>
-<div id="profileOfTheProvider">
-<%= render 'provider' %>
-</div>
-</div>

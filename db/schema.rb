@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316090532) do
+ActiveRecord::Schema.define(version: 20180316090535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20180316090532) do
     t.time     "start_time"
     t.time     "end_time"
     t.date     "date"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "payment_status"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.boolean  "payment_status", default: false
     t.integer  "payment_amount"
     t.index ["patient_id"], name: "index_appointments_on_patient_id", using: :btree
     t.index ["provider_id"], name: "index_appointments_on_provider_id", using: :btree
@@ -39,13 +39,13 @@ ActiveRecord::Schema.define(version: 20180316090532) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",                       null: false
-    t.string   "first_name",                     null: false
-    t.string   "last_name",                      null: false
-    t.string   "email",                          null: false
-    t.string   "encrypted_password", limit: 128
-    t.string   "remember_token",     limit: 128
-    t.string   "confirmation_token", limit: 128
+    t.string   "username",                         null: false
+    t.string   "first_name",                       null: false
+    t.string   "last_name",                        null: false
+    t.string   "email",                            null: false
+    t.string   "encrypted_password",   limit: 128
+    t.string   "remember_token",       limit: 128
+    t.string   "confirmation_token",   limit: 128
     t.string   "gender"
     t.string   "phone_number"
     t.date     "birthday"
@@ -57,12 +57,15 @@ ActiveRecord::Schema.define(version: 20180316090532) do
     t.string   "treatment"
     t.string   "language"
     t.json     "qualification"
-    t.string   "type",                           null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "type",                             null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "default_picture"
+    t.string   "fb_picture"
+    t.string   "profile_picture"
+    t.json     "profile_picture_json"
     t.index ["email"], name: "index_users_on_email", using: :btree
     t.index ["remember_token"], name: "index_users_on_remember_token", using: :btree
   end

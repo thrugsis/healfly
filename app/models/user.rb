@@ -1,8 +1,13 @@
 class User < ApplicationRecord
   include Clearance::User
   has_many :appointments, :dependent => :delete_all
-  has_many :images
   has_many :authentications, :dependent => :destroy
+
+  mount_uploaders :qualification, QualificationUploader
+  mount_uploaders :image, ImageUploader
+  mount_uploaders :medical_history, MedicalHistoryUploader
+  mount_uploader :profile_picture, ProfilePictureUploader
+
 
   scope :patients, -> { where(type: 'Patients')}
   scope :providers, -> { where(type: 'Providers')}
@@ -13,7 +18,7 @@ class User < ApplicationRecord
      username: auth_hash["info"]["name"],
      first_name: auth_hash["info"]["name"],
      last_name: auth_hash["info"]["name"],
-     default_picture: auth_hash["info"]["image"],
+     fb_picture: auth_hash["info"]["image"],
      email: auth_hash["extra"]["raw_info"]["email"],
      type: "Patient",
      password: SecureRandom.base64
