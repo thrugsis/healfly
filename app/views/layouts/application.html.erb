@@ -102,7 +102,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= form_tag session_path, :id => "log-in-form" do %>
+            <%= form_tag session_path, :id => "sign-in-form", remote: true  do %>
               <div> Email: <%= text_field_tag 'session[email]', params[:email], :class => "form-control" %> </div>
               <br/>
               <div> Password: <%= password_field_tag 'session[password]', params[:password], :class => "form-control" %> </div>
