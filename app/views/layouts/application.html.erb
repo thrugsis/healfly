@@ -43,17 +43,19 @@
 
                     <a class="patient_icon" href=
                     <%if current_user.patient? %>
-                        <%= patient_path(current_user.id) %>
-                      <%else%>
-                        <%= provider_path(current_user.id) %> 
-                      <%end%>>
-
-        <%if current_user.default_picture == nil %>
-                      <span class="no-underline"> <%= current_user.email %> </span>
+                      <%= patient_path(current_user.id) %>
                     <%else%>
-                      <img src=<%= current_user.default_picture %> height=30vw width=30vw></a>
+                      <%= provider_path(current_user.id) %> 
+                    <%end%>>
+
+                    <%if current_user.profile_picture.url != nil %>
+                     <img src=<%= current_user.profile_picture%> height=30vw width=30vw>
+                    <%elsif current_user.fb_picture != nil %>
+                      <img src=<%= current_user.fb_picture %> height=30vw width=30vw></a>
+                    <%else%>
+                      <span class="no-underline"> <%= current_user.email %> </span>
                     <%end%>
-                    <span class="no-underline"> <%= p" | " %>
+                    <span class="no-underline"> <%= p" | " %> </span>
 
                     <%= link_to 'sign out', sign_out_path, method: :delete, class: "nav-item", id:"beige_text" %>
                   </li>
@@ -100,16 +102,16 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= form_tag session_path, :id => "log-in-form" do %>
+            <%= form_tag session_path, :id => "sign-in-form", remote: true  do %>
               <div> Email: <%= text_field_tag 'session[email]', params[:email], :class => "form-control" %> </div>
               <br/>
               <div> Password: <%= password_field_tag 'session[password]', params[:password], :class => "form-control" %> </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='/auth/facebook'">Sign In with Facebook</button>
-            <%= submit_tag "Sign In", :name => nil, :class=>"btn btn-primary" %>
+            <%= submit_tag "Sign In", :name => nil, :class=>"btn btn-primary", :onclick => "onclick=myFunction()" %>
               <% end %>
-            
+            <div id="snackbar">Logging in...</div>
           </div>
         </div>
       </div>
@@ -154,6 +156,17 @@
     <%= yield %>
 
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+    <script>
+      function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+    </script>
   </body>
 </html>

@@ -41,6 +41,11 @@
 }
 
 #AppointmentButton {
+font-size: 1em;
+}
+
+#ProfileButton {
+font-size: 1em;
 }
 
 #provider_profile_picture {
@@ -53,31 +58,9 @@
   height: 455px;
 }
 
-#editProvider{
+#edit_profile_button{
   top: 50%;
   margin-left: 40%;
-}
-
-a.editProvider{
-  display: inline-block;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: red;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-    margin-left: 75%;
-    margin-bottom: 10%;
-}
-
-a.editProvider:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
 }
 
 div.overlay {
@@ -105,42 +88,22 @@ div.textProvider {
 
 .btn-group .buttonProvider {
     border: none;
-    color: black;
+    color: white;
     text-align: center;
-    text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    font-size: 25px;
-    background-color:hsla(0, 0%, 25%, 0.23);
-    padding-left: 68px;
-    padding-right: 60px;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid white;
+    font-size: 1em;
+    background-color: black;
+    border: 1px black;
 }
 
 .btn-group .buttonProvider:hover {
-  background-color:hsla(0, 0%, 25%, 0.5);
-  color: white;
+  background-color: white;
+  color: black;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
 
-
-/* The Modal (background) */
-  
-
-img.imgtop {
-  position: absolute;
-  width: 100%;
-  top: 0;
-}
-
-div.flowAppoint{
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 455px;
-}
 
 //Header & Search----------------------------------
 
@@ -221,7 +184,6 @@ div.flowAppoint{
 // PROVIDER SEARCH RESULTS ------------------------------------
 
 .show-button {
-  // border: 1px solid red;
   border-radius: 5px;
   position: absolute;
   top: 0;
@@ -273,7 +235,99 @@ div.flowAppoint{
   font-family: arial;
 }
 
+// SEARCH BAR ---------------------------------------------------------------------
 
 
+.s_form-group {
+  font-family: 'Fredoka One', cursive; 
+  word-spacing: 2px;
+  letter-spacing: 1px;
+}
 
+#s_search_container {
+  display: inline;
+  margin-left: 30%;
+  text-align: center;
+  margin-right: 2vw;
+}
 
+#s_search_container_row {
+  margin-left: 1.5vw;
+}
+
+#s_search_container_row_two {
+  margin-left: 0vw;
+}
+
+#s_treatment {
+  border-radius: 0;
+  border: none;
+  width: 28%;
+  text-align: center;
+  display: inline;
+  margin-top: -3%;
+}
+
+#s_location {
+  border-radius: 0;
+  border: none;
+  width: 18%;
+  display: inline;
+  text-align: center;
+  margin-top: 2%;
+  margin-right: 1%;
+}
+
+#s_language {
+  border-radius: 0;
+  border: none;
+  width: 13%;
+  text-align: center;
+  display: inline;
+  margin-top: 2%;
+  margin-right: 1%;
+}
+
+#s_min_price {
+  border-radius: 0;
+  border: none;
+  width: 7%;
+  text-align: center;
+  margin-top: 2%;
+  margin-right: 2%;
+  display: inline;
+}
+
+#s_max_price {
+  border-radius: 0;
+  border: none;
+  width: 8%;
+  text-align: center;
+  display: inline;
+  margin-top: 2%;
+  margin-right: 2%;
+
+}
+
+#s_search_button {
+  margin-left: -1%;
+  margin-top: 1%;
+  position: absolute;
+  z-index: 10;
+  display: inline;
+}
+
+#search_background {
+  width: 100%;
+}
+
+div#search_form {
+  position: absolute;
+    top: 6vw;
+    right: 8vw;
+}
+// PATIENT PROFILE ---------------------------------------------------------------------
+
+.patient_text {
+  margin-left: 10vw;
+}

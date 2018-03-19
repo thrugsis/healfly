@@ -1,4 +1,4 @@
-<div id="form_provider">
+<div id="form_provider profile_form">
 
 <div><span class="prov_text">Username: </span> <%= current_user.name %></div>
 <div><span class="prov_text">Treatment: </span> <%= current_user.treatment %></div>
@@ -10,5 +10,5 @@
 <div><span class="prov_text">Location: </span> <%= current_user.location %></div>
 <div><span class="prov_text">Gender:  </span> <%= current_user.gender %></div>
 <br><br>
-<%= link_to 'Edit', edit_provider_path(@provider), :class => "editProvider" %>
+<%= link_to 'Edit', edit_provider_path(@provider), :class => "edit_profile_button" %>
 </div>

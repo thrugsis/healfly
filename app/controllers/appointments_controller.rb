@@ -33,7 +33,8 @@ class AppointmentsController < ApplicationController
       if @appointment.save
         @providers = @appointment.provider
         AppointmentMailer.appointment_email(current_user, @provider, @appointment).deliver
-        redirect_to braintree_new_path(@appointment), notice: 'Appointment was successfully created'
+        redirect_to braintree_new_path(@appointment), :flash => { :success => "Appointment was successfully created." }
+        # redirect_to braintree_new_path(@appointment), success: 'Appointment was successfully created'
         # redirect_to provider_appointment_path(@providers, @appointment), notice: 'Appointment was successfully created'
       else
         redirect_to root_path
