@@ -110,8 +110,8 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" onclick="window.location.href='/auth/facebook'">Sign In with Facebook</button>
             <%= submit_tag "Sign In", :name => nil, :class=>"btn btn-primary", :onclick => "onclick=myFunction()" %>
-              <% end %>
-            <div id="snackbar">Logging in...</div>
+              <% end %><!-- 
+            <div id="snackbar">Logging in...</div> -->
           </div>
         </div>
       </div>
@@ -157,16 +157,16 @@
 
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
-      function myFunction() {
+      // function myFunction() {
     // Get the snackbar DIV
-    var x = document.getElementById("snackbar")
+    // var x = document.getElementById("snackbar")
 
     // Add the "show" class to DIV
-    x.className = "show";
+    // x.className = "show";
 
     // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
+    // setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+// }
     </script>
   </body>
 </html>
