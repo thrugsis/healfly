@@ -1,4 +1,4 @@
-  <div>
+  <div class="center">
     <h2> You are making a payment for: </h2>
     Provider: <%= @appointment.provider.name %> <br/>
     On: <%= @appointment.date %> <br/>
@@ -6,9 +6,9 @@
   </div>
   <br/>
   <br/>
-<h2> Payment Details </h2>
+<div class="demo-frame">
+<h2 class="center"> Payment Details: </h2>
 
-  <div class="demo-frame">
     <%= form_for :checkout_form, url: braintree_checkout_path, html: { id: "cardForm"} do |form| %>
     <%= form.hidden_field :client_token, :value => @client_token, id: "hidden-field" %>
     <%= form.hidden_field :id, :value => :id %>
@@ -29,6 +29,6 @@
       </div>
     <% end %>
 
-  </div>
+</div>
 
 

@@ -1,14 +1,15 @@
 <div id="form_provider profile_form">
 
-<div><span class="prov_text">Username: </span> <%= current_user.name %></div>
-<div><span class="prov_text">Treatment: </span> <%= current_user.treatment %></div>
-<div><span class="prov_text">Price: </span> <%= current_user.price %></div>
-<div><span class="prov_text">First Name: </span> <%= current_user.first_name %></div> 
-<div><span class="prov_text">Last Name: </span> <%= current_user.last_name %></div>
-<div><span class="prov_text">Language: </span>  <%= current_user.language%></div>
-<div><span class="prov_text">Email: </span> <%= current_user.email %></div>
-<div><span class="prov_text">Location: </span> <%= current_user.location %></div>
-<div><span class="prov_text">Gender:  </span> <%= current_user.gender %></div>
+<div>Username: </span> <%= current_user.name %></div>
+<div>Treatment: </span> <%= current_user.treatment %></div>
+<div>Price: </span> <%= current_user.price %></div>
+<div>First Name: </span> <%= current_user.first_name %></div> 
+<div>Last Name: </span> <%= current_user.last_name %></div>
+<div>Language: </span>  <%= current_user.language%></div>
+<div>Email: </span> <%= current_user.email %></div>
+<div>Location: </span> <%= current_user.location %></div>
+<div>Gender:  </span> <%= current_user.gender %></div>
+<div>Type:  </span> <%= current_user.type %></div>
 <br><br>
 <%= link_to 'Edit', edit_provider_path(@provider), :class => "edit_profile_button" %>
 </div>

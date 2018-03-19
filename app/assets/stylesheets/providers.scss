@@ -319,6 +319,16 @@ div.textProvider {
   height: 2vh;
 }
 
+#search_background {
+  width: 100%;
+}
+
+div#search_form {
+  position: absolute;
+    top: 6vw;
+    right: 8vw;
+}
+
 // PATIENT PROFILE ---------------------------------------------------------------------
 
 .patient_text {
