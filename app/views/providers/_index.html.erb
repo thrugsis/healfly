@@ -2,52 +2,64 @@
 
   <p id="notice"><%= notice %></p>
 
-  <h1>Providers</h1>
+  <div class="header-container">      <!--for centering-->
 
+      <div class="header-background"></div>
 
-  <div class="center-search-bar">
-    <div class="search-bar">
-      <%= form_tag search_path, remote: true do%>
+      <h1 class="header-title">The Ultimate Travel Nursing Contact Checklist <p class="header-title-healfly">healfly.com<p> </h1>
 
-        <%= text_field_tag "treatment", nil, placeholder: "by treatment", id:"search-field"%>
-        <%= text_field_tag "location", nil, placeholder: "by location", id:"search-field"%>
-        <%= text_field_tag "language", nil, placeholder: "by language", id:"search-field"%>
-        <%= text_field_tag "min_price", nil, placeholder: "min price", id:"search-field"%>
-        <%= text_field_tag "max_price", nil, placeholder: "max price", id:"search-field"%>
+      <div class="search-container">
+            <%= form_tag search_path, remote: true do%>
+                <p class="search-field"><%= text_field_tag "treatment", nil, placeholder: "by treatment", id:"search-field"%></p>
+                <p class="search-field"><%= text_field_tag "location", nil, placeholder: "by location", id:"search-field"%></p>
+                <p class="search-field"><%= text_field_tag "language", nil, placeholder: "by language", id:"search-field"%></p>
+                <p class="search-field">
+                    <%= text_field_tag "min_price", nil, placeholder: "min price", id:"search-field-price"%> 
+                    <%= text_field_tag "max_price", nil, placeholder: "max price", id:"search-field-price"%>
+                </p>
+                <%= submit_tag "Search", class:"btn btn-danger search-button"%>
+            <%end%>
+      </div>
 
-        <%= submit_tag "Search"%>
-      <%end%>
-    </div>
-  </div>  
-
-  
-  <div class="container">
-    <div class="row">    
-
-      <% @providers.each do |provider| %>
-
-           <div class="col-3">        
-
-                <%provider.image.each do |img| %>
-                  <p class ="image-container"> <%= image_tag img.url, class: "provider-image"%> </p>
-                <%end%>
-
-                <div class="description-container">
-                  <p class="provider-listing-description"> Name: <%= provider.name%> </p>       
-                  <p class="provider-listing-description"> Treatment: <%= provider.treatment%> </p>
-                  <p class="provider-listing-description"> Location: <%= provider.location%> </p>
-                  <p class="provider-listing-description"> Language: <%= provider.language%> </p>  
-                </div>
-
-                <%= link_to raw('<span></span>'), new_provider_appointment_path(provider), class: "show-button" %> 
-                <%#= link_to 'Edit', edit_provider_path(provider) %>
-                <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-           </div>
-
-      <% end %>
-
-    </div>
   </div>
+
+
+  <%if @providers.length > 0%>
+
+      <div class="container">
+        <div class="row">    
+
+          <% @providers.each do |provider| %>
+
+               <div class="col-3">        
+
+                    <%provider.image.each do |img| %>
+                      <p class ="image-container"> <%= image_tag img.url, class: "provider-image"%> </p>
+                    <%end%>
+
+                    <div class="description-container">
+                      <p class="provider-listing-description"> Name: <%= provider.name%> </p>       
+                      <p class="provider-listing-description"> Treatment: <%= provider.treatment%> </p>
+                      <p class="provider-listing-description"> Location: <%= provider.location%> </p>
+                      <p class="provider-listing-description"> Language: <%= provider.language%> </p>  
+                    </div>
+
+                    <%= link_to raw('<span></span>'), new_provider_appointment_path(provider), class: "show-button" %> 
+                    <%#= link_to 'Edit', edit_provider_path(provider) %>
+                    <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+               </div>
+
+          <% end %>
+
+        </div>
+      </div>
+
+  <%else%>
+      
+      <p class="no-search-result"><i><%= "Your search keyword does not match any result. Kindly try again." %></i></p>
+  
+  <%end%>
+
 
 </div>

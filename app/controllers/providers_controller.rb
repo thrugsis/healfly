@@ -10,7 +10,6 @@ class ProvidersController < UsersController
   # GET /providers/1
   # GET /providers/1.json
   def show
-    # provider_allowed?(user: current_user, action: set_provider)
     set_provider
     @appoint = @provider.appointments.all
   end
@@ -71,7 +70,9 @@ class ProvidersController < UsersController
 
     search_params(params).each do |key, value|
       @providers = @providers.public_send(key, value) if value.present?
+    # byebug
     end
+    # @search_keyword = value
 
     respond_to do |format|
      format.js
