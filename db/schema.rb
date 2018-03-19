@@ -57,9 +57,9 @@ ActiveRecord::Schema.define(version: 20180316090535) do
     t.string   "treatment"
     t.string   "language"
     t.text     "qualification"
-    t.string   "type",                           null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.string   "type",                             null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "default_picture"
