@@ -1,4 +1,4 @@
-<br><br><br><br><br><br><br> 
+ 
 
 <div class="card">
 	<h1><%= current_user.username %> Appointments</h1>
@@ -13,11 +13,11 @@
       <div class="timeline__content">
         <div class="timeline__title">
 
-Patient:<%= appointment.provider_id %><br>
-Provider First Name:<%= appointment.provider.first_name %><br>
-Provider Last Name:<%= appointment.provider.last_name %><br>
-Time:<%= appointment.start_time.strftime("%I:%M") %><br>
-Date:<%= appointment.date %><br>
+<h5>Patient:<%= appointment.provider_id %><br></h5>
+<h5>Provider First Name:<%= appointment.provider.first_name %></h5>
+<h5>Provider Last Name:<%= appointment.provider.last_name %></h5>
+<h5>Time:<%= appointment.start_time.strftime("%I:%M") %></h5>
+<h5>Date:<%= appointment.date %><br></h5>
 __________________________________________________<br>
 <% end %>
         </div>
