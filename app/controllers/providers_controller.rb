@@ -46,7 +46,7 @@ class ProvidersController < UsersController
     @provider = Provider.find(params[:id])
     @provider = @provider.update(provider_params)
 
-    if @provider.save
+    if @provider
       redirect_to root_url, :flash => { :success => 'Provider was successfully updated.' } 
     else
       redirect_to provider_path(@provider), :flash => { :danger => "Could not update Provider profile." }
