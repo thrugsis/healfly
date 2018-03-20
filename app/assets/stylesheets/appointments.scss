@@ -107,8 +107,7 @@ p#appointmentMade {
     background-color: #fefefe;
     margin: 15% auto; 
     border: 1px solid #888;
-    width: 80%;
-    margin: auto;
+    margin-top: 10vh;
     display: block;
     // width: 400px;
     max-width: 700px;
@@ -135,6 +134,9 @@ p#appointmentMade {
 
 #certBtn {
   color: blue;
+  height: 7vh;
+  width: 13vw;
+  font-size: 1vw;
 }
 
 .btn-sm {
@@ -147,8 +149,8 @@ p#appointmentMade {
 .google-map-container {
   // border:1px solid green;
   float:left;
-  width:55%;
-  height:50%;
+  height: 90vh;
+  width: 30vw;
   border-radius: 3px;
   padding:8px;
   margin-top: 15px;
