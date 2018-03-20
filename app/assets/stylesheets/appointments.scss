@@ -19,7 +19,7 @@ p#appointmentMade {
 
 .provider-info-container {
   float: left;
-  height:120%;
+  height:850px;
   width:63%;
   padding-left: 20px;
   border:1px solid #D6D6D6;
@@ -29,12 +29,9 @@ p#appointmentMade {
 }
 
 .bio {
-  // border:1px solid red;
   width:30%;
   float:left;
-  margin-left: 30px;
-  margin-right: 50px;
-  margin-top: 15px;
+  transform: translate(20%, 15%);
 }
 
 .appointment-image-container {
@@ -147,29 +144,29 @@ p#appointmentMade {
 }
 
 .google-map-container {
-  // border:1px solid green;
   float:left;
   height: 90vh;
   width: 30vw;
   border-radius: 3px;
   padding:8px;
   margin-top: 15px;
+  transform: translate(15%, 10%);
 }
 
 .map {
   width: 95%;
-  height: 95%;
+  height: 85%;
   border-radius: 3px;
 }
 
 
 .create-appointment-container {
-  // border:1px solid blue;
   display: inline-block;
   height:100%;
   width: 35%;
   text-align: center;
   margin-top:15px;
+  transform: translate(0.1%, 20%);
 }
 
 
