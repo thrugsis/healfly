@@ -1,7 +1,7 @@
 <div class="appointment-container">
 
         <div class="provider-info-container">
-
+          
             <div class="bio">
                 <% @provider.image.each do |img| %>
                   <p class="appointment-image-container"><%= image_tag img.url, class: "appointment-image" %></p>
@@ -38,7 +38,7 @@
 
         <div class="create-appointment-container">
 
-            <h1 class="appointment-heading">New Appointment</h1>  
+            <h2 class="appointment-heading">New Appointment</h2>  
 
             <%= form_for ([@provider,@appointment]) do |s| %>
               <p> <%= s.label :date, "Date" %> <%= s.text_field :date, id:"dateAppoint"%> </p>
