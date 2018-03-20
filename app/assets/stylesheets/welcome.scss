@@ -58,16 +58,16 @@ span.no-underline {
 /*// BACKGROUND - - - - - - - - - - - - - - - - - - */
 
 #lightblue_background {
-  // the color is D6FFF8
   z-index: -5;
   position: absolute; 
-  margin-top: -40vh;
-  height: 2vh;
+  margin-top: -10vh;
+  height: 102%;
+  width: 100%;
+  background: #D6FFF8;
+  position: absolute;
+  fill: solid #D6FFF8;
 }
 
-.lightblue_background {
-  width: 100%;
-}
  
 /*// LOGO - - - - - - - - - - - - - - - - - -*/
 
@@ -83,7 +83,7 @@ span.no-underline {
   display: inline-block;
   margin-left: 31%;
   position: absolute;
-  top: 10%;
+  top: 17%;
 }
 
 #healfly_logo_text {
@@ -94,7 +94,7 @@ span.no-underline {
   display: inline-block;
   position: absolute;
   text-align: center;
-  top: 13.8%;
+  top: 20.8%;
   left: 57.5%;
 }
 /*// MOTTO & ICONS - - - - - - - - - - - - - - - - - -*/
@@ -164,7 +164,7 @@ span.no-underline {
   width: 28%;
   text-align: center;
   display: inline;
-  margin-top: 13%;
+  margin-top: 18%;
 }
 
 #location {
@@ -238,7 +238,7 @@ span.no-underline {
 
 #maptable {
   width: 80%;
-  margin-top: 1%;
+  margin-top: 10%;
   margin-left: 9.5%;
 }
 
