@@ -1,8 +1,9 @@
+<br><br><br><br><br><br>  
 <% @appoint.each do |appointment|%>
-Patient:<%= appointment.provider_id %><br>
-Provider First Name:<%= appointment.provider.first_name %><br>
-Provider Last Name:<%= appointment.provider.last_name %><br>
-Time:<%= appointment.start_time.strftime("%I:%M") %><br>
-Date:<%= appointment.date %><br>
+Patient: <%= appointment.provider_id %><br>
+Provider First Name: <%= appointment.provider.first_name %><br>
+Provider Last Name: <%= appointment.provider.last_name %><br>
+Time: <%= appointment.start_time.strftime("%I:%M") %><br>
+Date: <%= appointment.date %><br>
 __________________________________________________<br>
 <% end %>
