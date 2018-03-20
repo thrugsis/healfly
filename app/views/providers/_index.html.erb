@@ -2,11 +2,9 @@
 
   <p id="notice"><%= notice %></p>
 
-  <div class="header-container">      <!--for centering-->
+  <div class="header-container">     
 
       <div class="header-background"></div>
-
-      <h1 class="header-title">The Ultimate Travel Nursing Contact Checklist <p class="header-title-healfly">healfly.com<p> </h1>
 
       <div class="search-container">
             <%= form_tag search_path, remote: true do%>
@@ -45,8 +43,6 @@
                     </div>
 
                     <%= link_to raw('<span></span>'), new_provider_appointment_path(provider), class: "show-button" %> 
-                    <%#= link_to 'Edit', edit_provider_path(provider) %>
-                    <%#= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' } %>
 
                </div>
 
@@ -57,7 +53,7 @@
 
   <%else%>
       
-      <p class="no-search-result"><i><%= "Your search keyword does not match any result. Kindly try again." %></i></p>
+      <p class="no-search-result"><i><%= "Your search did not match any result. Please try again." %></i></p>
   
   <%end%>
 
