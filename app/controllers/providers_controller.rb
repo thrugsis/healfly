@@ -28,16 +28,11 @@ class ProvidersController < UsersController
   # POST /providers.json
   def create
     @provider = Provider.new(provider_params)
-
-    respond_to do |format|
       if @provider.save
-        format.html { redirect_to @provider, notice: 'Provider was successfully created.' }
-        format.json { render :show, status: :created, location: @provider }
+        redirect_to @provider, :flash => { :success => 'Provider was successfully created.' }
       else
-        format.html { render :new }
-        format.json { render json: @provider.errors, status: :unprocessable_entity }
+        redirect_to root_url, :flash => { :danger => "Could not create Provider profile."}
       end
-    end
   end
 
   # PATCH/PUT /providers/1
