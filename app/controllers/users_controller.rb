@@ -38,7 +38,7 @@ class UsersController < Clearance::UsersController
         if @user.patient?
           format.html { redirect_to edit_patient_path(@user), :flash => { success: 'Patient was successfully created.' }}
         else
-          format.html { redirect_to edit_provider_path(@user), :flash => { success: 'Patient was successfully created.' }} 
+          format.html { redirect_to edit_provider_path(@user), :flash => { success: 'Provider was successfully created.' }} 
         end
       else
         format.js 

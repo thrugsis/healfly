@@ -1,6 +1,11 @@
+
 <div id="form_provider profile_form">
 <br>
 <br>
+
+<div class="card">
+	<h1><%= current_user.username %> Profile</h1>
+  <ul class="timelinePatient">
 <div>Username: </span> <%= current_user.name %></div>
 <div>Treatment: </span> <%= current_user.treatment %></div>
 <div>Price: </span> <%= current_user.price %></div>
@@ -13,4 +18,6 @@
 <div>Type:  </span> <%= current_user.type %></div>
 <br><br>
 <%= link_to 'Edit', edit_provider_path(@provider), :class => "edit_profile_button" %>
+</ul>
+</div>
 </div>

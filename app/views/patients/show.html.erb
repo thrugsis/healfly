@@ -15,18 +15,21 @@
     
   </div>
   </div>
-
+<br><br>
+<div class="buttonShit">
   <div class="btn-group">  
     <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Profile', :class => "buttonProvider", :id => 'ProfileButton'%>
     <%end%>  
   </div>
 
-  <br><br>
 
 <div class="btn-group"> <%= form_tag patient_path, method: :get, remote: true do %>
     <%= button_tag 'Appointments', :class => "buttonProvider", :id => "AppointmentButton" %>
-    <%end%></div><br>
+    <%end%></div>
+  </div>
+    <br>
+
 <br>
 <div id ="appointmentShow"></div>
 <div id="profileOfTheProvider">

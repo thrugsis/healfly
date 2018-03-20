@@ -1,10 +1,13 @@
-<div id="formProvider">
-
-<br><br><br><br><br><br>	
-<div>Username:  <%= current_user.username %></div>
-<div>First Name: <%= current_user.first_name %></div>
-<div>Last Name: <%= current_user.last_name %></div>
-<div>Email: <%= current_user.email %></div>
-<div>Gender:  <%= current_user.gender %></div> <br>
+<div class="card">
+	<h1><%= current_user.username %> Profile</h1>
+  <ul class="timelinePatient">
+<div id="formProvider">	
+<div><h5>Username:  <%= current_user.username %></h5></div>
+<div><h5>First Name: <%= current_user.first_name %></h5></div>
+<div><h5>Last Name: <%= current_user.last_name %></h5></div>
+<div><h5>Email: <%= current_user.email %></h5></div>
+<div><h5>Gender:  <%= current_user.gender %></h5></div> <br>
   <%= link_to 'Edit', edit_patient_path(@patient), :class => "editProvider" %>
+</div>
+</ul>
 </div>
