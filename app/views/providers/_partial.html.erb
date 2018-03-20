@@ -1,11 +1,24 @@
-<br><br><br><br><br><br>  
-<div class="flowAppoint">
-<% @appoint.each do |appointment|%>
-Patient: <%= appointment.patient_id %><br>
-Patient First Name: <%= appointment.patient.first_name %><br>
-Patient Last Name: <%= appointment.patient.last_name %><br>
-Time: <%= appointment.start_time.strftime("%I:%M") %><br>
-Date: <%= appointment.date %><br>
+
+<div class="card">
+	
+  <ul class="timeline">
+ <% @appoint.each do |appointment|%>
+    <li class="timeline__item">
+    	
+      <div class="timeline__step">
+        <div class="timeline__step__marker timeline__step__marker--red"></div>
+      </div>
+      <div class="timeline__time">
+      	<%= image_tag appointment.provider.profile_picture, :size => "150x150", style:'border-radius:100px;'%>
+      </div>
+      <div class="timeline__content">
+        <div class="timeline__title">
+
+Patient:<%= appointment.patient_id %><br>
+Patient First Name:<%= appointment.patient.first_name %><br>
+Patient Last Name:<%= appointment.patient.last_name %><br>
+Time:<%= appointment.start_time.strftime("%I:%M") %><br>
+Date:<%= appointment.date %><br>
 __________________________________________________<br>
 <% end %>
-</div>
+        </div>

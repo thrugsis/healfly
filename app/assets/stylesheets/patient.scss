@@ -1,2 +1,124 @@
-div#appointmentShow{
+@import 'https://fonts.googleapis.com/css?family=Muli:300';
+/* Timeline
+ */
+.timeline {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding: 0 62px;
+  margin: 0;
+  list-style: none;
+  background-color: #f0f8ff;
+  margin-top: 10%;
+}
+
+.card h1{
+  margin-top: 3vh;
+  margin-left: 5vw;
+}
+.timeline__item {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  padding: 20px 0;
+}
+.timeline__step {
+  padding-right: 62px;
+}
+.timeline__step__marker {
+  position: relative;
+  display: table-cell;
+  height: 24px;
+  min-height: 24px;
+  width: 24px;
+  min-width: 24px;
+  border: 4px solid #F2F2F2;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 0;
+}
+.timeline__step__marker--red {
+  border-color: #FF3467;
+}
+.timeline__step__marker--blue {
+  border-color: #18D0BF;
+}
+.timeline__step__marker--salmon {
+  border-color: #F48A6D;
+}
+.timeline__step__marker--purple {
+  border-color: #C178FA;
+}
+.timeline__time {
+  padding-right: 50px;
+  font-size: 26px;
+}
+.timeline__title {
+  padding-bottom: 26px;
+  font-size: 15px;
+}
+.timeline__points {
+  padding: 0;
+  list-style: none;
+  font-size: 24px;
+  color: #77777D;
+}
+.timeline__points > * {
+  padding: 0 0 12px 0;
+}
+
+/* For mobile!
+ */
+@media (max-width: 768px) {
+  .card {
+    max-width: 375;
+  }
+
+  .timeline {
+    padding: 0 35.42857px;
+  }
+ 
+  .timeline__item {
+    padding: 35.42857px 0;
+  }
+  .timeline__step {
+    padding-right: 35.42857px;
+  }
+
+  .timeline__time {
+    padding-right: 72px;
+    font-size: 5px;
+  }
+  .timeline__title {
+    padding-bottom: 14.85714px;
+  }
+  .timeline__points {
+    font-size: 13.71429px;
+  }
+  .timeline__points > * {
+    padding-bottom: 6.85714px;
+  }
+}
+/* Display stuff
+ */
+
+.card {
+  background-color: #f0f8ff;
+  max-width: 750px;
+  margin: 0 auto;
+  height: 100%;
+  -moz-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  display: table;
+  max-height: 100vh;
+}
+
+.timelinePatient {
+	background-color: #f0f8ff;
+	padding:0 30vh;
 }
