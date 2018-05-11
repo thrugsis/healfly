@@ -36,9 +36,9 @@ class UsersController < Clearance::UsersController
       if @user.save
         sign_in(@user)
         if @user.patient?
-          format.html { redirect_to edit_patient_path(@user) }
+          format.html { redirect_to edit_patient_path(@user), :flash => { success: 'Patient was successfully created.' }}
         else
-          format.html { redirect_to edit_provider_path(@user) } 
+          format.html { redirect_to edit_provider_path(@user), :flash => { success: 'Provider was successfully created.' }} 
         end
       else
         format.js 
@@ -51,7 +51,7 @@ class UsersController < Clearance::UsersController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, :flash => { success: 'User was successfully updated' }}
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

@@ -9,13 +9,13 @@
   color: black;
   width: 80vw;
   text-align: left;
-  margin-left: 16vw;
+  margin-left: 10vw;
   margin-top: 1vw;
 }
 
 .buttonProvider {
   border: none;
-  margin-left: 5vw;
+  margin-left: 1vw;
 }
 
 #provider_profile_picture {
@@ -92,9 +92,18 @@ div.textProvider {
     text-align: center;
     font-size: 16px;
     cursor: pointer;
-    font-size: 1em;
-    background-color: black;
+    font-size: 5em;
+    background-color: darkgrey;
     border: 1px black;
+    margin-top: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.buttonShit{
+  margin-left: 29vw;
 }
 
 .btn-group .buttonProvider:hover {
