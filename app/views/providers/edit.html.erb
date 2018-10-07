@@ -31,128 +31,124 @@
 
 
 <main id="site-content" role="main" tabindex="-1">
-<div id="notification-area"></div>
-<div class="page-container-responsive space-top-4 space-4">
-	<div class="row">
-    	<div class="col-md-8" >
-    		<div id="dashboard-content">
-        
+	<div id="notification-area"></div>
+	<div class="page-container-responsive space-top-4 space-4">
+		<div class="row">
+	    	<div class="col-md-8" >
+	    		<div id="dashboard-content">
 
+					<div class="panel space-4">
+			  			<div class="panel-header">
+			    			Update Information
+			  			</div>
+			  			<div class="panel-body">
+							<%= form_for(@provider) do |f| %>
 
+						    	<div class="row row-condensed space-4">
+						        	<label class="text-right col-sm-3">
+						        		Name 
+						        	</label>
+						        	<div class="col-sm-9">
+						        		<%= f.text_field :name, placeholder: "Enter your name", size:30, style:'padding-left:10px;'  %> 
+						        	</div>
+						    	</div>
 
-<div class="panel space-4">
-  	<div class="panel-header">
-    	Update Information
-  	</div>
-  	<div class="panel-body">
-		<%= form_for(@provider) do |f| %>
+						    	<div class="row row-condensed space-4">
+						        	<label class="text-right col-sm-3">
+						        		Email 
+						        	</label>
+						        	<div class="col-sm-9">
+						        		<%= f.text_field :email, placeholder: "Edit your email", size:30, style:'padding-left:10px;'  %>
+						        		<div class="text-muted space-top-1">
+						        			We won’t share your private email address with other HealFly users.
+						        		</div>
+						        	</div>
+						    	</div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		        	Name 
-		        </label>
-		        <div class="col-sm-9">
-		        	<%= f.text_field :name, placeholder: "Enter your name", size:30, style:'padding-left:10px;'  %> 
-		        </div>
-		    </div>
+						    	<div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3">
+							        	Phone Number <i class="icon icon-lock icon-ebisu" data-behavior="tooltip" tabindex="0" aria-label="Private"></i>
+							        </label>
+							        <div class="col-sm-9">
+							        	<%= f.text_field :phone_number, placeholder: "Add your phone number", size:30, style:'padding-left:10px;'  %>
+							        	<div class="text-muted space-top-1">
+							        		This is only shared once you have a confirmed appointment with your patient. This is how we can all get in touch.
+							        	</div>
+							        </div>
+							    </div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		        	Email 
-		        </label>
-		        <div class="col-sm-9">
-		        	<%= f.text_field :email, placeholder: "Edit your email", size:30, style:'padding-left:10px;'  %>
-		        	<div class="text-muted space-top-1">
-		        		We won’t share your private email address with other HealFly users.
-		        	</div>
-		        </div>
-		    </div>
+							    <div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3">
+							    	    Location 
+							        </label>
+							        <div class="col-sm-9">  
+							    		<%= f.text_field :location, placeholder: "Enter your location", size:30, style:'padding-left:10px;'  %>
+							        </div>
+							    </div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		        	Phone Number <i class="icon icon-lock icon-ebisu" data-behavior="tooltip" tabindex="0" aria-label="Private"></i>
-		        </label>
-		        <div class="col-sm-9">
-		        	<%= f.text_field :phone_number, placeholder: "Add your phone number", size:30, style:'padding-left:10px;'  %>
-		        	<div class="text-muted space-top-1">
-		        		This is only shared once you have a confirmed appointment with your patient. This is how we can all get in touch.
-		        	</div>
-		        </div>
-		    </div>
+							    <div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3">
+							        	Treatment 
+							        </label>
+							        <div class="col-sm-9">
+							    		<%= f.text_field :treatment, placeholder: "Enter your treatment", size:30, style:'padding-left:10px;' %>
+							        </div>
+							    </div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		    	    Location 
-		        </label>
-		        <div class="col-sm-9">  
-		    		<%= f.text_field :location, placeholder: "Enter your location", size:30, style:'padding-left:10px;'  %>
-		        </div>
-		    </div>
+							    <div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3">
+							        	Price 
+							        </label>
+							        <div class="col-sm-9">
+							    		<%= f.text_field :price, placeholder: "Enter your price", size:30, style:'padding-left:10px;' %>
+							        </div>
+							    </div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		        	Treatment 
-		        </label>
-		        <div class="col-sm-9">
-		    		<%= f.text_field :treatment, placeholder: "Enter your treatment", size:30, style:'padding-left:10px;' %>
-		        </div>
-		    </div>
+							    <div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3">
+							        	Language 
+							        </label>
+							        <div class="col-sm-9">
+							        	<%= f.text_field :language, placeholder: "Add your language", size:30, style:'padding-left:10px;'  %>
+							        </div>
+							    </div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		        	Price 
-		        </label>
-		        <div class="col-sm-9">
-		    		<%= f.text_field :price, placeholder: "Enter your price", size:30, style:'padding-left:10px;' %>
-		        </div>
-		    </div>
+							    <div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3" >
+							        	Update profile picture 
+							        </label>
+							        <div class="col-sm-9">
+							        	<%= f.file_field :profile_picture, style:'padding-left:10px;'  %>
+							        </div>
+							    </div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		        	Language 
-		        </label>
-		        <div class="col-sm-9">
-		        	<%= f.text_field :language, placeholder: "Add your language", size:30, style:'padding-left:10px;'  %>
-		        </div>
-		    </div>
+							    <div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3" >
+							        	Update image 
+							        </label>
+							        <div class="col-sm-9">
+							        	<%= f.file_field :image, multiple: true, style:'padding-left:10px;'  %>
+							        </div>
+							    </div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3" >
-		        	Update profile picture 
-		        </label>
-		        <div class="col-sm-9">
-		        	<%= f.file_field :profile_picture, style:'padding-left:10px;'  %>
-		        </div>
-		    </div>
+							    <div class="row row-condensed space-4">
+							        <label class="text-right col-sm-3">
+							        	Update qualifications
+							        </label>
+							        <div class="col-sm-9">
+							        	<%= f.file_field :qualification, multiple: true, style:'padding-left:10px;'  %>
+							        </div>
+							    </div>
+								<center>
+									<%= f.submit %>
+								</center>
+							<%end%>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3" >
-		        	Update image 
-		        </label>
-		        <div class="col-sm-9">
-		        	<%= f.file_field :image, multiple: true, style:'padding-left:10px;'  %>
-		        </div>
-		    </div>
+						</div>
+					</div>
 
-		    <div class="row row-condensed space-4">
-		        <label class="text-right col-sm-3">
-		        	Update qualifications
-		        </label>
-		        <div class="col-sm-9">
-		        	<%= f.file_field :qualification, multiple: true, style:'padding-left:10px;'  %>
-		        </div>
-		    </div>
-<center>
-	
-		<%= f.submit %>
-</center>
-		<%end%>
-
+	      		</div>
+	    	</div>
+	  	</div>
 	</div>
-</div>
-
-      </div>
-    </div>
-  </div>
-</div>
 </main>

@@ -1,4 +1,4 @@
-class CreateUsers < ActiveRecord::Migration[5.0]
+class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       #patients
@@ -12,8 +12,8 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :gender
       t.string :phone_number
       t.date :birthday
-      t.json :image
-      t.json :medical_history
+      t.string :image
+      t.string :medical_history
 
       #providers (will share username, first_name, last_name, email and password)
       t.integer :price
@@ -21,8 +21,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :treatment
       t.string :language
-      t.json :image
-      t.json :qualification
+      t.string :qualification
 
       #Single Table Inheritance Type
       t.string :type, null: false

@@ -1,4 +1,4 @@
-class AddClearanceToUsers < ActiveRecord::Migration[5.0]
+class AddClearanceToUsers < ActiveRecord::Migration
   def self.up
     change_table :users do |t|
     end

@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
+gem 'pg', '~> 0.20'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -26,6 +26,8 @@ gem 'figaro'
 gem 'mail'
 gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
+gem 'bcrypt-ruby', '3.0.0', :require => 'bcrypt'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -50,7 +52,6 @@ gem 'pg_search'
 
 gem 'inline_svg'
 
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -58,7 +59,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '~> 3.3.0'
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

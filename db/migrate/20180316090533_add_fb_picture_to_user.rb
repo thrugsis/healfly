@@ -1,4 +1,4 @@
-class AddFbPictureToUser < ActiveRecord::Migration[5.0]
+class AddFbPictureToUser < ActiveRecord::Migration
   def change
   	add_column :users, :fb_picture, :string
   end
