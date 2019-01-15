@@ -17,3 +17,12 @@ The idea behind this app was to have a listing of affordable health service prov
 <img src="https://medicaltourism.com/Content/images/Jordan/tbl1.jpg" alt="Costs of procedures internationally"/>
 
 The key features of this app include 
+
+  1. User login and authentication with email or Facebook
+  2. Practitioner service offering creation and photo upload 
+  3. Filtering based on service, price, location and/or language 
+  4. Appointment creation with payment 
+  5. Calendar reservation and blocking 
+  6. Notification email 
+
+  This app was created as an agile team using a KanBan board and Slack. Team members were: 
