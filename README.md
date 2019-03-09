@@ -7,7 +7,7 @@ App can be seen live here (hosted on heroku free tier so it takes a few seconds 
 
 ### The idea behind this app was to have a listing of affordable health service providers around the world. The cost of healthcare procedures in the USA is several times higher than in other countries: 
 
-<img src="https://medicaltourism.com/Content/images/Jordan/tbl1.jpg" alt="Costs of procedures internationally"/>
+<img src="https://lh3.googleusercontent.com/AUyGxGU88Y-7nphUg-RvppEVQCAEJ_hrtcwtVkAoocfb0UQs5tJlsb0PEh5IMWOT3KJJAI0p1iYqrHP_-le0M7B5YD_so5p7lMZh4O0HKxJCCrpAMJ7fMGLKTAQ54xmEGu-nyMjBAJlDCJzdoFyqVh9nFt4mlWCMxvyXX1dveG47i_AbPGcG8XGMHQaAQVqZPRJSKga0ijelowkH_b5T7OppYKO6OIyR5J27i03MYfdZJO38iaUnuhr1EbV8o6d-3ffoNsvIb8Nv04f1KxiEkleg0TyCwblIfRPdOsv7BA_YmDw-oTHbMa29BxOtUkxrKUyPqQ6ry5jjnF4SbZRx-CgKhKMM9mDii529BDdngq0bMbm_spCdsCgs0HQPqFPGzO_noFgKycMCpjezBZ6-8GDNTOEvVmwefrlc8-Gd1s6xZ1Q7wfBGaxBBbvt0HB7xBjiBk5PZ_RxpCAxX_rFWXz9tazVtahyCGsRMyY_twn0h94UMVgcAyXkXARD-TQs2xCOgNUsmvDEQ8qgBwP3QPBcVjQUjxUrPVp0psFV2imtF2EVWJaEPoC39Ww2r3BZlOWdQWaWPP91W4pfjRNp66myllsm8Un0oaqvPsVgAVASnlA8JLjOeLPznvjMQIz6pbC6zyQ3SAkA-wtoRzoOzF6xkAdbtairIoZVLD0-wmFB8lsI_7C76R8Qbb4lnAaK1aFNyTQnR-yet_MoJAtW8-9VQPA=w425-h211-no" alt="Costs of procedures internationally"/>
 
 ## Table of Contents
 
